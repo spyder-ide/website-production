@@ -1,0 +1,574 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/css/styles.css?h=ef88ba6d">
+<title> — Spider Website</title>
+<body>
+  <header>
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+
+    <nav class="top-bar" id="main-menu">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text">Spyder Website</li>
+        </ul>
+      </div>
+
+      <div class="top-bar-right">
+        <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+          <li><a href="../">Welcome</a></li>
+          
+            <li class="active"><a href="../blog/">Blog</a></li>
+          
+            <li><a href="../projects/">Projects</a></li>
+          
+            <li><a href="../about/">About</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div>
+    
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../blog/spyder-v2-3-2-released/">Spyder 2.3.2 released</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Carlos Córdoba
+    
+    on 2014-12-03 13:26:00
+  </p>
+  <p>Hi all,</p>
+<p>On the behalf of <a href="http://code.google.com/p/spyderlib/people/list">Spyder's development team</a>, I'm pleased to announce that Spyder 2.3.2 has been released and is available for Windows XP/Vista/7/8, GNU/Linux and MacOS X: <a href="https://bitbucket.org/spyder-ide/spyderlib/downloads">https://bitbucket.org/spyder-ide/spyderlib/downloads</a></p>
+<p>This release represents more than 2 months of development since 2.3.1 and introduces major enhancements and new features:</p>
+<ul>
+<li><p>Editor</p>
+<ul>
+<li>Improve cells visualization</li>
+<li>Add support for drag selection and improve look of line number area</li>
+<li>Open on it any text file present in the Variable Explorer</li>
+<li>View and edit IPython notebooks as Json files</li>
+<li>Syntax highlighting for Json and Yaml files</li>
+</ul>
+</li>
+<li><p>Variable Explorer:</p>
+<ul>
+<li>Import csv files as Pandas DataFrames</li>
+<li>Improve browsing speed for NumPy arrays and DataFrames with more than 1e5 elements</li>
+</ul>
+</li>
+<li><p>IPython Console</p>
+<ul>
+<li>Add a stop button to easily stop computations</li>
+</ul>
+</li>
+</ul>
+<p>We fixed almost 40 bugs, merged 13 pull requests from 8 authors and added about 150 commits between these two releases.</p>
+<p>This is a very important bugfix release which solves a lot of unicode problems in our consoles, the variable explorer and the main interface, so everyone is encouraged to update.</p>
+<p>For a full list of fixes see our <a href="https://code.google.com/p/spyderlib/wiki/ChangeLog">changelog</a></p>
+
+  </div>
+
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../blog/spyder-v2-3-released/">Spyder 2.3 has been released</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Carlos Córdoba
+    
+    on 2014-07-13 21:18:00
+  </p>
+  <p>Hi all,</p>
+<p>On the behalf of <a href="http://code.google.com/p/spyderlib/people/list">Spyder's development team</a>, I'm pleased to announce that Spyder 2.3 has been released and is available for Windows XP/Vista/7/8, GNU/Linux and MacOS X <a href="https://bitbucket.org/spyder-ide/spyderlib/downloads">here</a>.</p>
+<p>This release represents 14 months of development since version 2.2 and introduces major enhancements and new features:</p>
+<p>Python 3 support (versions 3.2, 3.3 and 3.4 are supported).
+Drop Python 2.5 support.
+Various Editor improvements:
+Use the Tab key to do code completions
+Highlight cells
+First-class support for Enaml files
+Improve how calltips are shown
+Better looking Object Inspector
+Several refinements to the user interface to make it easier and more intuitive 
+And <a href="http://code.google.com/p/spyderlib/wiki/ChangeLog">many other changes</a></p>
+<p>Spyder 2.2 has been a huge success (being downloaded more than 400,000 times!) and we hope 2.3 will be as successful as it. For that we fixed 70 important bugs, merged 30 pull requests from 11 authors and added almost 1000 commits between these two releases.</p>
+<p>Enjoy,</p>
+<ul>
+<li>Carlos</li>
+</ul>
+
+  </div>
+
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../blog/spyder-v2-1-14-supports-python-3/">Spyder v2.1.14 supports Python 3</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2014-01-24 12:24:00
+  </p>
+  <p><a href="http://code.google.com/p/spyderlib/source/checkout?repo=v21">Spyder v2.1.14</a> is an experimental release of Spyder which I've been working on lately. Its purpose is to demonstrate the possibility for supporting both Python 2 and Python 3 with a single code base.</p>
+<p>Great news: it works!
+(and I must admit that it was quite easy and that it took me far less time than expected)</p>
+<p>So now you may switch to Python 3 with Spyder at your side.</p>
+<p>For example, Windows users may already start working with a full featured scientific Python ecosystem including Spyder thanks to <a href="http://winpython.sourceforge.net/">WinPython v3.3</a> which first beta was released recently. WinPython is now supporting both 32bit and 64bit versions of both Python 2 and Python 3, and all this in a portable way. In other words, with WinPython, you may run four versions of Python on the same machine without any prior configuration and without any interference: fast switching from a Windows-integrated (Windows explorer/registry integration) Python version to another is even possible!</p>
+<p>Note that even if  <a href="http://code.google.com/p/spyderlib/source/checkout?repo=v21">Spyder v2.1.14</a> supports Python 3, the forthcoming Spyder v2.2 release won't support it: Python 3 support will be officially implemented in Spyder v2.3 which will hopefully be released shortly after v2.2.</p>
+<!--
+5 comments:
+===========
+
+DigitalPig
+February 11, 2013 at 8:34 PM
+Hi,
+
+Thank you for the hard work. But I checked out the tag v2.1.14dev3 and it still gives me a lot of error when I try to execute spyder under a python3 environment. I have a Ubuntu 12.10 amd64. Thank you.
+
+Reply
+
+Pierre
+February 12, 2013 at 12:36 AM
+Actually, it supports only Python 3.3 for now -- there are still compatibility issues with Python 3.0-3.2
+
+Reply
+
+Harsh ShuklaOctober 28, 2013 at 8:57 AM
+Hi, will version 2.3 support python 3.0-3.2 ? When can we expect the stable release ? 
+
+Thanks.
+
+Reply
+
+Brett NelsonNovember 15, 2013 at 9:49 AM
+Spyder if by far my favorite IDE and I am very much looking forward to Spyder 2.3. It has been a while since the original post and I am wondering if there are any updates on the progress of including python 3.3.
+
+Reply
+
+PierreNovember 16, 2013 at 4:21 AM
+Spyder v2.3.0dev5 (then dev6) was already pretty stable when it was released this summer.
+
+Now Spyder v2.3.0beta1 has been released and is also quite stable. So you may already test it (without too much risks).
+
+Reply
+
+-->
+  </div>
+
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../blog/winpython-distribution/">WinPython Distribution</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2013-12-24 05:26:00
+  </p>
+  <p>WinPython, a portable scientific Python distribution for Windows (32 &amp; 64 bit)</p>
+<p>Following <a href="http://spyder-ide.blogspot.fr/2012/08/scientific-python-distribution-for.html">my recent post</a> on a free open-source 64-bit Python distribution for Windows, I was able to create the project (<a href="http://winpython.sourceforge.net/">WinPython</a>, "a portable scientific Python distribution for Windows") and write some code to generate a portable Python distribution from scratch (actually from existing distutils packages).</p>
+<p>I've just uploaded <a href="http://winpython.sourceforge.net/">WinPython</a> v2.7.3.0beta2 for both 32-bit and 64-bit Windows platforms.</p>
+<p>WinPython has its <a href="https://sourceforge.net/projects/winpython/">SourceForge project</a> and everything is ready for <a href="https://sourceforge.net/projects/winpython/files">downloads</a>, <a href="https://sourceforge.net/p/winpython/discussion/">discussions</a>, <a href="https://sourceforge.net/p/winpython/tickets/">bug reports and feature requests</a>.</p>
+<p>Enjoy! (I hope)</p>
+<h1 id="comments">Comments</h1><p>ChrisSeptember 27, 2012 at 8:28 AM
+You sir, are the man. Thank you! Keep up the great work!</p>
+<p>Reply</p>
+<p>SteveNovember 15, 2012 at 3:56 PM
+I tried WinPython and it worked great. Actually I have a kind of getting-started-with-python guide for scientists who are not programmers - <a href="http://sjbyrnes.com/?page_id=67">http://sjbyrnes.com/?page_id=67</a> - I edited it to endorse WinPython.</p>
+<p>Reply</p>
+<p>Lab LogJanuary 4, 2013 at 3:35 PM
+I switched to using WinPython after campus MATLAB licence keeps expiring on me one too many times. It's perfect! Thank you very much.</p>
+<p>Reply</p>
+<p>UnknownDecember 29, 2013 at 9:11 PM
+Fantastic, thank you!</p>
+<p>Reply</p>
+
+  </div>
+
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../blog/scientific-python-distribution-for-win-64/">Scientific Python distribution for Windows 64bit</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2012-08-05 07:05:00
+  </p>
+  <p>As one of my image processing software (mainly based on NumPy, SciPy, guidata and guiqwt) is being limited by the "2GB per application" memory limit due to the fact that I'm using a 32bit build of Python on Windows, I'm currently thinking of switching to Python 64bit. That's why I've been recently investigating the 64bit/Windows/Python ecosystem.</p>
+<ol>
+<li>The NumPy/SciPy building issue on Windows 64bit.</li>
+</ol>
+<p>According to experienced developers, there is no decent open-source (free) Fortran compiler for the Windows 64bit platform. As a consequence, it's impossible to build NumPy or SciPy on this platform using only free and open-source tools. That's why there is no official Windows 64bit binaries for these two libraries. The only ready-to-use installers available out there were prepared by Christoph Gohlke (using Intel Fortran compiler, a.k.a. 'ifort') and these are clearly unofficial binaries. Furthermore, Christoph has built two different installers for NumPy: one unoptimized and one optimized with the Intel Math Kernel Library (MKL), hence providing better performance. And Gohlke's SciPy 64bit binary package (the only one available freely online) require NumPy MKL. The problem is that, according to Christoph Gohlke, the MKL license does not allow me (or anyone else) to redistribute these binaries, unless I have purchased such a license. It is still unclear to me if the end user would also require this license too. Hopefully no. Let's assume that. Besides, after reading carefully the Intel MKL License terms, I'm quite sure that I can redistribute the MKL-based NumPy built because it's just runtime redistribution. So I think I will purchase an Intel Fortran Compiler license (including MKL) to be able to rebuild NumPy and SciPy in the near future but in the meantime I will just redistribute the packages built by Christoph Gohlke.</p>
+<ol>
+<li>The distribution: how? when?</li>
+</ol>
+<p>I'm planning on releasing publicly a completely free 64bit Python distribution by the end of 2012 (and I'll probably release a 32bit version too). To achieve this, I can't go on with Python(x,y): the concept has its limits and it's beginning to be difficult to maintain. So I'm thinking of something completely different: a portable Python distribution with a built-in package manager which would be able to install/uninstall Python packages to/from the distribution using standard Python installers (made with the standard Python library 'distutils') - support for eggs won't be added as I had very disappointing results with their unconventional way of installing packages, sometimes messing with the sys.path list. This portable distribution would also embed some useful tools like SciTE, WinMerge or TortoiseHg. But, unfortunately, as mentioned above (point 1.), there won't be any integrated C/C++/Fortran compiler in the 64bit edition (I'll probably integrate MinGW with gfortran in the 32bit edition of the distribution).</p>
+<ol>
+<li>First experiments...</li>
+</ol>
+<p>I've already done a bunch of tests and this is working great. I just have to take the time to write scripts automating the distribution creation process from scratch: installing the official Python distribution (.msi file) to a folder, install PyQt by unzipping the official NSIS installer, create the batch scripts for running Python (or Spyder) in the appropriate environment, and so on. My current portable distribution test is able to run Spyder with all basic scientific packages. That is very interesting: a complete and ready-to-use (without any installation requirement) scientific Python distribution on a USB key!</p>
+<p>To be continued...</p>
+<p><strong>Update</strong></p>
+<p>This new project has now a name: this is WinPython. Check out the <a href="http://code.google.com/p/winpython/">website</a> for more informations.</p>
+<h1 id="comments">Comments</h1><p>6 comments:</p>
+<p>Ralf GommersAugust 5, 2012 at 1:03 PM
+Sounds promising! I hope someone else will continue maintaining Python(x,y), because it's definitely a valuable project.</p>
+<p>Reply
+Replies</p>
+<p>PierreAugust 6, 2012 at 5:37 AM
+Of course Python(x,y) project will go on, Gabi Davar and I will continue maintaining the project. I've been less involved for a while now (for almost a year if I remember correctly) because I have less free time than before and Spyder is taking all of it. Anyway, Python(x,y) will still be <em>the</em> scientific 32bit Python distribution for Windows, and maybe there will be a 64bit edition some day but right now I don't have enough time to get involved in this. So the fact to choose to develop a portable distribution which will rely on official packages (i.e. package made by others) is the only viable option for me: it saves a lot of time. 
+In the future, one could imagine that the two projects would take benefit from each other or even merge, but that's another story. Right now, the ambition of this portable distribution is <em>not</em> to replace Python(x,y): it's just an attempt to investigate another way of distributing Python on Windows. Maybe it won't be that interesting and I'll come back with new ideas to improve Python(x,y). But the fact to rely on existing packages instead of building our own is seducing. We'll see.</p>
+<p>Reply</p>
+<p>Gabi DavarAugust 5, 2012 at 1:47 PM
+What is wrong with portable python?</p>
+<p><a href="http://portablepython.com/wiki/PortablePython2.7.3.1">http://portablepython.com/wiki/PortablePython2.7.3.1</a></p>
+<p>Reply</p>
+<p>PierreAugust 6, 2012 at 5:48 AM
+From my point of view, there are two issues with Portable Python:
+(a) as an end user, I miss a lot of packages, like Spyder, Matplotlib, h5py, pyflakes, pylint, psutil, etc. 
+(b) as a developper, following (a) I would like to know how to add these packages and explore the source of the project but AFAIK, there is absolutely no source code available for Portable Python and I can't even find any license terms, so I'm more tempted to make my own project instead of contributing to this one.</p>
+<p>Reply</p>
+<p>...September 4, 2012 at 8:40 AM
+Is this going to compete with Python(x,y)? That seems like a waste. I wish people would work together to make a 64-bit version of Python(x,y) instead of splitting up effort between multiple projects.</p>
+<p>Reply</p>
+<p>PierreSeptember 4, 2012 at 9:44 AM
+No, this is not going to compete with Python(x,y): please read the end of the Overview section on WinPython website (<a href="http://code.google.com/p/winpython/">http://code.google.com/p/winpython/</a>). Actually it wouldn't have any sense for me to compete with a project that I've created.</p>
+<p>Moreover, the fact is that it would represent too much work for me right now to create a 64-bit Python(x,y), I simply can't. That's why I've created WinPython which requires less maintenance but also have less features than Python(x,y). So the idea is not to split up effort but to make it happen: without this initiative, there would be no freely available 64-bit Windows Python distribution.</p>
+<p>Reply</p>
+
+  </div>
+
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../blog/spyder-v2-1-is-available/">Spyder v2.1 is available</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2011-11-04 04:10:00
+  </p>
+  <p>After a year of hard work on stability, performance and new features, Spyder v2.1 is now available for Windows XP/Vista/7, GNU/Linux and MacOS X.</p>
+<p>This release introduces major enhancements and new features:</p>
+<ul>
+<li>Large performance and stability improvements</li>
+<li>PySide support (PyQt is no longer exclusively required)</li>
+<li>PyQt API v1 and v2 support</li>
+<li>New profiler plugin (thanks to Santiago Jaramillo, a new contributor)</li>
+<li>Experimental support for IPython v0.11+</li>
+<li>And many <a href="http://code.google.com/p/spyderlib/wiki/ChangeLog">other changes</a></li>
+</ul>
+<p>We [the Spyder development team] are all very excited by this new release: Spyder is now becoming the [GUI-based] scientific development environment. Its future seems very promising. First there is the PySide support and the PyQt API v1/v2 support which were strategically essential (this will also help us supporting Python 3 in time). Second there is a cleaner and optimized code: this was critical for Spyder's behavior to be the closest possible to a standard Python interpreter. Third there is a very stable application: a lot of crashes and segmentation faults were fixed during the last year. Last, but not least, the future looks bright thanks to the new <a href="http://code.google.com/p/spyderlib/people/list">project members</a>: we are now 5 committers and 6 contributors.</p>
+<p><strong>Stand-alone executable on Windows platforms</strong></p>
+<p>Note that, on Windows platforms, Spyder is also available as a stand-alone executable (don't forget to disable UAC on Vista/7). This all-in-one portable version is still experimental (for example, it does not embed sphinx -- meaning no rich text mode for the object inspector) but it should provide a working version of Spyder for Windows platforms without having to install anything else (except Python 2.x itself, of course).</p>
+<p><strong>Help needed</strong></p>
+<p>More than ever, we welcome any contribution that helps making Spyder an efficient scientific development/computing environment. <a href="http://code.google.com/p/spyderlib/wiki/NoteForContributors">Join us</a> to help creating your favourite environment!</p>
+<h1 id="comments">Comments</h1><p>MySchizoBuddy
+November 4, 2011 at 4:59 AM
+do you have a precompiled binary for macs or macports is still the preferred way. mac ports will literally download and compile a gazillion packages for spyder.</p>
+<p>Reply</p>
+<p>konstantin
+November 9, 2011 at 2:34 PM
+Hello. I liked a lot spyder. Using a Stand-alone executable. Before it i had lot of trouble with installing, now all is ok. I have a question. Code completion not working when a typing a key-words ("print" for example) and i have to press Ctrl+Space to get a complition. Can it be fixed? (I want auto code-completion like in eclipse) Sry for bad english</p>
+<p>Reply</p>
+<p>PierreNovember 15, 2011 at 12:48 AM
+Please use the GoogleCode bug tracker to report bugs or ask for new features:
+<a href="http://code.google.com/p/spyderlib/issues/list">http://code.google.com/p/spyderlib/issues/list</a></p>
+<p>This would be a new feature as automatic code completion for keywords is not implemented.</p>
+<p>Reply</p>
+<p>Elwood CookNovember 15, 2011 at 6:22 AM
+Beginner here. I'm thrilled with Spyder on windows - it's a kind of 'one window' development that I've been looking for to learn on (because its so easy to run code).</p>
+<p>Are there any plans to bring this to Mac? I have built using Mac Ports but it often hangs when I run code and seems to have lots of issues.</p>
+<p>-E</p>
+<p>Reply</p>
+<p>PierreNovember 26, 2011 at 7:36 AM
+Spyder is already available for Mac in MacPorts without having to build anything, I think. Please do not hesitate to ask for help here:
+<a href="http://groups.google.com/group/spyderlib">http://groups.google.com/group/spyderlib</a>
+or here:
+<a href="http://code.google.com/p/spyderlib/issues/list">http://code.google.com/p/spyderlib/issues/list</a></p>
+<p>Reply</p>
+<p>Catawba SamDecember 3, 2011 at 1:37 AM
+Pierre,
+I want to thank you for the good work you have done with Spyder.</p>
+<p>After watching your progress and testing the updates periodically, I have finally switched to Spyder (from PyScripter + some iPython) and been very pleased.</p>
+<p>Thanks again.</p>
+<p>Reply</p>
+<p>PierreDecember 4, 2011 at 6:17 AM
+Thanks for you for those kind words!</p>
+<p>Reply</p>
+<p>DashesyNovember 27, 2012 at 12:13 PM
+Thank you for the great job. I am trying to set up a full environment for our customers to use Python instead of MATLAB (I also want to add and setup Orange for them), and thanks to Spdyder the initial inertia is much lower, but only if I could have IPython on Spyder again that was great. 
+When do you think Spyder 2.2 (which I read works again with latest IPython 0.13) will be available for Windows? The option to select IPython as initial console is still greyed out (IPython 0.13.1 and Spyder 2.1.11).</p>
+<p>Reply</p>
+<p>DashesyNovember 27, 2012 at 1:46 PM
+I just realized I could pass --pylab from "External Modules" tab to IPython and now IPython 0.13.1 (the kernel version) seems to be working fine with Spyder 2.1.11
+Just wondering, is there any reason to keep the interpreter version when kernel version works just fine?</p>
+<p>Reply</p>
+<p>PierreMay 8, 2013 at 5:49 AM
+Spyder v2.2.0 is now available, enjoy!</p>
+<p>Reply</p>
+
+  </div>
+
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../blog/new-enhanced-scientific-python/">New Enhanced Scientific Python Interpreter</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2011-09-11 04:10:00
+  </p>
+  <p>As I mentionned in my previous post, the standard Python interpreter provided by Spyder's console has been considerably enhanced. Moreover, despite these interesting enhancements, this is based on a real Python interpreter, not an emulation.</p>
+<p>The scientific startup script mentionned in my previous post was integrated in Spyder's development version (under the name scientific_startup.py).</p>
+<p>The goal of all these recent changes was to provide a MATLAB-like experience with a minimum of requirements: NumPy, SciPy, Matplotlib and Spyder, that's all.</p>
+<p>And here are two screenshots of the result (Spyder was executed in <code>light</code> mode: <code>spyder --light</code>):</p>
+<p><img src="../blog/new-enhanced-scientific-python/sl_scientific.png" alt="Scientific Light 1"></p>
+<p><img src="../blog/new-enhanced-scientific-python/sl_scientific2.png" alt="Scientific Light 2"></p>
+<h1 id="comments:">comments:</h1><p>CarlosSeptember 11, 2011 at 10:27 AM
+I think it's a great addition to the Python console. Could it be possible to add it as a magic command too? So even if you have a different startup script, you can use something like</p>
+<blockquote><blockquote><blockquote><p>%scientific</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>to load your it.</p>
+<p>Cheers,
+Carlos</p>
+<p>Reply</p>
+<p>PierreSeptember 12, 2011 at 10:18 AM
+Excellent idea!
+That is done.</p>
+<p>Reply</p>
+<p>CarlosSeptember 12, 2011 at 10:48 AM
+Glad you like it!</p>
+<p>Reply</p>
+<p>tucuman87September 19, 2011 at 12:25 AM
+Pierre, this is a great piece of software, I use it a lot, and I all I can tell is that it's fun and productive.</p>
+<p>I have a small suggestion to enhance the console so it can be split, like editor documents can. IE having say one console on top and another on bottom- sometimes it would be useful so you can have say a server and a client and you could interact between them and see the results conveniently. Of course, now it can be done, but I have to swap tabs to see the result...</p>
+<p>THX!</p>
+<p>Reply</p>
+
+  </div>
+
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../blog/no-ipython-v0-11-support-in-spyder/">No IPython v0.11 support in Spyder&#39;s console, but standard Python interpreter enhancements</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2011-09-04 07:22:00
+  </p>
+  <p>It's been a month since IPython v0.11 public release and I've been trying to solve issues related to <a href="http://code.google.com/p/spyderlib/issues/detail?id=727">IPython support in Spyder's console</a>, all in vain. At first, I thought that it was only a problem on Windows platforms, but apparently it is not. The more I think about it (and the more I spend time on it), the more I doubt that there will ever be a decent support of IPython &gt;=v0.11 in Spyder's console. In the meantime, I have fixed a couple of bugs related to the new <a href="http://spyder-ide.blogspot.com/2011/08/preview-of-new-ipython-plugin-for.html">IPython plugin</a>: this new plugin will probably be the only way to run IPython &gt;=v0.11 within Spyder.</p>
+<p>So, to compensate this lack of IPython support in Spyder's console, I have implemented the following enhancements for the standard Python interpreter (this is not much, but it provides all the IPython features I am using personnally):</p>
+<ol>
+<li><p>I have <a href="http://code.google.com/p/spyderlib/source/detail?r=187d52472ec8616ccce5713c09bcf9b73ea4f1fb">fixed the PyQt input hook issue on Windows platforms</a>. Before this revision, the console was crashing (non-responsive actually) on Windows platforms after trying to manipulate Qt objects interactively, like interactive plotting with Matplotlib for example. Now, when enabling the "Replace PyQt input hook by Spyder's" option (which is enabled by default on Windows platforms), the standard Python interpreter may be used to do interactive plotting, even on Windows.</p>
+</li>
+<li><p>Plus, I have implemented some basic special commands in the standard Python interpreter (see <a href="http://code.google.com/p/spyderlib/source/detail?r=07394d8b179087e8be2f6a629e096ed3c4c4c14e">here</a> more details), adding support for %pwd, %ls, %clear or !dir (or !ls on UNIX platforms), etc. (I haven't implemented the %edit, %run and other similar commands which have really no use within Spyder).</p>
+</li>
+<li><p>And I have fixed a bug with <a href="http://code.google.com/p/spyderlib/source/detail?r=2d7929020f3e7756dfc4456d5653fda66759c3c9">PYTHONSTARTUP substitution option</a> (the packages imported in the startup script were not available in the Python interpreter).</p>
+</li>
+</ol>
+<p>These three changesets were intended to facilitate the use of standard Python interpreter as an interactive computing shell. I've also created two PYTHONSTARTUP scripts (on my machine), one to support <a href="http://matplotlib.sourceforge.net/">Matplotlib</a>'s pylab interface and the other to support <a href="http://code.google.com/p/guiqwt/">guiqwt</a>'s interactive plotting mode:</p>
+<ul>
+<li>Matplotlib's startup script:</li>
+</ul>
+<pre><code class="lang-python">print &quot;Running pylab startup script...&quot;,
+# Import modules following official guidelines:
+import numpy as np
+import scipy as sp
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+# Pollute the namespace but also provide MATLAB-like experience:
+from pylab import *
+# Enable Matplotlib&#39;s pylab mode:
+ion()
+print &quot;done.&quot;
+</code></pre>
+<ul>
+<li>guiqwt startup script:</li>
+</ul>
+<pre><code class="lang-python">print &quot;Running guiqwt startup script...&quot;,
+# Import modules following official guidelines:
+import numpy as np
+import scipy as sp
+import guiqwt.pyplot as plt
+import guiqwt.io as io
+# Pollute the namespace but also provide MATLAB-like experience:
+from numpy import *
+from guiqwt.pyplot import *
+# Enable guiqwt&#39;s interactive mode:
+ion()
+print &quot;done.&quot;
+</code></pre>
+<p>With these startup scripts, I have my own IPython shell (not as powerful as IPython, of course) but it suits my needs... why not yours?</p>
+<p>To select you own startup script, go to Tools &gt; Preferences &gt; Console &gt; Advanced settings:</p>
+<p><img src="../blog/no-ipython-v0-11-support-in-spyder/a.png" alt="PYTHONSTARTUP replacement"></p>
+<p>I think I'll add these startup scripts to Spyder v2.1 but I don't know how exactly. Maybe the simplest way would be to change the settings GUI above and add a third choice: "Build-in startup script: " with a combo box allowing to choose a script between the two scripts above (and others).</p>
+<h1 id="comments:">comments:</h1><p>DavePSeptember 5, 2011 at 4:33 PM
+Hi Pierre,</p>
+<p>So to clarify, Ipython 0.11 will be supported by a dedicated plugin, rather than by the standard spyder console, right? This sounds much more positive than the heading of the blog post would lead us to believe!</p>
+<p>Is the code for this ipython plugin in the hg repository yet? I installed ipython2.1-dev, but couldn't see the new ipython console option. I may be complicating things by using virtualenv, since I don't want to blow away my existing ipython with a development version.</p>
+<p>cheers
+David</p>
+<p>Reply</p>
+<p>PierreSeptember 6, 2011 at 8:26 AM
+Hi David,</p>
+<p>You're right, the heading of the blog post is quite pessimistic. But it does reflect the fact that I would prefer IPython to be supported by Spyder's console because it would require less efforts to implement in the first place and to maintain afterwards. Implementing a new plugin based on IPython Qt console will require some time.</p>
+<p>The code of this IPython plugin is already in the hg repository. You may try it without having to install IPython v0.12dev: just add the IPython source root directory to your PYTHONPATH environment variable (I think that it should work...).</p>
+<p>-Pierre</p>
+<p>Reply</p>
+
+  </div>
+
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../blog/preview-of-new-ipython-plugin-for-spyder/">Preview of the new IPython plugin for Spyder</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2011-08-13 08:42:00
+  </p>
+  <p>Here is a first preview of the <a href="http://code.google.com/p/spyderlib/source/detail?r=95f5eaa15e09b6382a5c53111089f6b39df2dab7">new IPython plugin</a> which will be available in Spyder v2.1 (to be released in September 2011, but the first beta will hopefully be available in a few days):</p>
+<p><img src="../blog/preview-of-new-ipython-plugin-for-spyder/spyder_ipython012b.png" alt="iPython plugin"></p>
+<p><strong>Important notes:</strong></p>
+<ul>
+<li><p>This feature is still experimental and will remain so until Spyder v2.2 (scheduled for December 2011).</p>
+</li>
+<li><p>It requires IPython v0.12dev (i.e. the current IPython development version, available through the github repository).</p>
+</li>
+</ul>
+<p>The idea is to start a new IPython kernel within the "Console" plugin (bottom left of the screenshot above), then a new IPython frontend dockwidget is created automatically (top left of the screenshot above). This first implementation already supports the Variable Explorer (top right of the screenshot above) through the IPython kernel associated to the frontend but nothing else is supported (link with the Editor, the Object Inspector, and so on).</p>
+<p>In the "Console" plugin preference page, the user may change the IPython kernel command line options (defaults are: "python --pylab=inline").</p>
+<h1 id="comments:">comments:</h1><p>olivier64August 16, 2011 at 12:50 PM
+Why target IPython 0.12, which for all we know may not be released until 2015, rather than IPython 0.11?</p>
+<p>Reply</p>
+<p>PierreAugust 17, 2011 at 2:01 PM
+That's not what I meant and this is ambiguous, you're right. Actually the feature requires the current IPython development version (which is v0.12dev) because v0.11 (the latest stable release) has a very serious bug affecting the API used for this feature. But this bug is already fixed in current development version and this bugfix will certainly be part of IPython v0.11.1 which will probably be released before the end of the year or so.</p>
+<p>Reply</p>
+
+  </div>
+
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../blog/ipython-has-taken-huge-step-forward/">IPython has taken a huge step forward!</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2011-08-09 07:07:00
+  </p>
+  <p>Two years of efforts were necessary for the IPython development team to achieve their goal and take a huge step forward with <a href="http://ipython.org/ipython-doc/rel-0.11/whatsnew/version0.11.html">IPython v0.11</a>, providing a powerful interactive shell with outstanding new features, a cleaner source code... and a brand new <a href="http://ipython.org/">great-looking website</a>! (at last... the old one was really minimalist)</p>
+<p>To my opinion, the most impressing new feature is the standalone Qt console (see the screenshot below): combined with the brand new "inline pylab mode", it allows plotting figures directly in the console itself, between lines of code (like in a notebook).</p>
+<p><img src="../blog/ipython-has-taken-huge-step-forward/qtconsole.png" alt="Qt Console"></p>
+<p>But there are <a href="http://ipython.org/ipython-doc/rel-0.11/whatsnew/version0.11.html">other interesting new features</a> such as high-level interactive parallel computing features, an improved vim integration, an integration in Python Tools for Visual Studio and support for Python 3 (the last major scientific library which does not support Python 3 is now <a href="http://matplotlib.sourceforge.net/">matplotlib</a>... hurry up guys!).</p>
+<p><strong>New IPython v0.11 breaks Spyder's IPython support</strong></p>
+<p>Unfortunately for Spyder users, this new version will break the IPython support within the "Console" plugin. We were not expecting this release until a few weeks from now, so we were not able to prepare Spyder for this.
+However, some preliminary changes were made to both v2.0 and v2.1 branches to make them compatible with IPython v0.11:</p>
+<ul>
+<li><p>For v2.0.12 users, simply copying and replacing the original files by the following should be sufficient to add support for IPython v0.11 (at least on Linux and MacOS X):</p>
+<ul>
+<li><p><a href="http://code.google.com/p/spyderlib/source/browse/spyderlib/widgets/externalshell/monitor.py?repo=v20&amp;r=94c3f2ae1734594553783c1fe9baabd2dadd26c5">monitor.py</a></p>
+</li>
+<li><p><a href="http://code.google.com/p/spyderlib/source/browse/spyderlib/widgets/externalshell/startup.py?repo=v20&amp;r=94c3f2ae1734594553783c1fe9baabd2dadd26c5">startup.py</a></p>
+</li>
+</ul>
+</li>
+<li><p>If you are using the development version (v2.1.0), you may simply update your local repository.</p>
+</li>
+</ul>
+<p><strong>Support for IPython v0.11 in Spyder's Console</strong></p>
+<p>Anyway, the most disappointing thing about IPython v0.11 for Spyder users is that it's now using Python's PyOS_InputHook mechanism to support GUI event loops. This is, from a general point of view, a good thing because this is much cleaner than the old thread-based implementation. But, on Windows platforms, PyQt's input hook is implemented in such a way that, when enabled, it's blocking the standard output redirection pipe with the remote process (I don't know why), thus blocking the whole shell (that's why an option to disable the PyQt's input hook was added a long time ago to Spyder's console preferences and this option is enable by default on Windows platforms). In other words, when running IPython in pylab mode (i.e. with matplotlib's interactive mode turned on), matplotlib's figures will freeze. That's why there is a warning message in Spyder v2.1.0 when it's running with IPython v0.11 on Windows: "Spyder does not support GUI interactions with IPython &gt;=v0.11 on Windows platforms (only IPython v0.10 is fully supported).".</p>
+<p><strong>The future of IPython support in Spyder</strong></p>
+<p>Currently, in Spyder v2.0.12 and v2.1.0, IPython is supported simply by running an IPython shell in Spyder's console: a Python script running an IPython shell is executed in a separate process (QProcess). This was a very efficient way to support IPython, as there was a lot of code refactoring between the pure Python interpreter and the IPython interpreter (code completion, variable explorer, ...).
+Now that IPython v0.11 is using a two-process model like Spyder, they were able to implement a GUI-based console (the "standalone Qt console" mentioned above) which could be integrated directly into Spyder.</p>
+<p>What needs to be done:</p>
+<ol>
+<li>The first step to make it possible is to add support for PyQt's API #2 in Spyder: this is now done (see previous post)</li>
+<li>Implement a specific "IPython plugin" that will encapsulate the IPython Qt console widget</li>
+<li>Add options support to customize IPython</li>
+<li>Add links with the Editor (run scripts, run selection, debug, breakpoints support, ...) and the Object inspector</li>
+<li>Add support for the Variable explorer (after some tests, I think this is a hard one and will probably require a lot of interactions with the IPython development team)</li>
+</ol>
+<p>This is a lot of work but it's worth the effort.</p>
+
+  </div>
+
+  
+
+  
+  <div class="pagination">
+    
+      <span class="disabled">&laquo; Previous</span>
+    
+    | 1 |
+    
+      <a href="../blog/page/2/">Next &raquo;</a>
+    
+  </div>
+
+
+  </div>
+  <footer>
+    <div class="row">
+    <div class="small-12 medium-6 columns">
+        <a href="https://github.com/spyder-ide/spyder/" title="Spyder on GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/spyder-ide/spyder/issues/" title="Report Issues for Spyder"><i class="fa fa-bug"></i></a>
+        <a href="https://twitter.com/Spyder_IDE" title="Find Spyder on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://gitter.im/spyder-ide/public" title="Chat on Gitter"><i class="fa fa-comment"></i></a>
+      </div>
+      <div class="small-12 medium-6 columns">
+        &copy; Copyright 2016 by The Spyder Development Team..
+      </div>
+    </div>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'spyder-ide/public'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script type=text/javascript src="../static/js/app.js?h=73b03350" charset="utf-8"></script>
+  </footer>
+</body>

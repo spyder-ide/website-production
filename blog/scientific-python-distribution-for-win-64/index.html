@@ -1,0 +1,135 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../static/css/styles.css?h=ef88ba6d">
+<title>Scientific Python distribution for Windows 64bit — Spider Website</title>
+<body>
+  <header>
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+
+    <nav class="top-bar" id="main-menu">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text">Spyder Website</li>
+        </ul>
+      </div>
+
+      <div class="top-bar-right">
+        <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+          <li><a href="../../">Welcome</a></li>
+          
+            <li class="active"><a href="../../blog/">Blog</a></li>
+          
+            <li><a href="../../projects/">Projects</a></li>
+          
+            <li><a href="../../about/">About</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div>
+    
+  
+  <div class="blog-post">
+  
+    <h2>Scientific Python distribution for Windows 64bit</h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2012-08-05 07:05:00
+  </p>
+  <p>As one of my image processing software (mainly based on NumPy, SciPy, guidata and guiqwt) is being limited by the "2GB per application" memory limit due to the fact that I'm using a 32bit build of Python on Windows, I'm currently thinking of switching to Python 64bit. That's why I've been recently investigating the 64bit/Windows/Python ecosystem.</p>
+<ol>
+<li>The NumPy/SciPy building issue on Windows 64bit.</li>
+</ol>
+<p>According to experienced developers, there is no decent open-source (free) Fortran compiler for the Windows 64bit platform. As a consequence, it's impossible to build NumPy or SciPy on this platform using only free and open-source tools. That's why there is no official Windows 64bit binaries for these two libraries. The only ready-to-use installers available out there were prepared by Christoph Gohlke (using Intel Fortran compiler, a.k.a. 'ifort') and these are clearly unofficial binaries. Furthermore, Christoph has built two different installers for NumPy: one unoptimized and one optimized with the Intel Math Kernel Library (MKL), hence providing better performance. And Gohlke's SciPy 64bit binary package (the only one available freely online) require NumPy MKL. The problem is that, according to Christoph Gohlke, the MKL license does not allow me (or anyone else) to redistribute these binaries, unless I have purchased such a license. It is still unclear to me if the end user would also require this license too. Hopefully no. Let's assume that. Besides, after reading carefully the Intel MKL License terms, I'm quite sure that I can redistribute the MKL-based NumPy built because it's just runtime redistribution. So I think I will purchase an Intel Fortran Compiler license (including MKL) to be able to rebuild NumPy and SciPy in the near future but in the meantime I will just redistribute the packages built by Christoph Gohlke.</p>
+<ol>
+<li>The distribution: how? when?</li>
+</ol>
+<p>I'm planning on releasing publicly a completely free 64bit Python distribution by the end of 2012 (and I'll probably release a 32bit version too). To achieve this, I can't go on with Python(x,y): the concept has its limits and it's beginning to be difficult to maintain. So I'm thinking of something completely different: a portable Python distribution with a built-in package manager which would be able to install/uninstall Python packages to/from the distribution using standard Python installers (made with the standard Python library 'distutils') - support for eggs won't be added as I had very disappointing results with their unconventional way of installing packages, sometimes messing with the sys.path list. This portable distribution would also embed some useful tools like SciTE, WinMerge or TortoiseHg. But, unfortunately, as mentioned above (point 1.), there won't be any integrated C/C++/Fortran compiler in the 64bit edition (I'll probably integrate MinGW with gfortran in the 32bit edition of the distribution).</p>
+<ol>
+<li>First experiments...</li>
+</ol>
+<p>I've already done a bunch of tests and this is working great. I just have to take the time to write scripts automating the distribution creation process from scratch: installing the official Python distribution (.msi file) to a folder, install PyQt by unzipping the official NSIS installer, create the batch scripts for running Python (or Spyder) in the appropriate environment, and so on. My current portable distribution test is able to run Spyder with all basic scientific packages. That is very interesting: a complete and ready-to-use (without any installation requirement) scientific Python distribution on a USB key!</p>
+<p>To be continued...</p>
+<p><strong>Update</strong></p>
+<p>This new project has now a name: this is WinPython. Check out the <a href="http://code.google.com/p/winpython/">website</a> for more informations.</p>
+<h1 id="comments">Comments</h1><p>6 comments:</p>
+<p>Ralf GommersAugust 5, 2012 at 1:03 PM
+Sounds promising! I hope someone else will continue maintaining Python(x,y), because it's definitely a valuable project.</p>
+<p>Reply
+Replies</p>
+<p>PierreAugust 6, 2012 at 5:37 AM
+Of course Python(x,y) project will go on, Gabi Davar and I will continue maintaining the project. I've been less involved for a while now (for almost a year if I remember correctly) because I have less free time than before and Spyder is taking all of it. Anyway, Python(x,y) will still be <em>the</em> scientific 32bit Python distribution for Windows, and maybe there will be a 64bit edition some day but right now I don't have enough time to get involved in this. So the fact to choose to develop a portable distribution which will rely on official packages (i.e. package made by others) is the only viable option for me: it saves a lot of time. 
+In the future, one could imagine that the two projects would take benefit from each other or even merge, but that's another story. Right now, the ambition of this portable distribution is <em>not</em> to replace Python(x,y): it's just an attempt to investigate another way of distributing Python on Windows. Maybe it won't be that interesting and I'll come back with new ideas to improve Python(x,y). But the fact to rely on existing packages instead of building our own is seducing. We'll see.</p>
+<p>Reply</p>
+<p>Gabi DavarAugust 5, 2012 at 1:47 PM
+What is wrong with portable python?</p>
+<p><a href="http://portablepython.com/wiki/PortablePython2.7.3.1">http://portablepython.com/wiki/PortablePython2.7.3.1</a></p>
+<p>Reply</p>
+<p>PierreAugust 6, 2012 at 5:48 AM
+From my point of view, there are two issues with Portable Python:
+(a) as an end user, I miss a lot of packages, like Spyder, Matplotlib, h5py, pyflakes, pylint, psutil, etc. 
+(b) as a developper, following (a) I would like to know how to add these packages and explore the source of the project but AFAIK, there is absolutely no source code available for Portable Python and I can't even find any license terms, so I'm more tempted to make my own project instead of contributing to this one.</p>
+<p>Reply</p>
+<p>...September 4, 2012 at 8:40 AM
+Is this going to compete with Python(x,y)? That seems like a waste. I wish people would work together to make a 64-bit version of Python(x,y) instead of splitting up effort between multiple projects.</p>
+<p>Reply</p>
+<p>PierreSeptember 4, 2012 at 9:44 AM
+No, this is not going to compete with Python(x,y): please read the end of the Overview section on WinPython website (<a href="http://code.google.com/p/winpython/">http://code.google.com/p/winpython/</a>). Actually it wouldn't have any sense for me to compete with a project that I've created.</p>
+<p>Moreover, the fact is that it would represent too much work for me right now to create a 64-bit Python(x,y), I simply can't. That's why I've created WinPython which requires less maintenance but also have less features than Python(x,y). So the idea is not to split up effort but to make it happen: without this initiative, there would be no freely available 64-bit Windows Python distribution.</p>
+<p>Reply</p>
+
+  </div>
+
+    
+      <div class="comment-box">
+        <h2>Comments</h2>
+        
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/scientific-python-distribution-for-win-64"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//spyder-ide.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+      </div>
+    
+
+  </div>
+  <footer>
+    <div class="row">
+    <div class="small-12 medium-6 columns">
+        <a href="https://github.com/spyder-ide/spyder/" title="Spyder on GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/spyder-ide/spyder/issues/" title="Report Issues for Spyder"><i class="fa fa-bug"></i></a>
+        <a href="https://twitter.com/Spyder_IDE" title="Find Spyder on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://gitter.im/spyder-ide/public" title="Chat on Gitter"><i class="fa fa-comment"></i></a>
+      </div>
+      <div class="small-12 medium-6 columns">
+        &copy; Copyright 2016 by The Spyder Development Team..
+      </div>
+    </div>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'spyder-ide/public'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script type=text/javascript src="../../static/js/app.js?h=73b03350" charset="utf-8"></script>
+  </footer>
+</body>

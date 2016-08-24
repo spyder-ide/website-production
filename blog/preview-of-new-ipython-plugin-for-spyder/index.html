@@ -1,0 +1,111 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../static/css/styles.css?h=ef88ba6d">
+<title>Preview of the new IPython plugin for Spyder — Spider Website</title>
+<body>
+  <header>
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+
+    <nav class="top-bar" id="main-menu">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text">Spyder Website</li>
+        </ul>
+      </div>
+
+      <div class="top-bar-right">
+        <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+          <li><a href="../../">Welcome</a></li>
+          
+            <li class="active"><a href="../../blog/">Blog</a></li>
+          
+            <li><a href="../../projects/">Projects</a></li>
+          
+            <li><a href="../../about/">About</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div>
+    
+  
+  <div class="blog-post">
+  
+    <h2>Preview of the new IPython plugin for Spyder</h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2011-08-13 08:42:00
+  </p>
+  <p>Here is a first preview of the <a href="http://code.google.com/p/spyderlib/source/detail?r=95f5eaa15e09b6382a5c53111089f6b39df2dab7">new IPython plugin</a> which will be available in Spyder v2.1 (to be released in September 2011, but the first beta will hopefully be available in a few days):</p>
+<p><img src="../../blog/preview-of-new-ipython-plugin-for-spyder/spyder_ipython012b.png" alt="iPython plugin"></p>
+<p><strong>Important notes:</strong></p>
+<ul>
+<li><p>This feature is still experimental and will remain so until Spyder v2.2 (scheduled for December 2011).</p>
+</li>
+<li><p>It requires IPython v0.12dev (i.e. the current IPython development version, available through the github repository).</p>
+</li>
+</ul>
+<p>The idea is to start a new IPython kernel within the "Console" plugin (bottom left of the screenshot above), then a new IPython frontend dockwidget is created automatically (top left of the screenshot above). This first implementation already supports the Variable Explorer (top right of the screenshot above) through the IPython kernel associated to the frontend but nothing else is supported (link with the Editor, the Object Inspector, and so on).</p>
+<p>In the "Console" plugin preference page, the user may change the IPython kernel command line options (defaults are: "python --pylab=inline").</p>
+<h1 id="comments:">comments:</h1><p>olivier64August 16, 2011 at 12:50 PM
+Why target IPython 0.12, which for all we know may not be released until 2015, rather than IPython 0.11?</p>
+<p>Reply</p>
+<p>PierreAugust 17, 2011 at 2:01 PM
+That's not what I meant and this is ambiguous, you're right. Actually the feature requires the current IPython development version (which is v0.12dev) because v0.11 (the latest stable release) has a very serious bug affecting the API used for this feature. But this bug is already fixed in current development version and this bugfix will certainly be part of IPython v0.11.1 which will probably be released before the end of the year or so.</p>
+<p>Reply</p>
+
+  </div>
+
+    
+      <div class="comment-box">
+        <h2>Comments</h2>
+        
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/preview-of-new-ipython-plugin-for-spyder"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//spyder-ide.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+      </div>
+    
+
+  </div>
+  <footer>
+    <div class="row">
+    <div class="small-12 medium-6 columns">
+        <a href="https://github.com/spyder-ide/spyder/" title="Spyder on GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/spyder-ide/spyder/issues/" title="Report Issues for Spyder"><i class="fa fa-bug"></i></a>
+        <a href="https://twitter.com/Spyder_IDE" title="Find Spyder on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://gitter.im/spyder-ide/public" title="Chat on Gitter"><i class="fa fa-comment"></i></a>
+      </div>
+      <div class="small-12 medium-6 columns">
+        &copy; Copyright 2016 by The Spyder Development Team..
+      </div>
+    </div>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'spyder-ide/public'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script type=text/javascript src="../../static/js/app.js?h=73b03350" charset="utf-8"></script>
+  </footer>
+</body>
