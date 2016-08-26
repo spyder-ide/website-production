@@ -1,0 +1,149 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../../static/css/styles.css?h=6c9de577">
+<title>New Enhanced Scientific Python Interpreter — Spider Website</title>
+<body>
+  <header>
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+
+    <div class="top-bar-container" data-sticky-container>
+      <nav class="top-bar" id="main-menu" data-sticky data-options="marginTop: 0;">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">
+              <a href="../../../es/">
+                <img id="menu-logo" src="../../../blog/new-enhanced-scientific-python/static/images/spyder.png">
+                Spyder IDE
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="top-bar-right">
+          <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+            
+            
+            <li
+              
+              >
+              <a href="../../../es/">Inicio</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../es/docs/">Documentación</a>
+            </li>
+            
+            <li
+              
+                class="active"
+              
+              >
+              <a href="../../../es/blog/">Blog</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../es/community/">Comunidad</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div>
+    
+  
+  <div class="blog-post">
+  
+    <h2>New Enhanced Scientific Python Interpreter</h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2011-09-11 04:10:00
+  </p>
+  <p>As I mentionned in my previous post, the standard Python interpreter provided by Spyder's console has been considerably enhanced. Moreover, despite these interesting enhancements, this is based on a real Python interpreter, not an emulation.</p>
+<p>The scientific startup script mentionned in my previous post was integrated in Spyder's development version (under the name scientific_startup.py).</p>
+<p>The goal of all these recent changes was to provide a MATLAB-like experience with a minimum of requirements: NumPy, SciPy, Matplotlib and Spyder, that's all.</p>
+<p>And here are two screenshots of the result (Spyder was executed in <code>light</code> mode: <code>spyder --light</code>):</p>
+<p><img src="../../../es/blog/new-enhanced-scientific-python/sl_scientific.png" alt="Scientific Light 1"></p>
+<p><img src="../../../es/blog/new-enhanced-scientific-python/sl_scientific2.png" alt="Scientific Light 2"></p>
+<h1 id="comments:">comments:</h1><p>CarlosSeptember 11, 2011 at 10:27 AM
+I think it's a great addition to the Python console. Could it be possible to add it as a magic command too? So even if you have a different startup script, you can use something like</p>
+<blockquote><blockquote><blockquote><p>%scientific</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>to load your it.</p>
+<p>Cheers,
+Carlos</p>
+<p>Reply</p>
+<p>PierreSeptember 12, 2011 at 10:18 AM
+Excellent idea!
+That is done.</p>
+<p>Reply</p>
+<p>CarlosSeptember 12, 2011 at 10:48 AM
+Glad you like it!</p>
+<p>Reply</p>
+<p>tucuman87September 19, 2011 at 12:25 AM
+Pierre, this is a great piece of software, I use it a lot, and I all I can tell is that it's fun and productive.</p>
+<p>I have a small suggestion to enhance the console so it can be split, like editor documents can. IE having say one console on top and another on bottom- sometimes it would be useful so you can have say a server and a client and you could interact between them and see the results conveniently. Of course, now it can be done, but I have to swap tabs to see the result...</p>
+<p>THX!</p>
+<p>Reply</p>
+
+  </div>
+
+    
+      <div class="comment-box">
+        <h2>Comments</h2>
+        
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/new-enhanced-scientific-python"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//spyder-ide.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+      </div>
+    
+
+  </div>
+  <footer>
+    <div class="row">
+    <div class="small-12 medium-6 columns">
+        <a href="https://github.com/spyder-ide/spyder/" title="Spyder on GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/spyder-ide/spyder/issues/" title="Report Issues for Spyder"><i class="fa fa-bug"></i></a>
+        <a href="https://twitter.com/Spyder_IDE" title="Find Spyder on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://gitter.im/spyder-ide/public" title="Chat on Gitter"><i class="fa fa-comment"></i></a>
+      </div>
+      <div class="small-12 medium-6 columns">
+        &copy; Copyright 2016 by The Spyder Development Team..
+      </div>
+    </div>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'spyder-ide/public'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script type=text/javascript src="../../../static/js/app.js?h=73b03350" charset="utf-8"></script>
+  </footer>
+</body>

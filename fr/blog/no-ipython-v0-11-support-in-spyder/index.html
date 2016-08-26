@@ -1,0 +1,180 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../../static/css/styles.css?h=6c9de577">
+<title>No IPython v0.11 support in Spyder&#39;s console, but standard Python interpreter enhancements — Spider Website</title>
+<body>
+  <header>
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+
+    <div class="top-bar-container" data-sticky-container>
+      <nav class="top-bar" id="main-menu" data-sticky data-options="marginTop: 0;">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">
+              <a href="../../../fr/">
+                <img id="menu-logo" src="../../../blog/no-ipython-v0-11-support-in-spyder/static/images/spyder.png">
+                Spyder IDE
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="top-bar-right">
+          <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+            
+            
+            <li
+              
+              >
+              <a href="../../../fr/">Accueil</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../fr/docs/">Documentation</a>
+            </li>
+            
+            <li
+              
+                class="active"
+              
+              >
+              <a href="../../../fr/blog/">Blog</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../fr/community/">Communauté</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div>
+    
+  
+  <div class="blog-post">
+  
+    <h2>No IPython v0.11 support in Spyder&#39;s console, but standard Python interpreter enhancements</h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2011-09-04 07:22:00
+  </p>
+  <p>It's been a month since IPython v0.11 public release and I've been trying to solve issues related to <a href="http://code.google.com/p/spyderlib/issues/detail?id=727">IPython support in Spyder's console</a>, all in vain. At first, I thought that it was only a problem on Windows platforms, but apparently it is not. The more I think about it (and the more I spend time on it), the more I doubt that there will ever be a decent support of IPython &gt;=v0.11 in Spyder's console. In the meantime, I have fixed a couple of bugs related to the new <a href="http://spyder-ide.blogspot.com/2011/08/preview-of-new-ipython-plugin-for.html">IPython plugin</a>: this new plugin will probably be the only way to run IPython &gt;=v0.11 within Spyder.</p>
+<p>So, to compensate this lack of IPython support in Spyder's console, I have implemented the following enhancements for the standard Python interpreter (this is not much, but it provides all the IPython features I am using personnally):</p>
+<ol>
+<li><p>I have <a href="http://code.google.com/p/spyderlib/source/detail?r=187d52472ec8616ccce5713c09bcf9b73ea4f1fb">fixed the PyQt input hook issue on Windows platforms</a>. Before this revision, the console was crashing (non-responsive actually) on Windows platforms after trying to manipulate Qt objects interactively, like interactive plotting with Matplotlib for example. Now, when enabling the "Replace PyQt input hook by Spyder's" option (which is enabled by default on Windows platforms), the standard Python interpreter may be used to do interactive plotting, even on Windows.</p>
+</li>
+<li><p>Plus, I have implemented some basic special commands in the standard Python interpreter (see <a href="http://code.google.com/p/spyderlib/source/detail?r=07394d8b179087e8be2f6a629e096ed3c4c4c14e">here</a> more details), adding support for %pwd, %ls, %clear or !dir (or !ls on UNIX platforms), etc. (I haven't implemented the %edit, %run and other similar commands which have really no use within Spyder).</p>
+</li>
+<li><p>And I have fixed a bug with <a href="http://code.google.com/p/spyderlib/source/detail?r=2d7929020f3e7756dfc4456d5653fda66759c3c9">PYTHONSTARTUP substitution option</a> (the packages imported in the startup script were not available in the Python interpreter).</p>
+</li>
+</ol>
+<p>These three changesets were intended to facilitate the use of standard Python interpreter as an interactive computing shell. I've also created two PYTHONSTARTUP scripts (on my machine), one to support <a href="http://matplotlib.sourceforge.net/">Matplotlib</a>'s pylab interface and the other to support <a href="http://code.google.com/p/guiqwt/">guiqwt</a>'s interactive plotting mode:</p>
+<ul>
+<li>Matplotlib's startup script:</li>
+</ul>
+<pre><code class="lang-python">print &quot;Running pylab startup script...&quot;,
+# Import modules following official guidelines:
+import numpy as np
+import scipy as sp
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+# Pollute the namespace but also provide MATLAB-like experience:
+from pylab import *
+# Enable Matplotlib&#39;s pylab mode:
+ion()
+print &quot;done.&quot;
+</code></pre>
+<ul>
+<li>guiqwt startup script:</li>
+</ul>
+<pre><code class="lang-python">print &quot;Running guiqwt startup script...&quot;,
+# Import modules following official guidelines:
+import numpy as np
+import scipy as sp
+import guiqwt.pyplot as plt
+import guiqwt.io as io
+# Pollute the namespace but also provide MATLAB-like experience:
+from numpy import *
+from guiqwt.pyplot import *
+# Enable guiqwt&#39;s interactive mode:
+ion()
+print &quot;done.&quot;
+</code></pre>
+<p>With these startup scripts, I have my own IPython shell (not as powerful as IPython, of course) but it suits my needs... why not yours?</p>
+<p>To select you own startup script, go to Tools &gt; Preferences &gt; Console &gt; Advanced settings:</p>
+<p><img src="../../../fr/blog/no-ipython-v0-11-support-in-spyder/a.png" alt="PYTHONSTARTUP replacement"></p>
+<p>I think I'll add these startup scripts to Spyder v2.1 but I don't know how exactly. Maybe the simplest way would be to change the settings GUI above and add a third choice: "Build-in startup script: " with a combo box allowing to choose a script between the two scripts above (and others).</p>
+<h1 id="comments:">comments:</h1><p>DavePSeptember 5, 2011 at 4:33 PM
+Hi Pierre,</p>
+<p>So to clarify, Ipython 0.11 will be supported by a dedicated plugin, rather than by the standard spyder console, right? This sounds much more positive than the heading of the blog post would lead us to believe!</p>
+<p>Is the code for this ipython plugin in the hg repository yet? I installed ipython2.1-dev, but couldn't see the new ipython console option. I may be complicating things by using virtualenv, since I don't want to blow away my existing ipython with a development version.</p>
+<p>cheers
+David</p>
+<p>Reply</p>
+<p>PierreSeptember 6, 2011 at 8:26 AM
+Hi David,</p>
+<p>You're right, the heading of the blog post is quite pessimistic. But it does reflect the fact that I would prefer IPython to be supported by Spyder's console because it would require less efforts to implement in the first place and to maintain afterwards. Implementing a new plugin based on IPython Qt console will require some time.</p>
+<p>The code of this IPython plugin is already in the hg repository. You may try it without having to install IPython v0.12dev: just add the IPython source root directory to your PYTHONPATH environment variable (I think that it should work...).</p>
+<p>-Pierre</p>
+<p>Reply</p>
+
+  </div>
+
+    
+      <div class="comment-box">
+        <h2>Comments</h2>
+        
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/no-ipython-v0-11-support-in-spyder"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//spyder-ide.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+      </div>
+    
+
+  </div>
+  <footer>
+    <div class="row">
+    <div class="small-12 medium-6 columns">
+        <a href="https://github.com/spyder-ide/spyder/" title="Spyder on GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/spyder-ide/spyder/issues/" title="Report Issues for Spyder"><i class="fa fa-bug"></i></a>
+        <a href="https://twitter.com/Spyder_IDE" title="Find Spyder on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://gitter.im/spyder-ide/public" title="Chat on Gitter"><i class="fa fa-comment"></i></a>
+      </div>
+      <div class="small-12 medium-6 columns">
+        &copy; Copyright 2016 by The Spyder Development Team..
+      </div>
+    </div>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'spyder-ide/public'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script type=text/javascript src="../../../static/js/app.js?h=73b03350" charset="utf-8"></script>
+  </footer>
+</body>

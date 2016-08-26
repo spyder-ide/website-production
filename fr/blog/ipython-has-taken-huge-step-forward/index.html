@@ -1,0 +1,154 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../../static/css/styles.css?h=6c9de577">
+<title>IPython has taken a huge step forward! — Spider Website</title>
+<body>
+  <header>
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+
+    <div class="top-bar-container" data-sticky-container>
+      <nav class="top-bar" id="main-menu" data-sticky data-options="marginTop: 0;">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">
+              <a href="../../../fr/">
+                <img id="menu-logo" src="../../../blog/ipython-has-taken-huge-step-forward/static/images/spyder.png">
+                Spyder IDE
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="top-bar-right">
+          <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+            
+            
+            <li
+              
+              >
+              <a href="../../../fr/">Accueil</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../fr/docs/">Documentation</a>
+            </li>
+            
+            <li
+              
+                class="active"
+              
+              >
+              <a href="../../../fr/blog/">Blog</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../fr/community/">Communauté</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div>
+    
+  
+  <div class="blog-post">
+  
+    <h2>IPython has taken a huge step forward!</h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2011-08-09 07:07:00
+  </p>
+  <p>Two years of efforts were necessary for the IPython development team to achieve their goal and take a huge step forward with <a href="http://ipython.org/ipython-doc/rel-0.11/whatsnew/version0.11.html">IPython v0.11</a>, providing a powerful interactive shell with outstanding new features, a cleaner source code... and a brand new <a href="http://ipython.org/">great-looking website</a>! (at last... the old one was really minimalist)</p>
+<p>To my opinion, the most impressing new feature is the standalone Qt console (see the screenshot below): combined with the brand new "inline pylab mode", it allows plotting figures directly in the console itself, between lines of code (like in a notebook).</p>
+<p><img src="../../../fr/blog/ipython-has-taken-huge-step-forward/qtconsole.png" alt="Qt Console"></p>
+<p>But there are <a href="http://ipython.org/ipython-doc/rel-0.11/whatsnew/version0.11.html">other interesting new features</a> such as high-level interactive parallel computing features, an improved vim integration, an integration in Python Tools for Visual Studio and support for Python 3 (the last major scientific library which does not support Python 3 is now <a href="http://matplotlib.sourceforge.net/">matplotlib</a>... hurry up guys!).</p>
+<p><strong>New IPython v0.11 breaks Spyder's IPython support</strong></p>
+<p>Unfortunately for Spyder users, this new version will break the IPython support within the "Console" plugin. We were not expecting this release until a few weeks from now, so we were not able to prepare Spyder for this.
+However, some preliminary changes were made to both v2.0 and v2.1 branches to make them compatible with IPython v0.11:</p>
+<ul>
+<li><p>For v2.0.12 users, simply copying and replacing the original files by the following should be sufficient to add support for IPython v0.11 (at least on Linux and MacOS X):</p>
+<ul>
+<li><p><a href="http://code.google.com/p/spyderlib/source/browse/spyderlib/widgets/externalshell/monitor.py?repo=v20&amp;r=94c3f2ae1734594553783c1fe9baabd2dadd26c5">monitor.py</a></p>
+</li>
+<li><p><a href="http://code.google.com/p/spyderlib/source/browse/spyderlib/widgets/externalshell/startup.py?repo=v20&amp;r=94c3f2ae1734594553783c1fe9baabd2dadd26c5">startup.py</a></p>
+</li>
+</ul>
+</li>
+<li><p>If you are using the development version (v2.1.0), you may simply update your local repository.</p>
+</li>
+</ul>
+<p><strong>Support for IPython v0.11 in Spyder's Console</strong></p>
+<p>Anyway, the most disappointing thing about IPython v0.11 for Spyder users is that it's now using Python's PyOS_InputHook mechanism to support GUI event loops. This is, from a general point of view, a good thing because this is much cleaner than the old thread-based implementation. But, on Windows platforms, PyQt's input hook is implemented in such a way that, when enabled, it's blocking the standard output redirection pipe with the remote process (I don't know why), thus blocking the whole shell (that's why an option to disable the PyQt's input hook was added a long time ago to Spyder's console preferences and this option is enable by default on Windows platforms). In other words, when running IPython in pylab mode (i.e. with matplotlib's interactive mode turned on), matplotlib's figures will freeze. That's why there is a warning message in Spyder v2.1.0 when it's running with IPython v0.11 on Windows: "Spyder does not support GUI interactions with IPython &gt;=v0.11 on Windows platforms (only IPython v0.10 is fully supported).".</p>
+<p><strong>The future of IPython support in Spyder</strong></p>
+<p>Currently, in Spyder v2.0.12 and v2.1.0, IPython is supported simply by running an IPython shell in Spyder's console: a Python script running an IPython shell is executed in a separate process (QProcess). This was a very efficient way to support IPython, as there was a lot of code refactoring between the pure Python interpreter and the IPython interpreter (code completion, variable explorer, ...).
+Now that IPython v0.11 is using a two-process model like Spyder, they were able to implement a GUI-based console (the "standalone Qt console" mentioned above) which could be integrated directly into Spyder.</p>
+<p>What needs to be done:</p>
+<ol>
+<li>The first step to make it possible is to add support for PyQt's API #2 in Spyder: this is now done (see previous post)</li>
+<li>Implement a specific "IPython plugin" that will encapsulate the IPython Qt console widget</li>
+<li>Add options support to customize IPython</li>
+<li>Add links with the Editor (run scripts, run selection, debug, breakpoints support, ...) and the Object inspector</li>
+<li>Add support for the Variable explorer (after some tests, I think this is a hard one and will probably require a lot of interactions with the IPython development team)</li>
+</ol>
+<p>This is a lot of work but it's worth the effort.</p>
+
+  </div>
+
+    
+      <div class="comment-box">
+        <h2>Comments</h2>
+        
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/ipython-has-taken-huge-step-forward"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//spyder-ide.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+      </div>
+    
+
+  </div>
+  <footer>
+    <div class="row">
+    <div class="small-12 medium-6 columns">
+        <a href="https://github.com/spyder-ide/spyder/" title="Spyder on GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/spyder-ide/spyder/issues/" title="Report Issues for Spyder"><i class="fa fa-bug"></i></a>
+        <a href="https://twitter.com/Spyder_IDE" title="Find Spyder on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://gitter.im/spyder-ide/public" title="Chat on Gitter"><i class="fa fa-comment"></i></a>
+      </div>
+      <div class="small-12 medium-6 columns">
+        &copy; Copyright 2016 by The Spyder Development Team..
+      </div>
+    </div>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'spyder-ide/public'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script type=text/javascript src="../../../static/js/app.js?h=73b03350" charset="utf-8"></script>
+  </footer>
+</body>

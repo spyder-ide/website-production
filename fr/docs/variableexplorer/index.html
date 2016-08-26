@@ -1,0 +1,238 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../../static/css/styles.css?h=6c9de577">
+<title>variableexplorer | Documentation — Spider Website</title>
+<body>
+  <header>
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+
+    <div class="top-bar-container" data-sticky-container>
+      <nav class="top-bar" id="main-menu" data-sticky data-options="marginTop: 0;">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">
+              <a href="../../../fr/">
+                <img id="menu-logo" src="../../../docs/variableexplorer/static/images/spyder.png">
+                Spyder IDE
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="top-bar-right">
+          <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+            
+            
+            <li
+              
+              >
+              <a href="../../../fr/">Accueil</a>
+            </li>
+            
+            <li
+              
+                class="active"
+              
+              >
+              <a href="../../../fr/docs/">Documentation</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../fr/blog/">Blog</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../fr/community/">Communauté</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div>
+    
+  <div class="row">
+    <div class="small-12 medium-3 columns">
+      <ul class="vertical menu" data-accordion-menu>
+        <li><a href="../../../fr/docs/">Welcome</a></li>
+        
+        
+          <li><a href="../../../docs/console/">console</a>
+            
+        
+          <li><a href="../../../docs/debugging/">debugging</a>
+            
+        
+          <li><a href="../../../docs/editor/">editor</a>
+            
+        
+          <li><a href="../../../docs/explorer/">explorer</a>
+            
+        
+          <li><a href="../../../docs/findinfiles/">findinfiles</a>
+            
+        
+          <li><a href="../../../docs/help/">help</a>
+            
+        
+          <li><a href="../../../docs/historylog/">historylog</a>
+            
+        
+          <li><a href="../../../docs/installation/">installation</a>
+            
+        
+          <li><a href="../../../docs/internalconsole/">internalconsole</a>
+            
+        
+          <li><a href="../../../docs/ipythonconsole/">ipythonconsole</a>
+            
+        
+          <li><a href="../../../docs/onlinehelp/">onlinehelp</a>
+            
+        
+          <li><a href="../../../docs/options/">options</a>
+            
+        
+          <li><a href="../../../docs/overview/">overview</a>
+            
+        
+          <li><a href="../../../docs/projectexplorer/">projectexplorer</a>
+            
+        
+          <li><a href="../../../docs/pylint/">pylint</a>
+            
+        
+          <li class="active"><a href="../../../docs/variableexplorer/">variableexplorer</a>
+            
+            <ul></ul>
+            
+        
+      </ul>
+
+      
+      <div class="hide-for-small-only">
+        <h4>This Page</h4>
+        <ul class="toc">
+        
+          <li><a href="#variable-explorer">Variable Explorer</a><ul>
+          <li><a href="#supported-types">Supported types</a></li>
+        </ul></li>
+        
+          <li><a href="#.-pandas-dataframes-and-timeseries">. <code>Pandas</code> DataFrames and TimeSeries</a></li>
+        
+          <li><a href="#.-numpy-arrays-and-matrices">. <code>NumPy</code> arrays and matrices</a></li>
+        
+          <li><a href="#.-pil/pillow-images">. <code>PIL/Pillow</code> images</a></li>
+        
+          <li><a href="#.-datetime-dates">. <code>datetime</code> dates</a></li>
+        
+          <li><a href="#.-integers">. Integers</a></li>
+        
+          <li><a href="#.-floats">. Floats</a></li>
+        
+          <li><a href="#.-complex-numbers">. Complex numbers</a></li>
+        
+          <li><a href="#.-lists">. Lists</a></li>
+        
+          <li><a href="#.-dictionaries">. Dictionaries</a></li>
+        
+          <li><a href="#.-tuples">. Tuples</a></li>
+        
+          <li><a href="#.-strings">. Strings</a></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="small-12 medium-9 columns">
+
+      <h1 id="variable-explorer">Variable Explorer</h1><p>The variable explorer shows the <code>globals()</code> namespace contents (i.e.
+all global object references) of the current console: it supports both
+the <a href="../../../docs/console">console</a> (Python interpreter running in a remote process)
+and the <a href="../../../docs/internalconsole">internalconsole</a>.</p>
+<p><img src="../../../fr/docs/variableexplorer/variableexplorer1.png" alt="variableexplorer1"></p>
+<p>The following screenshots show some interesting features such as editing
+lists, strings, dictionaries, NumPy arrays, or plotting/showing NumPy
+arrays data.</p>
+<p><img src="../../../fr/docs/variableexplorer/listeditor.png" alt="listeditor"></p>
+<p><img src="../../../fr/docs/variableexplorer/texteditor.png" alt="texteditor"></p>
+<p><img src="../../../fr/docs/variableexplorer/dicteditor.png" alt="dicteditor"></p>
+<p><img src="../../../fr/docs/variableexplorer/arrayeditor.png" alt="arrayeditor"></p>
+<p><img src="../../../fr/docs/variableexplorer/variableexplorer-plot.png" alt="variableexplorer-plot"></p>
+<p><img src="../../../fr/docs/variableexplorer/variableexplorer-imshow.png" alt="variableexplorer-imshow"></p>
+<p>The default variable explorer configuration allows to browse global
+variables without slowing the console even with very large NumPy arrays,
+lists or dictionaries. The trick is to truncate values, to hide
+collection contents (i.e. showing '' instead of list contents) and to
+<em>not</em> show mininum and maximum values for NumPy arrays (see context menu
+options on the screenshot at the top of this page).</p>
+<p>However, most of the time, choosing the opposite options won't have too
+much effect on console's performance:</p>
+<p><img src="../../../fr/docs/variableexplorer/variableexplorer2.png" alt="variableexplorer2"></p>
+<h2 id="supported-types">Supported types</h2><p>The variable explorer can't show all types of objects. The ones
+currently supported are:</p>
+<h1 id=".-pandas-dataframes-and-timeseries">. <code>Pandas</code> DataFrames and TimeSeries</h1><h1 id=".-numpy-arrays-and-matrices">. <code>NumPy</code> arrays and matrices</h1><h1 id=".-pil/pillow-images">. <code>PIL/Pillow</code> images</h1><h1 id=".-datetime-dates">. <code>datetime</code> dates</h1><h1 id=".-integers">. Integers</h1><h1 id=".-floats">. Floats</h1><h1 id=".-complex-numbers">. Complex numbers</h1><h1 id=".-lists">. Lists</h1><h1 id=".-dictionaries">. Dictionaries</h1><h1 id=".-tuples">. Tuples</h1><h1 id=".-strings">. Strings</h1><p>Related plugins:</p>
+<ul>
+<li><a href="../../../docs/console">console</a></li>
+<li><a href="../../../docs/internalconsole">internalconsole</a></li>
+</ul>
+
+
+      
+
+      
+      <div class="comment-box">
+        <h2>Comments</h2>
+        
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/docs/variableexplorer"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//spyder-ide.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+      </div>
+      
+    </div>
+  </div>
+
+  </div>
+  <footer>
+    <div class="row">
+    <div class="small-12 medium-6 columns">
+        <a href="https://github.com/spyder-ide/spyder/" title="Spyder on GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/spyder-ide/spyder/issues/" title="Report Issues for Spyder"><i class="fa fa-bug"></i></a>
+        <a href="https://twitter.com/Spyder_IDE" title="Find Spyder on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://gitter.im/spyder-ide/public" title="Chat on Gitter"><i class="fa fa-comment"></i></a>
+      </div>
+      <div class="small-12 medium-6 columns">
+        &copy; Copyright 2016 by The Spyder Development Team..
+      </div>
+    </div>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'spyder-ide/public'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script type=text/javascript src="../../../static/js/app.js?h=73b03350" charset="utf-8"></script>
+  </footer>
+</body>

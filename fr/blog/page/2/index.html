@@ -1,0 +1,153 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../../../static/css/styles.css?h=6c9de577">
+<title> — Spider Website</title>
+<body>
+  <header>
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+
+    <div class="top-bar-container" data-sticky-container>
+      <nav class="top-bar" id="main-menu" data-sticky data-options="marginTop: 0;">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">
+              <a href="../../../../fr/">
+                <img id="menu-logo" src="../../../../blog/static/images/spyder.png">
+                Spyder IDE
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="top-bar-right">
+          <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+            
+            
+            <li
+              
+              >
+              <a href="../../../../fr/">Accueil</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../../fr/docs/">Documentation</a>
+            </li>
+            
+            <li
+              
+                class="active"
+              
+              >
+              <a href="../../../../fr/blog/">Blog</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../../fr/community/">Communauté</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div>
+    
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../../../../fr/blog/pyqt-and-pyside-compatibility/">PyQt and PySide compatibility</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2011-06-22 12:55:00
+  </p>
+  <p>One year after its creation, the new Python library for Qt named <em>PySide</em> has reached version 1.0 for a while now. Even if Python developers are still hesitating to use intensively this new library despite its permissive license (LGPL), the fact is that <em>PySide</em> has brought a constructive competition in a field which was exclusively dominated by <em>PyQt</em>, the historical Python-Qt library which is still distributed under non-permissive licensing terms (GPL or commercial license). So, a lot of projects have already chosen to make the necessary changes to be able to migrate from <em>PyQt</em> to <em>PySide</em> when it's time, i.e. when <em>PySide</em> is mature enough (version 1.0 is still moving fast: very nasty bugs have been fixed between v1.0.0 and the latest v1.0.3 release). For example, in scientific Python ecosystem, IPython (with its <a href="http://ipython.scipy.org/doc/manual/html/development/ipython_qt.html">new Qt frontend</a> which will be integrated in a future Spyder version), <a href="http://matplotlib.sourceforge.net/">Matplotlib</a> and <a href="http://blog.enthought.com/enthought-tool-suite/experimental-pyside-support-in-ets/">Enthought Tool Suite</a> have made the choice to move forward.</p>
+<p><em>PySide</em> is intended to be compatible with <em>PyQt</em>'s API #2 which was introduced with <em>PyQt</em> v4.6 (this is the default API for Python 3). So the first step to migrate from <em>PyQt</em> to <em>PySide</em> is to switch from API #1 to API #2, which means no more <em>QString</em>, <em>QStringList</em> or <em>QVariant</em> objects (replaced by Python objects):
+<a href="http://developer.qt.nokia.com/wiki/Differences_Between_PySide_and_PyQt">http://developer.qt.nokia.com/wiki/Differences_Between_PySide_and_PyQt</a></p>
+<p>For Spyder, I chose to deal with this transition period with the following solution. The idea is to be able to test alternatively (and without changing too much code) the three cases (<em>PyQt</em> API #1, <em>PyQt</em> API #2 and <em>PySide</em>) by implementing a transitional package that your code will import instead of importing directly <em>PyQt</em> or <em>PySide</em>. See for example the Spyder's Qt transitional package :
+<a href="http://code.google.com/p/spyderlib/source/browse/#hg%2Fspyderlib%2Fqt">http://code.google.com/p/spyderlib/source/browse/#hg%2Fspyderlib%2Fqt</a>
+(in the rest of the code, all <code>import PyQt4.QtGui</code> statements are for example replaced by <code>import spyderlib.qt.QtGui</code>)</p>
+<p>At first, I thought that the best solution was to migrate directly to <em>PyQt</em> API #2, hence breaking the compatibility with <em>PyQt</em> API #1 (it's hard to resist to the temptation of getting rid of <em>QString</em> and <em>QVariant</em> objects!). But then I realized that other projects using the Spyder's widgets (source code editor, array editor or dictionnary editor widgets) like <a href="http://guidata.googlecode.com/">guidata</a> would be forced to perform this migration at the same time: this was not acceptable and would lead to maintain two different versions of Spyder, one compatible with API #1 (Spyder v2.1) and the other with API #2 (Spyder v2.2). So I'm now convinced that the best solution is to change the code to make it compatible with both APIs and this is quite easy to do (it's now done in v2.1): <em>QString</em> objects can be used implicitely and QVariant objects and methods may be replaced by simple conversion functions (see 'from_qvariant' and 'to_qvariant' in spyderlib's code):
+<a href="http://code.google.com/p/spyderlib/source/browse/spyderlib/qt/compat.py">http://code.google.com/p/spyderlib/source/browse/spyderlib/qt/compat.py</a></p>
+<p>Here is the example of the NumPy arrays editor widget which is compatible with <em>PyQt</em> API #1, API #2 and PySide:
+<a href="http://code.google.com/p/spyderlib/source/browse/spyderlib/widgets/arrayeditor.py">http://code.google.com/p/spyderlib/source/browse/spyderlib/widgets/arrayeditor.py</a></p>
+<p>Another difference between <em>PyQt</em> and PySide is the way the QFileDialog static methods are wrapped. In <em>PyQt</em>, <em>getOpenFileName</em> returns only the filename. With <em>PySide</em>, the same function returns a tuple containing the filename and the selected filter. So we have to deal with it and the best way is to write wrappers that ensure full compatibility with <em>PyQt</em> (API #1 and #2) and PySide. This is done here:
+<a href="http://code.google.com/p/spyderlib/source/browse/spyderlib/qt/compat.py#77">http://code.google.com/p/spyderlib/source/browse/spyderlib/qt/compat.py#77</a></p>
+<p>There are still a lot of bug to fix for Spyder to be fully compatible with <em>PySide</em> (only Spyder's light mode is running with <em>PySide</em>, with very minor bugs) but that's a great start!</p>
+<p>2 comments:</p>
+<p>placid
+August 29, 2011 at 12:51 AM
+In related news, the latest Enthought Python Distribution (by far the best way to get a scientific python environment on Mac) comes with PySide - so a PySide compatilble Spyder will be very handy :)</p>
+<p>Pierre
+August 29, 2011 at 12:55 AM
+The current development version (<a href="http://code.google.com/p/spyderlib/source/checkout">http://code.google.com/p/spyderlib/source/checkout</a>) is now mostly compatible with PySide, you may try it!</p>
+
+  </div>
+
+  
+    
+  <div class="blog-post">
+  
+    <h2><a href="../../../../fr/blog/welcome-to-spyders-blog/">Welcome to Spyder&#39;s blog</a></h2>
+  
+  <p class="meta">
+    written by
+    
+      Pierre Raybaut
+    
+    on 2011-06-15 13:23:00
+  </p>
+  <p>This is the <a href="http://spyder-ide.org">Spyder</a>'s official blog.</p>
+<p>Of course this is the right place to keep you informed about the new features, the philosophy and the future directions of the project. But Spyder is more than a development environment: it's a realistic and very efficient replacement for MATLAB or IDL. In other words, Spyder is intimately related to the scientific Python ecosystem (the Python language and all the Python packages available out there): this is a global solution for your scientific development projects as well as for your data analysis/visualization work, the perfect companion for all your numerical computing needs. So from this perspective, this is also the right place for presenting our subjective thoughts on this scientific Python world.</p>
+<p>Note that there are a lot of interesting online resources on scientific Python but the best starting point would probably be the <a href="http://www.scipy.org">SciPy</a> website: home page of the SciPy conference and the SciPy Python library (see the mailing lists, the blogs, the cookbook and the brand new "<a href="http://ask.scipy.org">Ask SciPy</a>" Q&amp;A forum).</p>
+
+  </div>
+
+  
+
+  
+  <div class="pagination">
+    
+      <a href="../../../../fr/blog/">&laquo; Previous</a>
+    
+    | 2 |
+    
+      <span class="disabled">Next &raquo;</span>
+    
+  </div>
+
+
+  </div>
+  <footer>
+    <div class="row">
+    <div class="small-12 medium-6 columns">
+        <a href="https://github.com/spyder-ide/spyder/" title="Spyder on GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/spyder-ide/spyder/issues/" title="Report Issues for Spyder"><i class="fa fa-bug"></i></a>
+        <a href="https://twitter.com/Spyder_IDE" title="Find Spyder on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://gitter.im/spyder-ide/public" title="Chat on Gitter"><i class="fa fa-comment"></i></a>
+      </div>
+      <div class="small-12 medium-6 columns">
+        &copy; Copyright 2016 by The Spyder Development Team..
+      </div>
+    </div>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'spyder-ide/public'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script type=text/javascript src="../../../../static/js/app.js?h=73b03350" charset="utf-8"></script>
+  </footer>
+</body>

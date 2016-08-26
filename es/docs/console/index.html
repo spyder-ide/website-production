@@ -1,0 +1,238 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../../static/css/styles.css?h=6c9de577">
+<title>console | Documentation — Spider Website</title>
+<body>
+  <header>
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+
+    <div class="top-bar-container" data-sticky-container>
+      <nav class="top-bar" id="main-menu" data-sticky data-options="marginTop: 0;">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">
+              <a href="../../../es/">
+                <img id="menu-logo" src="../../../docs/console/static/images/spyder.png">
+                Spyder IDE
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="top-bar-right">
+          <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+            
+            
+            <li
+              
+              >
+              <a href="../../../es/">Inicio</a>
+            </li>
+            
+            <li
+              
+                class="active"
+              
+              >
+              <a href="../../../es/docs/">Documentación</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../es/blog/">Blog</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../es/community/">Comunidad</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div>
+    
+  <div class="row">
+    <div class="small-12 medium-3 columns">
+      <ul class="vertical menu" data-accordion-menu>
+        <li><a href="../../../es/docs/">Welcome</a></li>
+        
+        
+          <li class="active"><a href="../../../docs/console/">console</a>
+            
+            <ul></ul>
+            
+        
+          <li><a href="../../../docs/debugging/">debugging</a>
+            
+        
+          <li><a href="../../../docs/editor/">editor</a>
+            
+        
+          <li><a href="../../../docs/explorer/">explorer</a>
+            
+        
+          <li><a href="../../../docs/findinfiles/">findinfiles</a>
+            
+        
+          <li><a href="../../../docs/help/">help</a>
+            
+        
+          <li><a href="../../../docs/historylog/">historylog</a>
+            
+        
+          <li><a href="../../../docs/installation/">installation</a>
+            
+        
+          <li><a href="../../../docs/internalconsole/">internalconsole</a>
+            
+        
+          <li><a href="../../../docs/ipythonconsole/">ipythonconsole</a>
+            
+        
+          <li><a href="../../../docs/onlinehelp/">onlinehelp</a>
+            
+        
+          <li><a href="../../../docs/options/">options</a>
+            
+        
+          <li><a href="../../../docs/overview/">overview</a>
+            
+        
+          <li><a href="../../../docs/projectexplorer/">projectexplorer</a>
+            
+        
+          <li><a href="../../../docs/pylint/">pylint</a>
+            
+        
+          <li><a href="../../../docs/variableexplorer/">variableexplorer</a>
+            
+        
+      </ul>
+
+      
+      <div class="hide-for-small-only">
+        <h4>This Page</h4>
+        <ul class="toc">
+        
+          <li><a href="#console">Console</a><ul>
+          <li><a href="#reloading-modules:-the-user-module-deleter-umd">Reloading modules: the User Module Deleter (UMD)</a></li>
+        </ul></li>
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="small-12 medium-9 columns">
+
+      <h1 id="console">Console</h1><p>The <strong>Console</strong> is where you may enter, interact with and visualize
+data, inside a command interpreter. All the commands entered in the
+console are executed in a separate process, thus allowing the user to
+interrupt any process at any time.</p>
+<p><img src="../../../es/docs/console/console.png" alt="console"></p>
+<p>Many command windows may be created in the <strong>Console</strong>:</p>
+<ul>
+<li>Python interpreter</li>
+<li>Running Python script</li>
+<li>System command window (this terminal emulation window has quite
+limited features compared to a real terminal: it may be useful on
+Windows platforms where the system terminal is not much more powerful<ul>
+<li>on the contrary, on GNU/Linux, a real system terminal is opened,
+outside Spyder)</li>
+</ul>
+</li>
+</ul>
+<p>Python-based command windows support the following features:</p>
+<ul>
+<li>Code completion and calltips</li>
+<li>Variable explorer with GUI-based editors for arrays, lists,
+dictionaries, strings, etc.</li>
+<li>Debugging with standard Python debugger (<code>pdb</code>): at each breakpoint
+the corresponding script is opened in the <a href="../../../docs/editor">editor</a> at the
+breakpoint line number</li>
+<li>User Module Deleter (see below)</li>
+</ul>
+<p>Related plugins:</p>
+<ul>
+<li><a href="../../../docs/help">help</a></li>
+<li><a href="../../../docs/historylog">historylog</a></li>
+<li><a href="../../../docs/editor">editor</a></li>
+<li><a href="../../../docs/explorer">explorer</a></li>
+</ul>
+<h2 id="reloading-modules:-the-user-module-deleter-umd">Reloading modules: the User Module Deleter (UMD)</h2><p>When working with Python scripts interactively, one must keep in mind
+that Python import a module from its source code (on disk) only when
+parsing the first corresponding import statement. During this first
+import, the byte code is generated (.pyc file) if necessary and the
+imported module code object is cached in <code>sys.modules</code>. Then, when
+re-importing the same module, this cached code object will be directly
+used even if the source code file (.py[w] file) has changed meanwhile.</p>
+<p>This behavior is sometimes unexpected when working with the Python
+interpreter in interactive mode, because one must either always restart
+the interpreter or remove manually the .pyc files to be sure that
+changes made in imported modules were taken into account.</p>
+<p>The User Module Deleter (UMD) is a Spyder console's exclusive feature
+that forces the Python interpreter to reload modules completely when
+executing a Python script.</p>
+<p>For example, when UMD is turned on, one may test complex applications
+within the same Python interpreter without having to restart it every
+time (restart time may be relatively long when testing GUI-based
+applications).</p>
+
+
+      
+
+      
+      <div class="comment-box">
+        <h2>Comments</h2>
+        
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/docs/console"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//spyder-ide.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+      </div>
+      
+    </div>
+  </div>
+
+  </div>
+  <footer>
+    <div class="row">
+    <div class="small-12 medium-6 columns">
+        <a href="https://github.com/spyder-ide/spyder/" title="Spyder on GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/spyder-ide/spyder/issues/" title="Report Issues for Spyder"><i class="fa fa-bug"></i></a>
+        <a href="https://twitter.com/Spyder_IDE" title="Find Spyder on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://gitter.im/spyder-ide/public" title="Chat on Gitter"><i class="fa fa-comment"></i></a>
+      </div>
+      <div class="small-12 medium-6 columns">
+        &copy; Copyright 2016 by The Spyder Development Team..
+      </div>
+    </div>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'spyder-ide/public'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script type=text/javascript src="../../../static/js/app.js?h=73b03350" charset="utf-8"></script>
+  </footer>
+</body>
