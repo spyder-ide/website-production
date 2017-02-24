@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" href="../../../static/images/favicon.png" type="image/png" />
   <link rel="shortcut icon" href="./favicon.ico" />
-  <link rel="stylesheet" href="../../../static/css/styles.css?h=d4596a47">
+  <link rel="stylesheet" href="../../../static/css/styles.css?h=e10f3a6f">
   <title>No IPython v0.11 support in Spyder&#39;s console, but standard Python interpreter enhancements — Spyder Website</title>
 </head>
 <body>
@@ -73,19 +73,32 @@
   </header>
   <div>
     
+<div class="row">
+  <div class="medium-8 columns blog-column">
+    <a href="../../../fr/blog/">
+    <div class="blog-banner">
+      <div class="banner-text">
+        <span class="banner-big-text">Blog</span>
+        <span class="banner-small-text">Spyder</span>
+      </div>
+    </div>
+    </a>
+  <div class="blog-body">
+    
   
+
   <div class="blog-post">
   
     <h2>No IPython v0.11 support in Spyder&#39;s console, but standard Python interpreter enhancements</h2>
-  
-  <p class="meta">
-    written by
-    
-      Pierre Raybaut
-    
-    on 2011-09-04 07:22:00
-  </p>
-  <p>It's been a month since IPython v0.11 public release and I've been trying to solve issues related to <a href="http://code.google.com/p/spyderlib/issues/detail?id=727">IPython support in Spyder's console</a>, all in vain. At first, I thought that it was only a problem on Windows platforms, but apparently it is not. The more I think about it (and the more I spend time on it), the more I doubt that there will ever be a decent support of IPython &gt;=v0.11 in Spyder's console. In the meantime, I have fixed a couple of bugs related to the new <a href="http://spyder-ide.blogspot.com/2011/08/preview-of-new-ipython-plugin-for.html">IPython plugin</a>: this new plugin will probably be the only way to run IPython &gt;=v0.11 within Spyder.</p>
+    <p class="meta-blog-author">
+      <span>
+        <img class="author-img" src="../../../fr/authors/pierreraybaut/pierre_raybaut.jpeg" alt="Pierre Raybaut" />
+      </span>
+      <span>
+        Author: Pierre Raybaut
+      </span>
+    </p>
+    <p>It's been a month since IPython v0.11 public release and I've been trying to solve issues related to <a href="http://code.google.com/p/spyderlib/issues/detail?id=727">IPython support in Spyder's console</a>, all in vain. At first, I thought that it was only a problem on Windows platforms, but apparently it is not. The more I think about it (and the more I spend time on it), the more I doubt that there will ever be a decent support of IPython &gt;=v0.11 in Spyder's console. In the meantime, I have fixed a couple of bugs related to the new <a href="http://spyder-ide.blogspot.com/2011/08/preview-of-new-ipython-plugin-for.html">IPython plugin</a>: this new plugin will probably be the only way to run IPython &gt;=v0.11 within Spyder.</p>
 <p>So, to compensate this lack of IPython support in Spyder's console, I have implemented the following enhancements for the standard Python interpreter (this is not much, but it provides all the IPython features I am using personnally):</p>
 <ol>
 <li><p>I have <a href="http://code.google.com/p/spyderlib/source/detail?r=187d52472ec8616ccce5713c09bcf9b73ea4f1fb">fixed the PyQt input hook issue on Windows platforms</a>. Before this revision, the console was crashing (non-responsive actually) on Windows platforms after trying to manipulate Qt objects interactively, like interactive plotting with Matplotlib for example. Now, when enabling the "Replace PyQt input hook by Spyder's" option (which is enabled by default on Windows platforms), the standard Python interpreter may be used to do interactive plotting, even on Windows.</p>
@@ -145,6 +158,10 @@ Hi David,</p>
 <p>-Pierre</p>
 <p>Reply</p>
 
+    <p class="meta-blog-date">
+        Date: 04 September of 2011
+    </p>
+  
   </div>
 
     
@@ -168,6 +185,47 @@ Hi David,</p>
 
       </div>
     
+
+  </div>
+  </div>
+  <div class="medium-4 columns show-for-medium sidebar-blog" >
+    <div class="blog-archive">
+      <h3>Blog Archive</h3>
+        <ul>
+          
+          <li><a href="/blog/spyder-v2-3-2-released">Spyder 2.3.2 released</a></li>
+          
+          <li><a href="/blog/spyder-v2-3-released">Spyder 2.3 has been released</a></li>
+          
+          <li><a href="/blog/spyder-v2-1-14-supports-python-3">Spyder v2.1.14 supports Python 3</a></li>
+          
+          <li><a href="/blog/winpython-distribution">WinPython Distribution</a></li>
+          
+          <li><a href="/blog/scientific-python-distribution-for-win-64">Scientific Python distribution for Windows 64bit</a></li>
+          
+          <li><a href="/blog/spyder-v2-1-is-available">Spyder v2.1 is available</a></li>
+          
+          <li><a href="/blog/new-enhanced-scientific-python">New Enhanced Scientific Python Interpreter</a></li>
+          
+        </ul>
+    </div>
+
+    <div class="colaborators">
+      <h3>Colaborators</h3>
+        <div class="row small-up-2 medium-up-3">
+        
+          <div class="column column-block">
+            <img class="author-img" src="../../../fr/authors/ccordoba12/carlos_cordoba.jpeg" alt="Carlos Córdoba" />
+          </div>
+        
+          <div class="column column-block">
+            <img class="author-img" src="../../../fr/authors/pierreraybaut/pierre_raybaut.jpeg" alt="Pierre Raybaut" />
+          </div>
+        
+        </div>
+    </div>
+  </div>
+</div>
 
   </div>
   <footer>

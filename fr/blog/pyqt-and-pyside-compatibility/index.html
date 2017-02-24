@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" href="../../../static/images/favicon.png" type="image/png" />
   <link rel="shortcut icon" href="./favicon.ico" />
-  <link rel="stylesheet" href="../../../static/css/styles.css?h=d4596a47">
+  <link rel="stylesheet" href="../../../static/css/styles.css?h=e10f3a6f">
   <title>PyQt and PySide compatibility — Spyder Website</title>
 </head>
 <body>
@@ -73,19 +73,32 @@
   </header>
   <div>
     
+<div class="row">
+  <div class="medium-8 columns blog-column">
+    <a href="../../../fr/blog/">
+    <div class="blog-banner">
+      <div class="banner-text">
+        <span class="banner-big-text">Blog</span>
+        <span class="banner-small-text">Spyder</span>
+      </div>
+    </div>
+    </a>
+  <div class="blog-body">
+    
   
+
   <div class="blog-post">
   
     <h2>PyQt and PySide compatibility</h2>
-  
-  <p class="meta">
-    written by
-    
-      Pierre Raybaut
-    
-    on 2011-06-22 12:55:00
-  </p>
-  <p>One year after its creation, the new Python library for Qt named <em>PySide</em> has reached version 1.0 for a while now. Even if Python developers are still hesitating to use intensively this new library despite its permissive license (LGPL), the fact is that <em>PySide</em> has brought a constructive competition in a field which was exclusively dominated by <em>PyQt</em>, the historical Python-Qt library which is still distributed under non-permissive licensing terms (GPL or commercial license). So, a lot of projects have already chosen to make the necessary changes to be able to migrate from <em>PyQt</em> to <em>PySide</em> when it's time, i.e. when <em>PySide</em> is mature enough (version 1.0 is still moving fast: very nasty bugs have been fixed between v1.0.0 and the latest v1.0.3 release). For example, in scientific Python ecosystem, IPython (with its <a href="http://ipython.scipy.org/doc/manual/html/development/ipython_qt.html">new Qt frontend</a> which will be integrated in a future Spyder version), <a href="http://matplotlib.sourceforge.net/">Matplotlib</a> and <a href="http://blog.enthought.com/enthought-tool-suite/experimental-pyside-support-in-ets/">Enthought Tool Suite</a> have made the choice to move forward.</p>
+    <p class="meta-blog-author">
+      <span>
+        <img class="author-img" src="../../../fr/authors/pierreraybaut/pierre_raybaut.jpeg" alt="Pierre Raybaut" />
+      </span>
+      <span>
+        Author: Pierre Raybaut
+      </span>
+    </p>
+    <p>One year after its creation, the new Python library for Qt named <em>PySide</em> has reached version 1.0 for a while now. Even if Python developers are still hesitating to use intensively this new library despite its permissive license (LGPL), the fact is that <em>PySide</em> has brought a constructive competition in a field which was exclusively dominated by <em>PyQt</em>, the historical Python-Qt library which is still distributed under non-permissive licensing terms (GPL or commercial license). So, a lot of projects have already chosen to make the necessary changes to be able to migrate from <em>PyQt</em> to <em>PySide</em> when it's time, i.e. when <em>PySide</em> is mature enough (version 1.0 is still moving fast: very nasty bugs have been fixed between v1.0.0 and the latest v1.0.3 release). For example, in scientific Python ecosystem, IPython (with its <a href="http://ipython.scipy.org/doc/manual/html/development/ipython_qt.html">new Qt frontend</a> which will be integrated in a future Spyder version), <a href="http://matplotlib.sourceforge.net/">Matplotlib</a> and <a href="http://blog.enthought.com/enthought-tool-suite/experimental-pyside-support-in-ets/">Enthought Tool Suite</a> have made the choice to move forward.</p>
 <p><em>PySide</em> is intended to be compatible with <em>PyQt</em>'s API #2 which was introduced with <em>PyQt</em> v4.6 (this is the default API for Python 3). So the first step to migrate from <em>PyQt</em> to <em>PySide</em> is to switch from API #1 to API #2, which means no more <em>QString</em>, <em>QStringList</em> or <em>QVariant</em> objects (replaced by Python objects):
 <a href="http://developer.qt.nokia.com/wiki/Differences_Between_PySide_and_PyQt">http://developer.qt.nokia.com/wiki/Differences_Between_PySide_and_PyQt</a></p>
 <p>For Spyder, I chose to deal with this transition period with the following solution. The idea is to be able to test alternatively (and without changing too much code) the three cases (<em>PyQt</em> API #1, <em>PyQt</em> API #2 and <em>PySide</em>) by implementing a transitional package that your code will import instead of importing directly <em>PyQt</em> or <em>PySide</em>. See for example the Spyder's Qt transitional package :
@@ -106,6 +119,10 @@ In related news, the latest Enthought Python Distribution (by far the best way t
 August 29, 2011 at 12:55 AM
 The current development version (<a href="http://code.google.com/p/spyderlib/source/checkout">http://code.google.com/p/spyderlib/source/checkout</a>) is now mostly compatible with PySide, you may try it!</p>
 
+    <p class="meta-blog-date">
+        Date: 22 June of 2011
+    </p>
+  
   </div>
 
     
@@ -129,6 +146,47 @@ The current development version (<a href="http://code.google.com/p/spyderlib/sou
 
       </div>
     
+
+  </div>
+  </div>
+  <div class="medium-4 columns show-for-medium sidebar-blog" >
+    <div class="blog-archive">
+      <h3>Blog Archive</h3>
+        <ul>
+          
+          <li><a href="/blog/spyder-v2-3-2-released">Spyder 2.3.2 released</a></li>
+          
+          <li><a href="/blog/spyder-v2-3-released">Spyder 2.3 has been released</a></li>
+          
+          <li><a href="/blog/spyder-v2-1-14-supports-python-3">Spyder v2.1.14 supports Python 3</a></li>
+          
+          <li><a href="/blog/winpython-distribution">WinPython Distribution</a></li>
+          
+          <li><a href="/blog/scientific-python-distribution-for-win-64">Scientific Python distribution for Windows 64bit</a></li>
+          
+          <li><a href="/blog/spyder-v2-1-is-available">Spyder v2.1 is available</a></li>
+          
+          <li><a href="/blog/new-enhanced-scientific-python">New Enhanced Scientific Python Interpreter</a></li>
+          
+        </ul>
+    </div>
+
+    <div class="colaborators">
+      <h3>Colaborators</h3>
+        <div class="row small-up-2 medium-up-3">
+        
+          <div class="column column-block">
+            <img class="author-img" src="../../../fr/authors/ccordoba12/carlos_cordoba.jpeg" alt="Carlos Córdoba" />
+          </div>
+        
+          <div class="column column-block">
+            <img class="author-img" src="../../../fr/authors/pierreraybaut/pierre_raybaut.jpeg" alt="Pierre Raybaut" />
+          </div>
+        
+        </div>
+    </div>
+  </div>
+</div>
 
   </div>
   <footer>
