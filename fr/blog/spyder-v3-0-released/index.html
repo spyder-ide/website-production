@@ -1,0 +1,258 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" href="../../../static/images/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="../../../static/css/styles.css?h=e10f3a6f">
+  <title>Spyder 3.0 is released — Spyder Website</title>
+</head>
+<body>
+  <header>
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+
+    <div class="top-bar-container" data-sticky-container>
+      <nav class="top-bar" id="main-menu" data-sticky data-options="marginTop: 0;">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li id="menu-logo">
+              <a href="../../../fr/">
+                <img src="../../../static/images/spyder-logo.svg">
+                <span  >
+                  <span id="logo-text">Spyder IDE</span>
+                  <span id="logo-small-text" class="show-for-medium">
+                    The Scientific PYthon Development EnviRonment
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="top-bar-right">
+          <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+            
+            
+            <li
+              
+              >
+              <a href="../../../fr/">Accueil</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../fr/docs/">Documentation</a>
+            </li>
+            
+            <li
+              
+                class="active"
+              
+              >
+              <a href="../../../fr/blog/">Blog</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../fr/community/">Communauté</a>
+            </li>
+            
+            <li>
+                <a href="#"><i class="fa fa-search fa-lg"></i></a>
+            </li>
+            <li><input type="search" placeholder="Search"></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div>
+    
+<div class="row">
+  <div class="medium-8 columns blog-column">
+    <a href="../../../fr/blog/">
+    <div class="blog-banner">
+      <div class="banner-text">
+        <span class="banner-big-text">Blog</span>
+        <span class="banner-small-text">Spyder</span>
+      </div>
+    </div>
+    </a>
+  <div class="blog-body">
+    
+  
+
+  <div class="blog-post">
+  
+    <h2>Spyder 3.0 is released</h2>
+    <p class="meta-blog-author">
+      <span>
+        <img class="author-img" src="../../../fr/authors/ccordoba12/carlos_cordoba.jpeg" alt="Carlos Córdoba" />
+      </span>
+      <span>
+        Author: Carlos Córdoba
+      </span>
+    </p>
+    <p>Hi all,</p>
+<p>On the behalf of the <a href="https://github.com/spyder-ide/spyder/graphs/contributors">Spyder Project Contributors</a>, I’m pleased to announce that Spyder 3.0 has been released and is available for Windows, GNU/Linux and MacOS X <a href="https://github.com/spyder-ide/spyder/releases">here</a></p>
+<p>This release represents more than two years of development since version 2.3.0 was released, and it introduces major enhancements and new features. The most important ones are:</p>
+<ul>
+<li>Third-party plugins: External developers can now create plugins that extend Spyder in novel and interesting ways. For example, we already have plugins for the line-profiler and memory-profiler projects, and also a graphical frontend for the conda package manager. These plugins can be distributed as pip and/or conda packages for authors convenience.</li>
+<li>Improved projects support: Projects have been revamped and improved significantly in Spyder 3.0. With our new projects support, people will have the possibility of easily working on different coding efforts at the same time. That’s because projects save the state of open files in the Editor and allow Python packages created as part of the project to be imported in our consoles.</li>
+<li>Support for much more programming languages: Spyder relies now on the excellent Pygments library to provide syntax highlight and suggest code completions in the Editor, for all programming languages supported by it.</li>
+<li>A new file switcher: Spyder 3.0 comes with a fancy file switcher, very similar in spirit to the one present in Sublime Text. This is a dialog to select among the open files in the Editor, by doing a fuzzy search through their names. It also lets users to view the list of classes, methods and functions defined in the current file, and select one of them. This dialog is activated with Ctrl+P.</li>
+<li>A Numpy array graphical builder: Users who need to create NumPy arrays in Spyder for matrices and vectors can do it now in a graphical way by pressing Ctrl+M in the Editor or the Consoles. This will open an empty 2D table widget to be filled with the data required by the user.</li>
+<li>A new icon theme based on FontAwesome.</li>
+<li>A new set of default pane layouts for those coming from Rstudio or Matlab (under View &gt; Window layouts).</li>
+<li>A simpler and more intuitive way to introduce keyboard shortcuts.</li>
+<li>Support for PyQt5, which fixes problems in MacOS X and in high definition screens.</li>
+</ul>
+<p>For a complete list of changes, please see <a href="https://github.com/spyder-ide/spyder/blob/3.x/CHANGELOG.md">here</a></p>
+<p>Spyder 2.3 has been a huge success (being downloaded almost 550,000 times!) and we hope 3.0 will be as successful as it. For that we fixed 203 important bugs, merged 218 pull requests from about 40 authors and added almost 2850 commits between these two releases.</p>
+<p>Don’t forget to follow Spyder updates/news on the project <a href="https://github.com/spyder-ide/spyder">Github website</a></p>
+<p>Last, but not least, we welcome any contribution that helps making Spyder an efficient scientific development/computing environment. Join us to help creating your favorite environment!</p>
+<p>Enjoy!</p>
+<p>-Carlos</p>
+
+    <p class="meta-blog-date">
+        Date: 24 September of 2016
+    </p>
+  
+  </div>
+
+    
+      <div class="comment-box">
+        <h2>Comments</h2>
+        
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/spyder-v3-0-released"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//spyder-ide.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+      </div>
+    
+
+  </div>
+  </div>
+  <div class="medium-4 columns show-for-medium sidebar-blog" >
+    <div class="blog-archive">
+      <h3>Blog Archive</h3>
+        <ul>
+          
+          <li><a href="/blog/spyder-unitest-v0-1-released">Spyder-unitest 0.1 is released</a></li>
+          
+          <li><a href="/blog/spyder-v3-1-released">Spyder 3.1 is released</a></li>
+          
+          <li><a href="/blog/spyder-v3-0-released">Spyder 3.0 is released</a></li>
+          
+          <li><a href="/blog/spyder-v2-3-2-released">Spyder 2.3.2 released</a></li>
+          
+          <li><a href="/blog/spyder-v2-3-released">Spyder 2.3 has been released</a></li>
+          
+          <li><a href="/blog/spyder-v2-1-14-supports-python-3">Spyder v2.1.14 supports Python 3</a></li>
+          
+          <li><a href="/blog/winpython-distribution">WinPython Distribution</a></li>
+          
+        </ul>
+    </div>
+
+    <div class="colaborators">
+      <h3>Colaborators</h3>
+        <div class="row small-up-2 medium-up-3">
+        
+          <div class="column column-block">
+            <img class="author-img" src="../../../fr/authors/ccordoba12/carlos_cordoba.jpeg" alt="Carlos Córdoba" />
+          </div>
+        
+          <div class="column column-block">
+            <img class="author-img" src="../../../fr/authors/jitseniesen/jitse_niesen.jpeg" alt="Jitse Niesen" />
+          </div>
+        
+          <div class="column column-block">
+            <img class="author-img" src="../../../fr/authors/pierreraybaut/pierre_raybaut.jpeg" alt="Pierre Raybaut" />
+          </div>
+        
+        </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  <footer>
+  
+    <div id="footer-area">
+      <div class=row>
+        <div id="logo-footer" class="small-12 medium-4 columns">
+          <div>
+            <p>
+              <img src="../../../static/images/spyder-logo.svg">
+              <span>Spyder IDE</span>
+            </p>
+            <p>
+              The Spyder Development Team
+              <br>
+              <a href="mailto:info@spyder-ide.org ">info@spyder-ide.org </a>
+            </p>
+          </div>
+        </div>
+        <div class="small-12 medium-4 columns">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Télécharge et installer Spyder</a></li>
+            <li><a href="#">Commence à utiliser Spyder</a></li>
+            <li><a href="http://groups.google.com/group/spyderlib" target="_blank" rel="noopener">Joindre à la groupe de discussion</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/spyder" target="_blank" rel="noopener">Demande une question sur Stack Overflow</a></li>
+          </ul>
+        </div>
+        <div class="small-12 medium-4 columns">
+          <h3>Contribuer</h3>
+          <ul>
+            <li><a href="#">Faire un don</a></li>
+            <li><a href="https://github.com/spyder-ide/spyder/issues/new?title=Feature Request:" target="_blank" rel="noopener">Suggérer de nouvelles fonctionnalités</a></li>
+            <li><a href="https://github.com/spyder-ide/spyder/issues/new" target="_blank" rel="noopener">Rapporter un bug</a></li>
+            <li><a href="https://github.com/spyder-ide/spyder/issues" target="_blank" rel="noopener">Examiner des problèmes sur Github</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class=row>
+        <div class="small-12 medium-8 columns">
+          &copy; 2016 by <a href="https://github.com/orgs/spyder-ide/people" target="_blank" rel="noopener">The Spyder Development Team</a> &middot; Powered by <a href="https://www.getlektor.com/" target="_blank" rel="noopener">Lektor</a>
+        </div>
+        <div class="small-12 medium-4 columns">
+          <a href="https://github.com/spyder-ide/spyder/" title="Spyder sur GitHub"><i class="fa fa-github fa-lg"></i></a>
+          <a href="https://github.com/spyder-ide/spyder/issues/" title="Examiner des problèmes sur Github"><i class="fa fa-bug fa-lg"></i></a>
+          <a href="https://www.facebook.com/SpyderIDE/" title="Suivez-nous sur Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+          <a href="https://twitter.com/Spyder_IDE" title="Suivez-nous sur Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+          <a href="https://plus.google.com/u/0/communities/112932801653352854842" title="Joindre a la communauté de Spyder sur Google+"><i class="fa fa-google-plus fa-lg"></i></a>
+          <a href="https://gitter.im/spyder-ide/public" title="Écrivez-nous sur le chat de Gitter"><i class="fa fa-comment fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'spyder-ide/public'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script type=text/javascript src="../../../static/js/app.js?h=7fdc8378" charset="utf-8"></script>
+  </footer>
+</body>
