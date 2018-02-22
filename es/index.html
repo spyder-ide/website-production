@@ -1,298 +1,535 @@
-<!doctype html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" href="../static/images/favicon.png" type="image/png" />
-  <link rel="shortcut icon" href="./favicon.ico" />
-  <link rel="stylesheet" href="../static/css/styles.css?h=e10f3a6f">
-  <title>Welcome to Spyder Website! — Spyder Website</title>
-</head>
-<body>
-  <header>
-    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-      <button class="menu-icon" type="button" data-toggle></button>
-      <div class="title-bar-title">Menu</div>
-    </div>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> The Scientific PYthon Development EnviRonment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO - Hugo port by interadata" />
+	 <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive, hugo, static site" />
+	 <meta name="author" content="FREEHTML5.CO / Hugo port " />
+ -->
+<meta name="author" content="Spyder Team">
+<meta name="description" content="The Scientific PYthon Development EnviRonment">
+<meta http-equiv="content-language" content="en, es, fr" />
 
-    <div class="top-bar-container" data-sticky-container>
-      <nav class="top-bar" id="main-menu" data-sticky data-options="marginTop: 0;">
-        <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li id="menu-logo">
-              <a href="../es/">
-                <img src="../static/images/spyder-logo.svg">
-                <span  >
-                  <span id="logo-text">Spyder IDE</span>
-                  <span id="logo-small-text" class="show-for-medium">
-                    The Scientific PYthon Development EnviRonment
-                  </span>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
+<!-- FREE HTML5 TEMPLATE  -->
+<!-- DESIGNED & DEVELOPED by FREEHTML5.CO -->
 
-        <div class="top-bar-right">
-          <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-            
-            
-            <li
-              
-                class="active"
-              
-              >
-              <a href="../es/">Inicio</a>
-            </li>
-            
-            <li
-              
-              >
-              <a href="../es/docs/">Documentación</a>
-            </li>
-            
-            <li
-              
-              >
-              <a href="../es/blog/">Blog</a>
-            </li>
-            
-            <li
-              
-              >
-              <a href="../es/community/">Comunidad</a>
-            </li>
-            
-            <li>
-                <a href="#"><i class="fa fa-search fa-lg"></i></a>
-            </li>
-            <li><input type="search" placeholder="Search"></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <div>
-    
-  <div class="carousel-home" role="listbox">
-    
-    <div class="slide">
-        <img src="home-features-cross.svg">
-        
-          <div class="background-trapezoid">
-          </div>
-          <div class="description">
-          <p><strong>Work Cross Platform:</strong></p>
-<p>Spyder is avalaible for Windows, Mac and Linux</p>
+<!-- Website:        http://freehtml5.co/ -->
+<!-- Email:          info@freehtml5.co -->
+<!-- Twitter:        http://twitter.com/fh5co -->
+<!-- Facebook:       https://www.facebook.com/fh5co -->
 
-          </div>
-        
-    </div>
-    
-    <div class="slide">
-        <img src="banner.png">
-        
-          <div class="background-trapezoid">
-          </div>
-          <div class="description">
-          <p><strong>Choose your Style:</strong></p>
-<p>Spyder is fully customizable</p>
+<!-- HUGO TEMPLATE PORTED BY SteveLane-->
+<!-- Website:        https://interadata.io/ -->
 
-          </div>
-        
-    </div>
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!-- <link rel="shortcut icon" href="favicon.ico"> -->
     
-</div>
-<div id="first-body-part">
-  <div id="information-section">
-    <div class="row">
-      <div class="medium-6 columns" id="information">
-        <p>
-          Spyder is a Python development environment with a lot of features.
-        </p>
-        <p>A powerful interactive development environment for the Python language with advanced editing, interactive testing, debugging and introspection features</p>
+<!-- Animate.css -->
+<link rel="stylesheet" href="../static/css/animate.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="../static/css/icomoon.css">
+<!-- Simple Line Icons -->
+<link rel="stylesheet" href="../static/css/simple-line-icons.css">
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="../static/css/magnific-popup.css">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="../static/css/bootstrap.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../static/css/style.css">
+  </head>
+  <body>
+
+    <!-- Loader -->
+    <div class="fh5co-loader"></div>
+    <div class="fh5co-page">
+      <div id="fh5co-container">
+	
+	<div class="js-sticky">
+  <div class="fh5co-main-nav navbar fixed-top">
+    <div class="container">
+      <div class="fh5co-menu-1">
+
+	<a href="#" data-nav-section="home">Home</a>
+	
+	<a href="#" data-nav-section="mission">Overview</a>
+	
+
+	
+	<a href="#" data-nav-section="services">Components</a>
+	
+	
+	
+	<a href="#" data-nav-section="team">The Team</a>
+	
+
+	
       </div>
-      <div class="medium-6 columns" id="download">
-        <ul>
-          <a class="button primary" href="https://github.com/spyder-ide/spyder/releases" id="download-button">
-            <i class="fa fa-download fa-lg"></i>
-            Download Spyder Source Code
-          </a>
-          <p>The best IDE for scientific computing!!</p>
-        </ul>
+		</div>
+
+	</div>
+	
+</div>
+
+	<div id="fh5co-home" class="js-fullheight-home" data-section="home" 
+style="background-image: url(../static/images/readme_banner.png);" data-stellar-background-ratio="0.5">
+  <div class="container">
+    <div class="col-md-6">
+      <div class="js-fullheight-home fh5co-copy">
+	<div class="js-fullheight-home fh5co-copy-inner">
+	  <h1></h1>
+	  <h2></h2>
+	</div>
       </div>
     </div>
   </div>
-
-  <div id="features-section">
-    <h2>COMPONENTS</h2>
-    <div class="row">
+</div>
+	
+	
+	<div id="fh5co-about" data-section="mission">
+  <div class="fh5co-2col">
     
-      <div class="medium-4 large-3 columns">
-          <img src="home-features-style.svg">
-          <h4>Editor</h4>
-          <div class="description">
-            <p>Multi-language editor with syntax coloring, code analysis,code completion,
+    <div class="fh5co-2col-inner left">
+      
+      <div class="fh5co-tabs-container">
+	<ul class="fh5co-tabs fh5co-three">
+	  
+		
+			<li class="active">
+		
+	    <a href="#" data-tab="<p>Description</p>
+"><p>Description</p>
+</a>
+	  </li>
+	  
+		
+			<li>
+		
+	    <a href="#" data-tab="<p>Download</p>
+"><p>Download</p>
+</a>
+	  </li>
+	  
+	</ul>
+
+	
+	
+	<div class="fh5co-tab-content active" data-tab-content="<p>Description</p>
+">
+	
+	  <h2><p>Spyder is a Python development environment with a lot of features.</p>
+</h2>
+	  <p>Spyder is a Python development environment with many features for research, data analysis, and scientific package creation: <strong>Editor</strong>, <strong>Interactive console</strong>, <strong>Documentation viewer</strong>, <strong>Variable explorer</strong>, <strong>Find in files</strong>, <strong>File explorer</strong>, <strong>History log</strong></p>
+<p>Spyder may also be used as a PyQt5/PyQt4 extension library (module spyder). For example, the Python interactive shell widget used in Spyder may be embedded in your own PyQt5/PyQt4 application.</p>
+
+	</div>
+	
+	
+	<div class="fh5co-tab-content" data-tab-content="<p>Download</p>
+">
+	
+	  <h2><p>Download the source code of Spyder IDE</p>
+</h2>
+	  <p><a href="https://github.com/spyder-ide/spyder/releases/" class="btn-danger btn-lg">Download <span class="glyphicon glyphicon-download"></span>
+</a></p>
+<p>For a detailed guide to installing Spyder, please refer to our <a href="http://pythonhosted.org/spyder/installation.html">installation instructions.</a></p>
+<p>The easiest way to install Spyder on any of our supported platforms is to download it as part of the <strong>Anaconda distribution</strong>, and use the <code>conda</code> package and environment manager to keep it and your other packages installed and up to date.</p>
+<p>If in doubt, you should always install Spyder via this method to avoid unexpected issues we are unable to help you with; it generally has the least likelihood of potential pitfalls for non-experts, and we may be able to provide limited assistance if you do run into trouble.</p>
+
+	</div>
+	
+
+
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  <div class="fh5co-2col fh5co-text">
+    <div class="fh5co-grid">
+      
+				
+				<div class="fh5co-grid-item" style="background-image:url(component_var.png);"></div>
+				
+				
+				<div class="fh5co-grid-item" style="background-image:url(component_project.png)"></div>
+				 
+				
+				<div class="fh5co-grid-item" style="background-image:url(ipython.png)"></div>
+				
+				
+				<div class="fh5co-grid-item" style="background-image:url(home-features-cross.svg)"></div>
+				
+      
+      
+    </div>
+  </div>
+</div> <!-- END fh5co-about -->
+	
+	
+	
+	<div id="fh5co-services" data-section="services">
+  
+  <div class="fh5co-video"><a href="https://www.youtube.com/watch?v=Hf07PmwQwPQ" class="popup-vimeo"><i class="icon-play2"></i></a> <span>Watch video</span></div>
+  
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+      <h2>Components</h2>
+      <p><p>Here you can see the main components of Spyder IDE</p>
+</p>
+    </div>
+    
+    
+    <div class="col-md-4">
+      <div class="service">
+  <div class="icon"><img class="img-responsive" src=home-features-style.svg/></div>
+	<h3><p>Editor</p>
+</h3>
+	<p><p>Multi-language editor with syntax coloring, code analysis,code completion,
 calltips, go-to-definition, function/class browser, and horizontal/vertical
 splitting features.</p>
-
-          </div>
+</p>
       </div>
+    </div>
     
-      <div class="medium-4 large-3 columns">
-          <img src="ipython.png">
-          <h4>IPython Console</h4>
-          <div class="description">
-            <p>Spyder’s IPython Console implements a full two-process IPython session where a
+    <div class="col-md-4">
+      <div class="service">
+  <div class="icon"><img class="img-responsive" src=ipython.png/></div>
+	<h3><p>IPython Console</p>
+</h3>
+	<p><p>Spyder’s IPython Console implements a full two-process IPython session where a
 lightweight front-end interface connects to a full IPython kernel on the backend.</p>
-
-          </div>
+</p>
       </div>
+    </div>
     
-      <div class="medium-4 large-3 columns">
-          <img src="component_var.png">
-          <h4>Variable Explorer</h4>
-          <div class="description">
-            <p>Shows the namespace contents (i.e. all global object references) of the current
-console.</p>
-
-          </div>
+    <div class="col-md-4">
+      <div class="service">
+  <div class="icon"><img class="img-responsive" src=component_var.png/></div>
+	<h3><p>Variable Explorer</p>
+</h3>
+	<p><p>Shows the namespace contents (i.e. all global object references) of the current
+console. Also you can interact with the variables, edit them and see this changes reflected in the actual variable!</p>
+</p>
       </div>
+    </div>
     
-      <div class="medium-4 large-3 columns">
-          <img src="component_project.png">
-          <h4>Projects</h4>
-          <div class="description">
-            <p>Spyder allows users to associate a given directory with a project.</p>
-
-          </div>
+    <div class="col-md-4">
+      <div class="service">
+  <div class="icon"><img class="img-responsive" src=component_project.png/></div>
+	<h3><p>Projects</p>
+</h3>
+	<p><p>Spyder allows users to associate a given directory with a project.</p>
+</p>
       </div>
+    </div>
     
+    
+  </div>
+ </div> <!-- END fh5co-services -->
+	
+	
+	
+	<div class="container">
+  <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+    <h2>Plugins</h2>
+    <p><p>Third party plugins under development</p>
+</p>
+  </div>
+</div> 
+<div id="fh5co-gallery">
+  
+  <a href="example.gif" class="fh5co-item image-popup" style="background-image: url(example.gif)">
+    <div class="fh5co-overlay"></div>
+    <div class="fh5co-copy">
+      <div class="fh5co-copy-inner">
+	<h2><p>Spyder Notebook</p>
+</h2>
+	
+	<h3><p>Jupyter notebook integration with Spyder</p>
+</h3>
+	
+      </div>
+    </div>
+  </a>
+  
+  <a href="example_terminal.gif" class="fh5co-item image-popup" style="background-image: url(example_terminal.gif)">
+    <div class="fh5co-overlay"></div>
+    <div class="fh5co-copy">
+      <div class="fh5co-copy-inner">
+	<h2><p>Spyder Terminal</p>
+</h2>
+	
+	<h3><p>Run system terminals inside Spyder. Works on Linux, macOS and Windows.</p>
+</h3>
+	
+      </div>
+    </div>
+  </a>
+  
+  <a href="unittest_screenshot.png" class="fh5co-item image-popup" style="background-image: url(unittest_screenshot.png)">
+    <div class="fh5co-overlay"></div>
+    <div class="fh5co-copy">
+      <div class="fh5co-copy-inner">
+	<h2><p>Spyder UnitTest</p>
+</h2>
+	
+	<h3><p>A plugin for Spyder to run tests and view the results</p>
+</h3>
+	
+      </div>
+    </div>
+  </a>
+  
+  <a href="reports_screenshot.png" class="fh5co-item image-popup" style="background-image: url(reports_screenshot.png)">
+    <div class="fh5co-overlay"></div>
+    <div class="fh5co-copy">
+      <div class="fh5co-copy-inner">
+	<h2><p>Spyder Reports</p>
+</h2>
+	
+	<h3><p>Spyder plugin to render Markdown reports using Pweave as a backend</p>
+</h3>
+	
+      </div>
+    </div>
+  </a>
+  
+</div> <!-- END fh5co-gallery -->
+	
+	
+	
+	<div id="fh5co-team" data-section="team">
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+      <h2>Our team</h2>
+      <p><p>The people behind Spyder IDE development</p>
+</p>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="person">
+	<img src="carlos_cordoba.jpeg" alt="" class="img-responsive">
+	<h3><p>Carlos Córdoba</p>
+</h3>
+	<h4><p>Core Developer/Maintainer</p>
+</h4>
+	<p></p>
+	<ul class="social">
+	  
+	  <li><a href=""><i class="icon-facebook"></i></a></li>
+	  
+	  
+	  <li><a href=""><i class="icon-twitter"></i></a></li>
+	  
+	  
+	  
+	  <li><a href=""><i class="icon-instagram"></i></a></li>
+	  
+	  
+	  <li><a href="https://github.com/ccordoba12"><i class="icon-github"></i></a></li>
+	  
+	  
+	  <li><a href=""><i class="icon-linkedin"></i></a></li>
+	  
+	</ul>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="person">
+	<img src="goanpeca.jpg" alt="" class="img-responsive">
+	<h3><p>Gonzalo Peña-Castellanos</p>
+</h3>
+	<h4><p>Core Developer</p>
+</h4>
+	<p></p>
+	<ul class="social">
+	  
+	  <li><a href=""><i class="icon-facebook"></i></a></li>
+	  
+	  
+	  <li><a href=""><i class="icon-twitter"></i></a></li>
+	  
+	  
+	  
+	  <li><a href=""><i class="icon-instagram"></i></a></li>
+	  
+	  
+	  <li><a href="https://github.com/goanpeca"><i class="icon-github"></i></a></li>
+	  
+	  
+	  <li><a href=""><i class="icon-linkedin"></i></a></li>
+	  
+	</ul>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="person">
+	<img src="dalthviz.jpg" alt="" class="img-responsive">
+	<h3><p>Daniel Althviz</p>
+</h3>
+	<h4><p>Core Developer</p>
+</h4>
+	<p></p>
+	<ul class="social">
+	  
+	  <li><a href=""><i class="icon-facebook"></i></a></li>
+	  
+	  
+	  <li><a href=""><i class="icon-twitter"></i></a></li>
+	  
+	  
+	  
+	  <li><a href=""><i class="icon-instagram"></i></a></li>
+	  
+	  
+	  <li><a href="https://github.com/dalthviz"><i class="icon-github"></i></a></li>
+	  
+	  
+	  <li><a href=""><i class="icon-linkedin"></i></a></li>
+	  
+	</ul>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="person">
+	<img src="andfoy.jpg" alt="" class="img-responsive">
+	<h3><p>Edgar Andrés Margffoy</p>
+</h3>
+	<h4><p>Core Developer</p>
+</h4>
+	<p></p>
+	<ul class="social">
+	  
+	  <li><a href=""><i class="icon-facebook"></i></a></li>
+	  
+	  
+	  <li><a href=""><i class="icon-twitter"></i></a></li>
+	  
+	  
+	  
+	  <li><a href=""><i class="icon-instagram"></i></a></li>
+	  
+	  
+	  <li><a href="https://github.com/andfoy"><i class="icon-github"></i></a></li>
+	  
+	  
+	  <li><a href=""><i class="icon-linkedin"></i></a></li>
+	  
+	</ul>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="person">
+	<img src="rlaverde.jpg" alt="" class="img-responsive">
+	<h3><p>Rafael Laverde</p>
+</h3>
+	<h4><p>Core Developer</p>
+</h4>
+	<p></p>
+	<ul class="social">
+	  
+	  <li><a href=""><i class="icon-facebook"></i></a></li>
+	  
+	  
+	  <li><a href=""><i class="icon-twitter"></i></a></li>
+	  
+	  
+	  
+	  <li><a href=""><i class="icon-instagram"></i></a></li>
+	  
+	  
+	  <li><a href="https://github.com/rlaverde"><i class="icon-github"></i></a></li>
+	  
+	  
+	  <li><a href=""><i class="icon-linkedin"></i></a></li>
+	  
+	</ul>
+      </div>
+    </div>
+    
+  </div>
+</div> <!-- END fh5co-team -->
+	
+
+	
+	<div id="fh5co-footer">
+  <div class="container">
+		
+			<div class="row">
+				<a href="https://opencollective.com/spyder/donate" target="_blank">
+					<img src="../static/images/collective.png" width=300 class="center" />
+				</a>
+			</div>
+			</br>
+		
+    <div class="row">
+      <div class="col-md-6">
+	<p><small>&copy; 2016 Free HTML5 Template. All Rights Reserved. <br> Designed by <a href='http://freehtml5.co/' target='_blank'>FreeHTML5.co</a> Demo Images: <a href='http://pexels.com/' target='_blank'>Pexels</a><br>Hugo port by <a href='https://github.com/SteveLane/' target='_blank'>SteveLane</a><br>Lektor port by <a href='https://github.com/dalthviz/' target='_blank'>Dalthviz</a></small></p>
+      </div>
+      <div class="col-md-6">
+	<ul class="fh5co-social">
+	  
+	  <li><a href="https://github.com/spyder-ide/spyder"><i class="icon-github"></i></a></li>
+	  
+	  
+	  <li><a href="https://twitter.com/spyder_ide"><i class="icon-twitter"></i></a></li>
+	  
+	  
+	  <li><a href="https://www.facebook.com/SpyderIDE/"><i class="icon-facebook"></i></a></li>
+	  
+	  
+	  
+	</ul>
+      </div>
     </div>
   </div>
 </div>
-
-  <div id="title-download-section">
-    <h2>Get started</h2>
-  </div>
-  <div id="download-section">
-    <div class="row">
-    <ul class="tabs" data-tabs id="base-tabs">
-      <li class="tabs-title is-active"><a href="#info-tab" aria-selected="true">Starting with Spyder</a></li>
-    </ul>
-
-    <div class="tabs-content" data-tabs-content="base-tabs">
-      <div class="tabs-panel is-active" id="info-tab">
-        <div class=row>
-         <div class="medium-6 columns ">
-           <h3>Spyder basics</h3>
-           <p>Some starting information</p>
-           <ul>
-             <li>
-               <a href="https://github.com/spyder-ide/spyder/blob/ab216333d8a0fb4a8becb09bcec8badf382bb176/doc/installation.rst">How to install</a>
-             </li>             
-             <li>
-              <a href="https://github.com/spyder-ide/spyder/wiki/Troubleshooting-Guide-and-FAQ">Troubleshooting Guide and FAQ</a>
-            </li>
-           </ul>
-          </div>  
-          <div class="medium-6 columns" id="donate-text">
-            <img alt="Spyder" src="./static/images/spyder-logo.svg">
-          </div>        
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-
-  <div id="donation-section">
-    <div class="row">
-      <div class="medium-6 columns">
-      <a href="https://opencollective.com/spyder/" id="donate-button">
-        <img alt="Support us!!" src="./static/images/donate.svg">
-      </a>
-      <p id="copy-donate">Believe in Spyder...Take an action!!</p>
-      </div>
-      <div class="medium-6 columns" id="donate-text">
-        <p>
-          With your support we create a better world, we evolve and grow up with you.
-        </p>
-        <p>
-          Thanks!!!
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div id="users-section">
-    <div class="row">
-      <div class="small-11 medium-12 columns small-centered">
+	
       
       </div>
     </div>
-  </div>
+    
+    <div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+</div>
 
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+    room: 'spyder-ide/public',
+    activationElement: '#open_chat',
+    };
+  </script>
+  <a href="https://gitter.im/spyder-ide/public" id="open_chat" class="gitter-open-chat-button"
+  style="background-color:#bc5736;">Open Chat</a>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
-  </div>
-  <footer>
-  
-    <div id="footer-area">
-      <div class=row>
-        <div id="logo-footer" class="small-12 medium-4 columns">
-          <div>
-            <p>
-              <img src="../static/images/spyder-logo.svg">
-              <span>Spyder IDE</span>
-            </p>
-            <p>
-              The Spyder Development Team
-              <br>
-              <a href="mailto:info@spyder-ide.org ">info@spyder-ide.org </a>
-            </p>
-          </div>
-        </div>
-        <div class="small-12 medium-4 columns">
-          <h3>Soporte</h3>
-          <ul>
-            <li><a href="#">Descarga e instala Spyder</a></li>
-            <li><a href="#">Comienza a usar Spyder</a></li>
-            <li><a href="http://groups.google.com/group/spyderlib" target="_blank" rel="noopener">Únete al grupo de Discusión</a></li>
-            <li><a href="http://stackoverflow.com/questions/tagged/spyder" target="_blank" rel="noopener">Pregunta en Stack Overflow</a></li>
-          </ul>
-        </div>
-        <div class="small-12 medium-4 columns">
-          <h3>Contribuir</h3>
-          <ul>
-            <li><a href="https://opencollective.com/spyder/">Has una donación</a></li>
-            <li><a href="https://github.com/spyder-ide/spyder/issues/new?title=Feature Request:" target="_blank" rel="noopener">Sugiere nuevas características</a></li>
-            <li><a href="https://github.com/spyder-ide/spyder/issues/new" target="_blank" rel="noopener">Envía un informe de errores</a></li>
-            <li><a href="https://github.com/spyder-ide/spyder/issues" target="_blank" rel="noopener">Revisa los problemas en Github</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div id="footer">
-      <div class=row>
-        <div class="small-12 medium-8 columns">
-          &copy; 2016 by <a href="https://github.com/orgs/spyder-ide/people" target="_blank" rel="noopener">The Spyder Development Team</a> &middot; Powered by <a href="https://www.getlektor.com/" target="_blank" rel="noopener">Lektor</a>
-        </div>
-        <div class="small-12 medium-4 columns">
-          <a href="https://github.com/spyder-ide/spyder/" title="Spyder en GitHub"><i class="fa fa-github fa-lg"></i></a>
-          <a href="https://github.com/spyder-ide/spyder/issues/" title="Revisa los problemas en Github"><i class="fa fa-bug fa-lg"></i></a>
-          <a href="https://www.facebook.com/SpyderIDE/" title="Síguenos en Facebook"><i class="fa fa-facebook fa-lg"></i></a>
-          <a href="https://twitter.com/Spyder_IDE" title="Síguenos en Twitter"><i class="fa fa-twitter fa-lg"></i></a>
-          <a href="https://plus.google.com/u/0/communities/112932801653352854842" title="Únete a la comunidad de Spyder en Google+"><i class="fa fa-google-plus fa-lg"></i></a>
-          <a href="https://gitter.im/spyder-ide/public" title="Escríbenos en el chat de Gitter"><i class="fa fa-comment fa-lg"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      ((window.gitter = {}).chat = {}).options = {
-        room: 'spyder-ide/public'
-      };
-    </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-    <script type=text/javascript src="../static/js/app.js?h=7fdc8378" charset="utf-8"></script>
-  </footer>
-</body>
+<!-- jQuery -->
+<script src="../static/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="../static/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="../static/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="../static/js/jquery.waypoints.min.js"></script>
+<!-- Stellar Parallax -->
+<script src="../static/js/jquery.stellar.min.js"></script>
+<!-- Magnific Popup -->
+<script src="../static/js/jquery.magnific-popup.min.js"></script>
+<script src="../static/js/magnific-popup-options.js"></script>
+<!-- Main JS -->
+<script src="../static/js/main.js"></script>
+    
+  </body>
+</html>
