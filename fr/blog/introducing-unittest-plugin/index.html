@@ -1,0 +1,287 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" href="../../../static/images/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="../../../static/css/styles.css?h=e10f3a6f">
+  <title>Introducing the unittest plugin — Spyder Website</title>
+</head>
+<body>
+  <header>
+    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
+    </div>
+
+    <div class="top-bar-container" data-sticky-container>
+      <nav class="top-bar" id="main-menu" data-sticky data-options="marginTop: 0;">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li id="menu-logo">
+              <a href="../../../fr/">
+                <img src="../../../static/images/spyder-logo.svg">
+                <span  >
+                  <span id="logo-text">Spyder IDE</span>
+                  <span id="logo-small-text" class="show-for-medium">
+                    The Scientific PYthon Development EnviRonment
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="top-bar-right">
+          <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+            
+            
+            <li
+              
+              >
+              <a href="../../../fr/">Accueil</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../fr/docs/">Documentation</a>
+            </li>
+            
+            <li
+              
+                class="active"
+              
+              >
+              <a href="../../../fr/blog/">Blog</a>
+            </li>
+            
+            <li
+              
+              >
+              <a href="../../../fr/community/">Communauté</a>
+            </li>
+            
+            <li>
+                <a href="#"><i class="fa fa-search fa-lg"></i></a>
+            </li>
+            <li><input type="search" placeholder="Search"></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div>
+    
+<div class="row">
+  <div class="medium-8 columns blog-column">
+    <a href="../../../fr/blog/">
+    <div class="blog-banner">
+      <div class="banner-text">
+        <span class="banner-big-text">Blog</span>
+        <span class="banner-small-text">Spyder</span>
+      </div>
+    </div>
+    </a>
+  <div class="blog-body">
+    
+  
+
+  <div class="blog-post">
+  
+    <h2>Introducing the unittest plugin</h2>
+    <p class="meta-blog-author">
+      <span>
+        <img class="author-img" src="../../../fr/authors/jitseniesen/jitse_niesen.jpeg" alt="Jitse Niesen" />
+      </span>
+      <span>
+        Author: Jitse Niesen
+      </span>
+    </p>
+    <p>Automatic testing can increase the quality of your code. This is especially true of dynamic languages like Python, where a typo may only be noticed when that particular code path is executed. The new <a href="https://github.com/spyder-ide/spyder-unittest">Spyder unittest plugin</a> lets you run tests and view the results, all within the IDE. Here, I'll demonstrate what it can do by way of a real-world example.</p>
+<p>There are numerous unit testing frameworks available for Python, of which the plugin supports several of the most prominent. However, I'm using my favorite here, <a href="https://pytest.org/">pytest</a>. I prefer to write the tests in a separate file from the code, so that's what I'll do here.</p>
+<h3 id="installing-the-plugin">Installing the plugin</h3><p>If you use the Anaconda distribution (as we recommend), then you can install the Spyder unittest plugin with the command</p>
+<pre><code class="lang-bash">conda install -c spyder-ide spyder-unittest
+</code></pre>
+<p>This will also grab all its mandatory dependencies (including Spyder itself if necessary). The <code>-c</code> option instructs <code>conda</code> to use the custom channel <code>spyder-ide</code> run by the Spyder developers, since the plugin isn't part of the default channel.</p>
+<p>Since we will be using the <code>pytest</code> framework, you also need to install it:</p>
+<pre><code class="lang-bash">conda install pytest
+</code></pre>
+<p>We'll be running Python 3.6.4, Spyder 3.2.6, <code>spyder-unittest</code> 0.3.0 and <code>pytest</code> 3.3.2 for this example.</p>
+<h3 id="creating-a-project">Creating a project</h3><p>I'll be using separate files for the tests and the code to be tested, so let's start by creating a project which will contain these files. In the <code>Projects</code> menu, click on <code>New Project ...</code>. Enter a name for the project (in my example, <code>prime_example</code>), and under <code>Location</code>, select the directory in which to store it. Click <code>Create</code>.</p>
+<p><img src="../../../fr/blog/introducing-unittest-plugin/new-project.png" alt="&#34;Create new project&#34; window"></p>
+<h3 id="writing-code-to-be-tested">Writing code to be tested</h3><p>Create a Python file <code>primes.py</code> with the following function, which checks whether a number is prime:</p>
+<pre><code class="lang-python">def is_prime(number):
+    &quot;&quot;&quot;Return True if `number` is prime.&quot;&quot;&quot;
+    for element in range(2, number):
+        if number % element == 0:
+            return False
+    return True
+</code></pre>
+<p>This example is taken from the blog post <a href="https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/">Improve Your Python: Understanding Unit Testing</a> by Jeff Knupp.</p>
+<h3 id="writing-the-tests">Writing the tests</h3><p>To test our <code>is_prime</code> function, we will write two tests: one to check that <code>5</code> is considered a prime, and one to ensure <code>4</code> is not. They can be implemented as follows:</p>
+<pre><code class="lang-python">from primes import is_prime
+
+def test_five_is_prime():
+    assert is_prime(5) == True
+
+def test_four_is_not_prime():
+    assert is_prime(4) == False
+</code></pre>
+<p>One of the cool things about <code>pytest</code> is that it can find the tests automatically, so you don't need to mark them in any way. By default <code>pytest</code> uses a naming convention: all functions starting with <code>test_</code> in files starting with <code>test_</code> are considered test functions. We'll save the code in the file <code>test_primes.py</code> which follows this naming convention.</p>
+<p>In Spyder, the project now looks as follows:</p>
+<p><img src="../../../fr/blog/introducing-unittest-plugin/code.png" alt="Spyder window with code"></p>
+<h3 id="running-the-tests">Running the tests</h3><p>Now comes the fun part, where we actually get to use the plugin. In the <code>Run</code> menu, select <code>Run unit tests</code>. If you do not see this menu item, then the plugin is not installed; refer to the installation instructions above.</p>
+<p>A window appears in which to configure the test run. One of the advantages of using a project is that it is automatically selected as the directory in which to find tests (another advantage is that Spyder will remember the testing configuration). So the only thing we need to do is select the test framework, which is <code>pytest</code>.</p>
+<p><img src="../../../fr/blog/introducing-unittest-plugin/test-config.png" alt="&#34;Configure tests&#34; window"></p>
+<p>Press the <code>OK</code> button to run the tests, and lo and behold, the results appear in a new pane called "Unit testing":</p>
+<p><img src="../../../fr/blog/introducing-unittest-plugin/test-results.png" alt="Test results in Spyder windows"></p>
+<p>As you can see, both tests pass. This means that our function correctly identifies <code>5</code> as prime and <code>4</code> as not prime.</p>
+<h3 id="a-failing-test">A failing test</h3><p>Unfortunately, our function <code>is_prime</code> has a bug. The number <code>1</code> is not considered a prime, but <code>is_prime(1)</code> in fact returns <code>True</code>. Therefore, to test for this, we add the following code to <code>test_primes.py</code>:</p>
+<pre><code class="lang-python">def test_one_is_not_prime():
+    assert is_prime(1) == False
+</code></pre>
+<p>Now, run the tests again by clicking on <code>Run unit tests</code> in the <code>Run</code> menu. Spyder remembers the configuration so you are not asked for it again. This time, the results are:</p>
+<p><img src="../../../fr/blog/introducing-unittest-plugin/test-results2.png" alt="Test results in Spyder windows"></p>
+<p>Our new test fails. The details clarify that <code>is_prime(1)</code> returns <code>True</code>, while the assert in the test function claims that it should return <code>False</code>.</p>
+<h3 id="where-to-go-from-here">Where to go from here</h3><p>With this demonstration under your belt, you should be able to write tests for your code and run them with the plugin. For example, try fixing the bug so that <code>1</code> is correctly identified as non-prime, and run the tests again to check verify it.</p>
+<p><code>Spyder-unittest</code> supports not only the <code>pytest</code> framework, but also the <code>nose</code> framework and the <code>unittest</code> module in the Python standard library. It is still fairly new (as its version number suggests), so I look forward to your comments. Please send your ideas, bug reports and pull requests to the <a href="https://github.com/spyder-ide/spyder-unittest">spyder-unittest</a> repo on Github.</p>
+<p>Happy Spydering with automatic tests!</p>
+
+    <p class="meta-blog-date">
+        Date: 23 February of 2018
+    </p>
+  
+  </div>
+
+    
+      <div class="comment-box">
+        <h2>Comments</h2>
+        
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/introducing-unittest-plugin"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//spyder-ide.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+      </div>
+    
+
+  </div>
+  </div>
+  <div class="medium-4 columns show-for-medium sidebar-blog" >
+    <div class="blog-archive">
+      <h3>Blog Archive</h3>
+        <ul>
+          
+          <li><a href="/blog/introducing-unittest-plugin">Introducing the unittest plugin</a></li>
+          
+          <li><a href="/blog/spyder-unitest-v0-1-released">Spyder-unittest 0.1 is released</a></li>
+          
+          <li><a href="/blog/spyder-v3-1-released">Spyder 3.1 is released</a></li>
+          
+          <li><a href="/blog/spyder-v3-0-released">Spyder 3.0 is released</a></li>
+          
+          <li><a href="/blog/spyder-v2-3-2-released">Spyder 2.3.2 released</a></li>
+          
+          <li><a href="/blog/spyder-v2-3-released">Spyder 2.3 has been released</a></li>
+          
+          <li><a href="/blog/spyder-v2-1-14-supports-python-3">Spyder v2.1.14 supports Python 3</a></li>
+          
+        </ul>
+    </div>
+
+    <div class="colaborators">
+      <h3>Collaborators</h3>
+        <div class="row small-up-2 medium-up-3">
+        
+          <div class="column column-block">
+            <img class="author-img" src="../../../fr/authors/ccordoba12/carlos_cordoba.jpeg" alt="Carlos Córdoba" />
+          </div>
+        
+          <div class="column column-block">
+            <img class="author-img" src="../../../fr/authors/jitseniesen/jitse_niesen.jpeg" alt="Jitse Niesen" />
+          </div>
+        
+          <div class="column column-block">
+            <img class="author-img" src="../../../fr/authors/pierreraybaut/pierre_raybaut.jpeg" alt="Pierre Raybaut" />
+          </div>
+        
+        </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  <footer>
+  
+    <div id="footer-area">
+      <div class=row>
+        <div id="logo-footer" class="small-12 medium-4 columns">
+          <div>
+            <p>
+              <img src="../../../static/images/spyder-logo.svg">
+              <span>Spyder IDE</span>
+            </p>
+            <p>
+              The Spyder Development Team
+              <br>
+              <a href="mailto:info@spyder-ide.org ">info@spyder-ide.org </a>
+            </p>
+          </div>
+        </div>
+        <div class="small-12 medium-4 columns">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Télécharge et installer Spyder</a></li>
+            <li><a href="#">Commence à utiliser Spyder</a></li>
+            <li><a href="http://groups.google.com/group/spyderlib" target="_blank" rel="noopener">Joindre à la groupe de discussion</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/spyder" target="_blank" rel="noopener">Demande une question sur Stack Overflow</a></li>
+          </ul>
+        </div>
+        <div class="small-12 medium-4 columns">
+          <h3>Contribuer</h3>
+          <ul>
+            <li><a href="https://opencollective.com/spyder/">Faire un don</a></li>
+            <li><a href="https://github.com/spyder-ide/spyder/issues/new?title=Feature Request:" target="_blank" rel="noopener">Suggérer de nouvelles fonctionnalités</a></li>
+            <li><a href="https://github.com/spyder-ide/spyder/issues/new" target="_blank" rel="noopener">Rapporter un bug</a></li>
+            <li><a href="https://github.com/spyder-ide/spyder/issues" target="_blank" rel="noopener">Examiner des problèmes sur Github</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class=row>
+        <div class="small-12 medium-8 columns">
+          &copy; 2016 by <a href="https://github.com/orgs/spyder-ide/people" target="_blank" rel="noopener">The Spyder Development Team</a> &middot; Powered by <a href="https://www.getlektor.com/" target="_blank" rel="noopener">Lektor</a>
+        </div>
+        <div class="small-12 medium-4 columns">
+          <a href="https://github.com/spyder-ide/spyder/" title="Spyder sur GitHub"><i class="fa fa-github fa-lg"></i></a>
+          <a href="https://github.com/spyder-ide/spyder/issues/" title="Examiner des problèmes sur Github"><i class="fa fa-bug fa-lg"></i></a>
+          <a href="https://www.facebook.com/SpyderIDE/" title="Suivez-nous sur Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+          <a href="https://twitter.com/Spyder_IDE" title="Suivez-nous sur Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+          <a href="https://plus.google.com/u/0/communities/112932801653352854842" title="Joindre a la communauté de Spyder sur Google+"><i class="fa fa-google-plus fa-lg"></i></a>
+          <a href="https://gitter.im/spyder-ide/public" title="Écrivez-nous sur le chat de Gitter"><i class="fa fa-comment fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'spyder-ide/public'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script type=text/javascript src="../../../static/js/app.js?h=7fdc8378" charset="utf-8"></script>
+  </footer>
+</body>
