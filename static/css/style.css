@@ -637,6 +637,7 @@ p {
 #fh5co-download {
   position: relative;
   padding-top: 30px;
+  clear: both;
   padding-bottom: 10px;
 }
 
@@ -644,7 +645,6 @@ p {
   position: relative;
   padding: 7em 0 0;
   margin-top: 2em;
-  background: #E8ECF1;
 }
 @media screen and (max-width: 768px) {
   #fh5co-services {
@@ -709,7 +709,7 @@ p {
   padding-right: 10px;
   margin-bottom: 40px;
   padding: 40px 20px 20px 20px;
-  background: #E8ECF1;
+  background: #fff;
   border: 1px solid transparent;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -758,7 +758,7 @@ p {
   font-size: 23px;
   color: #ce4333;
   font-family: 'icomoon';
-  speak: none;
+  display: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -863,18 +863,19 @@ p {
   clear: both;
   float: left;
   width: 100%;
-  background: rgb(255, 255, 255);
+  background: #E8ECF1;
   margin-bottom: 30px;
 }
 
 #fh5co-gallery-header{
-  background: rgb(255, 255, 255);
+  background: #E8ECF1;
   margin-top: 30px;
 }
 
 #fh5co-donate{
   background: #E8ECF1;
   padding-top: 30px;
+  clear: both;
   padding-bottom: 30px;
 }
 
