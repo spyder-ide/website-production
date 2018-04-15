@@ -50,7 +50,7 @@ a:hover, a:focus, a:active {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Amiri, Arial, sans-serif;
+  font-family: Raleway, Arial, sans-serif;
   color: #000;
   margin-bottom: 30px;
 }
@@ -658,7 +658,7 @@ p {
   height: 90px;
   left: 50%;
   margin-left: -45px;
-  top: -45px;
+  top: -82px;
   text-align: center;
 }
 #fh5co-services .fh5co-video span {
@@ -694,6 +694,9 @@ p {
 #fh5co-services .fh5co-video a:hover {
   background: #ce4333;
 }
+#fh5co-services .container .col-md-6 .col-md-offset-3 .text-center .fh5co-heading {
+  margin-top: -45px;
+}
 #fh5co-services .fh5co-video a:hover, #fh5co-services .fh5co-video a:focus, #fh5co-services .fh5co-video a:active {
   text-decoration: none;
   outline: none;
@@ -708,7 +711,7 @@ p {
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 40px;
-  padding: 40px 20px 20px 20px;
+  padding: 40px 15px 20px 15px;
   background: #fff;
   border: 1px solid transparent;
   -webkit-border-radius: 5px;
@@ -729,7 +732,7 @@ p {
 }
 #fh5co-services .service h3 {
   text-align: center;
-  font-size: 1.7em;
+  font-size: 1.4em;
   font-weight: 500;
   color: #ce4333;
 }
@@ -773,9 +776,9 @@ p {
   margin-bottom: 30px;
 }
 .fh5co-heading h2 {
-  font-size: 2.7em;
+  font-size: 2.1em;
   font-weight: 500;
-  color: #4d4d4d;
+  color: #333;
   padding-bottom: 20px;
   margin-bottom: 20px;
   position: relative;
@@ -907,14 +910,15 @@ p {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  color: #ce4333;
 }
 
 #fh5co-gallery h3{
   text-align: center;
   align-content: center;
-  font-size: 1.7em;
-  font-family: Amiri;
-  color: #ce4333
+  font-size: 1.4em;
+  font-family: Raleway, Arial, sans-serif;
+  color: #ce4333;
 }
 @media screen and (max-width: 1200px) {
   #fh5co-gallery .fh5co-item {
