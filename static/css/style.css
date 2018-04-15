@@ -28,7 +28,7 @@
 }
 
 body {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: Raleway, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.8;
@@ -50,9 +50,13 @@ a:hover, a:focus, a:active {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: Cinzel, Arial, sans-serif;
   color: #000;
   margin-bottom: 30px;
+}
+
+h3, h4, h5, h6 {
+  font-family: Lora, Arial, sans-serif; 
 }
 
 p {
@@ -268,6 +272,8 @@ p {
   position: relative;
   float: absolute;
   background: #fff;
+  font-family: Cinzel;
+  font-size: 11px;
 }
 .fh5co-main-nav.fh5co-shadow {
   -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.09);
@@ -350,7 +356,6 @@ p {
 .fh5co-heading .sub-heading {
   font-size: 20px;
   line-height: 1.5;
-  margin-bottom: 30px;
 }
 @media screen and (max-width: 768px) {
   .fh5co-heading .sub-heading {
@@ -584,6 +589,12 @@ p {
   }
 }
 
+.fh5co-content-white {
+  position: relative;
+  margin-bottom: 30px;
+  background: #ffffff;
+}
+  
 .gototop {
   position: fixed;
   bottom: 20px;
@@ -621,9 +632,22 @@ p {
   outline: none;
 }
 
+#fh5co-mission {
+  position: relative;
+  margin-top: 30px;
+  background: #E8ECF1;
+}
+
+#fh5co-download {
+  position: relative;
+  margin-top: 30px;
+}
+
 #fh5co-services {
   position: relative;
   padding: 7em 0 0;
+  margin-top: 2em;
+  background: #E8ECF1;
 }
 @media screen and (max-width: 768px) {
   #fh5co-services {
@@ -688,7 +712,7 @@ p {
   padding-right: 10px;
   margin-bottom: 40px;
   padding: 40px 20px 20px 20px;
-  background: #fff;
+  background: #E8ECF1;
   border: 1px solid transparent;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -754,7 +778,7 @@ p {
   margin-bottom: 30px;
 }
 .fh5co-heading h2 {
-  font-size: 14px;
+  font-size: 30px;
   letter-spacing: 2px;
   font-weight: 700;
   text-transform: uppercase;
@@ -845,11 +869,19 @@ p {
   clear: both;
   float: left;
   width: 100%;
-  background: #E8ECF1;
+  background: rgb(255, 255, 255);
+  margin-bottom: 30px;
 }
 
 #fh5co-gallery-header{
+  background: rgb(255, 255, 255);
+  margin-top: 30px;
+}
+
+#fh5co-donate{
   background: #E8ECF1;
+  margin-top: 30px;
+  clear: both;
 }
 
 #fh5co-gallery .fh5co-item {
@@ -866,6 +898,8 @@ p {
   -o-transition: 0.5s;
   transition: 0.5s;
   border-style: solid;
+  border-width: 1px;
+  font-size: 18px;
 }
 #fh5co-gallery .fh5co-item-link {
   display: block;
@@ -884,6 +918,8 @@ p {
 #fh5co-gallery h3{
   text-align: center;
   align-content: center;
+  font-size: 23px;
+  font-family: Cinzel;
 }
 @media screen and (max-width: 1200px) {
   #fh5co-gallery .fh5co-item {
@@ -1005,8 +1041,9 @@ p {
 }
 
 #fh5co-footer {
+  clear: both;
   padding: 3em 0;
-  background: #E8ECF1;
+  background: rgb(255, 255, 255);
   -webkit-box-shadow: inset 0px 10px 21px -15px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: inset 0px 10px 21px -15px rgba(0, 0, 0, 0.12);
   box-shadow: inset 0px 10px 21px -15px rgba(0, 0, 0, 0.12);
@@ -1080,7 +1117,7 @@ p {
   transition: 0.5s;
 }
 
-#fh5co-container, .fh5co-nav-toggle, #fh5co-footer {
+#fh5co-container, .fh5co-nav-toggle {
   z-index: 2;
   position: relative;
 }
@@ -1259,6 +1296,13 @@ p {
   .fh5co-nav-toggle {
     display: block;
   }
+}
+
+.header-row{  
+  background: #E8ECF1;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1em;
 }
 
 .row-padded {
