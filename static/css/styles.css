@@ -1569,7 +1569,8 @@ strong {
 small {
     font-size: 80%;
     line-height: inherit;
-    color:#949494;
+    color:white;
+    font-weight: bold;
 }
 
 
@@ -5950,6 +5951,26 @@ screen and (min-width:40em) {
 
 .donate{
     width:40%;
+}
+
+#fh5co-footer{
+    padding: 0.9em 0;
+    color: white;
+}
+
+#fh5co-footer .container .row .text-center{
+    margin-bottom: 0.7em;
+}
+
+#fh5co-footer .container .row .text-center p small{
+    font-size: 16px;
+    line-height: 2em;
+}
+
+
+#fh5co-footer .container .row .text-center p {
+    font-size: 13px;
+    line-height: 1.2em;
 }
 
 /*# sourceMappingURL=styles.css.map*/
