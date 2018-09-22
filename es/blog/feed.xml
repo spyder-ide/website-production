@@ -2,13 +2,36 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Spyder Blog</title>
   <id>urn:uuid:a1aeb560-1c3d-3d4a-bd0b-639353c820c3</id>
-  <updated>2018-08-14T00:00:00Z</updated>
+  <updated>2018-09-21T00:00:00Z</updated>
   <link href="https://www.spyder-ide.org/es/blog/" />
   <link href="https://www.spyder-ide.org/es/blog/feed.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.3">Lektor Atom Plugin</generator>
+  <entry xml:base="https://www.spyder-ide.org/es/blog/release-qtconsole-440/">
+    <title type="text">QtConsole 4.4 Released!</title>
+    <id>urn:uuid:15c642d1-eb3f-3cd6-b4f2-85543a8447d3</id>
+    <updated>2018-09-21T00:00:00Z</updated>
+    <link href="https://www.spyder-ide.org/es/blog/release-qtconsole-440/" />
+    <author>
+      <name>camgerlach</name>
+    </author>
+    <content type="html">&lt;p&gt;We're excited to announce a significant update to &lt;a href=&quot;https://qtconsole.readthedocs.io/en/stable/&quot;&gt;QtConsole&lt;/a&gt;—the package that powers Spyder's &lt;a href=&quot;https://docs.spyder-ide.org/ipythonconsole.html&quot;&gt;IPython Console&lt;/a&gt; interface—which the Spyder team maintains in collaboration with &lt;a href=&quot;https://jupyter.org/&quot;&gt;Project Jupyter&lt;/a&gt;.
+Two of the biggest changes—user-selectable syntax highlighting themes, and enhanced external editor/IDE integration—are already built right into Spyder, so they'll likely be of more interest if you use QtConsole standalone or with another editor/IDE.
+However, most of the other changes should prove quite useful within Spyder as well, and many were in fact suggested and even implemented by users of our IDE.
+Particular highlights include a block indent/unindent feature, Select-All (&lt;code&gt;Ctrl-Shift-A&lt;/code&gt;) being made cell-specific, &lt;code&gt;Ctrl-Backspace&lt;/code&gt; and &lt;code&gt;Ctrl-Delete&lt;/code&gt; behaving more intelligently across whitespace and line boundaries, &lt;code&gt;Ctrl-D&lt;/code&gt; allowing you to easily exit &lt;code&gt;ipdb&lt;/code&gt;, &lt;code&gt;input()&lt;/code&gt; and the like, and numerous smaller enhancements and bug fixes.
+If you'd like to learn more about what's new, please check out &lt;a href=&quot;https://blog.jupyter.org/jupyter-qtconsole-4-4-81f2eaad5706&quot;&gt;our article&lt;/a&gt; over on the &lt;a href=&quot;https://blog.jupyter.org/&quot;&gt;Jupyter blog&lt;/a&gt;, where we go over the major changes in more detail, with plenty of screenshots and GIFs to illustrate each feature and how to use it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/es/blog/release-qtconsole-440/qtconsole-syntax-highlighting.png&quot; alt=&quot;Screenshot of the QtConsole main window, with a new syntax highlighting theme applied&quot;&gt;&lt;/p&gt;
+&lt;p&gt;To update to the newest version with your existing Spyder install, open an Anaconda Prompt (Windows), Terminal (macOS) or command line (Linux), activate the &lt;code&gt;conda&lt;/code&gt; environment or &lt;code&gt;virtualenv&lt;/code&gt;/&lt;code&gt;venv&lt;/code&gt; of the Spyder install you are using, and run &lt;code&gt;conda update qtconsole&lt;/code&gt; (or &lt;code&gt;pip install --upgrade qtconsole&lt;/code&gt;, if not using Anaconda).
+If you'd like to try QtConsole out separate from Spyder or integrate it in with your own editor or IDE, it is also available as a standalone GUI by running &lt;code&gt;jupyter qtconsole&lt;/code&gt; from the Python environment where it or Spyder is installed.&lt;/p&gt;
+&lt;p&gt;If you have any questions, problems or feedback, we'd love to hear from you. Report issues, request features or participate in QtConsole's development at its &lt;a href=&quot;https://github.com/jupyter/qtconsole&quot;&gt;Github site&lt;/a&gt;, and check out its &lt;a href=&quot;https://qtconsole.readthedocs.io/en/stable/&quot;&gt;documentation&lt;/a&gt; for help using it.
+For the latest Spyder news, releases, previews and tips, you can follow our &lt;a href=&quot;https://www.facebook.com/SpyderIDE/&quot;&gt;Facebook&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/spyder_ide&quot;&gt;Twitter&lt;/a&gt;, and help support the development on Spyder and its sister projects like QtConsole on &lt;a href=&quot;https://opencollective.com/spyder&quot;&gt;OpenCollective&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Our new documentation and Spyder 4 beta 1 have been fully live for some time now; given the dramatic scale of the changes in both, their respective blog posts are still in the works.
+We'll also have an upcoming article on our official Spyder 4 feature roadmap and more, and Spyder 3.3.2 is due out soon, so keep in right here for your Spyder fix!
+Until then, happy Spydering and enjoy QtConsole 4.4!&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="https://www.spyder-ide.org/es/blog/release-spyder-330/">
     <title type="text">Spyder 3.3.0 and 3.3.1 released!</title>
     <id>urn:uuid:175e550f-54d6-3128-8243-b6cbfe6174b0</id>
