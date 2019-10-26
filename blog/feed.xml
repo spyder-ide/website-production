@@ -2,13 +2,124 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Spyder Blog</title>
   <id>urn:uuid:a1aeb560-1c3d-3d4a-bd0b-639353c820c3</id>
-  <updated>2019-05-20T00:00:00Z</updated>
+  <updated>2019-06-02T00:00:00Z</updated>
   <link href="https://www.spyder-ide.org/blog/" />
   <link href="https://www.spyder-ide.org/blog/feed.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.3">Lektor Atom Plugin</generator>
+  <entry xml:base="https://www.spyder-ide.org/blog/tdk-micronas-partners-with-quansight-labs/">
+    <title type="text">TDK-Micronas partners with Quansight to sponsor Spyder</title>
+    <id>urn:uuid:b60ba249-27fe-33db-9261-993df6970c69</id>
+    <updated>2019-06-02T00:00:00Z</updated>
+    <link href="https://www.spyder-ide.org/blog/tdk-micronas-partners-with-quansight-labs/" />
+    <author>
+      <name>goanpeca</name>
+    </author>
+    <content type="html">&lt;!--
+.. title: TDK-Micronas partners with Quansight to sponsor Spyder
+.. slug: tdk-partners-with-quansight-labs
+.. date: 2019-06-02
+.. tags: Spyder, Labs
+.. category: 
+.. link: 
+.. author: Gonzalo Peña-Castellanos
+.. description: 
+.. type: text
+--&gt;
+
+&lt;p&gt;&lt;em&gt;This blogpost was originally published on the &lt;a href=&quot;https://labs.quansight.org/&quot;&gt;Quansight Labs website&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;TDK-Micronas is sponsoring Spyder development efforts through Quansight Labs.
+This will enable the development of some features that have been requested by
+our users, as well as new features that will help TDK develop custom Spyder
+plugins in order to complement their Automatic Test Equipment (ATE’s) in the
+development of their Application Specific Integrated Circuits (ASIC’s).&lt;/p&gt;
+&lt;p&gt;At this point it may be useful to clarify the relationship the role of
+Quansight Labs in Spyder's development and the relationship with TDK. To quote
+Ralf Gommers (director of Quansight Labs):&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&quot;We're an R&amp;amp;D lab for open source development of core technologies around data
+science and scientific computing in Python. And focused on growing communities
+around those technologies. That's how I see it for Spyder as well: Quansight
+Labs enables developers to be employed to work on Spyder, and helps with
+connecting them to developers of other projects in similar situations. Labs
+should be an enabler to let the Spyder project, its community and individual
+developers grow. And Labs provides mechanisms to attract and coordinate
+funding. Of course the project is still independent. If there are other
+funding sources, e.g. donations from individuals to Spyder via OpenCollective,
+all the better.&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;multiple-projects-aka-workspaces&quot;&gt;Multiple Projects aka Workspaces&lt;/h2&gt;&lt;p&gt;In its current state Spyder can only handle one active project at a time.
+Although in the past we had basic support for workspaces, it was never a fully
+functional feature, so to ease development and simplify the user experience,
+we decided to remove it in the 3.x series.&lt;/p&gt;
+&lt;!-- TEASER_END --&gt;
+
+&lt;p&gt;For TDK-Micronas, as well as for a large part of the Spyder user base, the use
+of multiple simultaneous projects is a common pattern, so this enhancement
+will:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Move from a single to a multiple active projects concept&lt;/li&gt;
+&lt;li&gt;Change the name &lt;code&gt;Project Explorer&lt;/code&gt; to &lt;code&gt;WorkSpace Explorer&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Copying from one project to another is done in the 'Explorer' by means of
+context menus.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It is worth mentioning that projects are considered an “advanced feature”,
+so it will not be forced on users that just want to get some work done.
+Projects usage is, and will remain, an optional feature.&lt;/p&gt;
+&lt;h2 id=&quot;project-types&quot;&gt;Project Types&lt;/h2&gt;&lt;p&gt;Since the revamp of Spyder Projects with the 3.x series, the new dialog hinted
+at the possibility of creating different types of projects. Currently Spyder
+provides an &quot;empty project&quot; project type.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/tdk-micronas-partners-with-quansight-labs/spyder-project-creation.png&quot; alt=&quot;Project creation&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This feature will:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Expand the (current) Project Explorer API to handle Project Types.&lt;/li&gt;
+&lt;li&gt;Define and implement the minimal aspects that should be extensible by a
+Project Type&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;file-associations&quot;&gt;File Associations&lt;/h2&gt;&lt;p&gt;Spyder currently supports opening files on the Project and File Explorer
+using the (default) Operating System defined applications. We will enhance
+this by adding &lt;strong&gt;Global&lt;/strong&gt; file associations as part of the &lt;strong&gt;Preferences&lt;/strong&gt;
+and Project Specific associations as part of the &lt;strong&gt;Project Preferences&lt;/strong&gt;.
+This will give users more power to select the tool or set of tools that they
+prefer to use for specific projects and tasks directly on the File and Project
+Explorer pane.&lt;/p&gt;
+&lt;h2 id=&quot;url-awareness&quot;&gt;URL Awareness&lt;/h2&gt;&lt;p&gt;Working with projects requires access to documentation, located within the
+computer as other files or links located over the internet. We will now
+include integration for URI detection within the editor so users can
+&lt;code&gt;Ctrl+Click&lt;/code&gt; on these items. This will work similarly as module
+inspection works, but generalized to external and internal links.&lt;/p&gt;
+&lt;h2 id=&quot;git-version-control-enhancements&quot;&gt;Git version control enhancements&lt;/h2&gt;&lt;p&gt;The revision system of choice by our user base, including TDK, is Git.
+The purpose of this enhancement is to enable basic Git integration from
+within the File and Project Explorer and to extend the current plugin
+API so context menus can be customized with specific Git features and
+commands.&lt;/p&gt;
+&lt;p&gt;Initial work has already started to display Git relevant information
+on the status bar&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/tdk-micronas-partners-with-quansight-labs/spyder-git-status.png&quot; alt=&quot;Status bar git&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Git status is now displayed in the status bar (on the left)&lt;/small&gt;&lt;/p&gt;
+&lt;h2 id=&quot;editor-alternative-views&quot;&gt;Editor alternative views&lt;/h2&gt;&lt;p&gt;There are many circumstances where a user would like to edit a file that might
+be rendered using a parsing tool into another type of view. One example of
+this is Markdown, the markup language in which this blog post is written and
+that can be rendered to HTML. At the moment the only way to achieve this within
+Spyder is via the use of a dedicated plugin that would create a new type of
+Pane. An example of such a plugin is &lt;a href=&quot;https://github.com/spyder-ide/spyder-reports&quot;&gt;spyder-reports&lt;/a&gt;
+(See image below and the Reports pane). The reason why plugins are developed
+this way is because the Editor Plugin on Spyder can only contain Code Editor
+widgets, which prevents us and other developers to use the Editor to hold
+these alternate views of a given file.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/tdk-micronas-partners-with-quansight-labs/spyder-reports.png&quot; alt=&quot;Spyder Reports&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The new alternative views feature will remove this limitation and enable the
+inclusion of generic widgets (views) of different types of files and provide
+an API for plugin extensions.&lt;/p&gt;
+&lt;h2 id=&quot;closing-remarks&quot;&gt;Closing Remarks&lt;/h2&gt;&lt;p&gt;I would like to thank TDK-Micronas and Quansight for the opportunity to
+work in open source development on an awesome product such as Spyder.&lt;/p&gt;
+&lt;p&gt;I would also like to thank the users,
+&lt;a href=&quot;https://github.com/spyder-ide/spyder/graphs/contributors&quot;&gt;contributors&lt;/a&gt;
+and &lt;a href=&quot;https://github.com/orgs/spyder-ide/people&quot;&gt;core developers&lt;/a&gt; for helping
+make Spyder an awesome tool!&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="https://www.spyder-ide.org/blog/release-spyder-4beta2/">
     <title type="text">Spyder 4.0 takes a big step closer with the release of Beta 2!</title>
     <id>urn:uuid:74fa23e9-57c4-3a81-b4db-34754f0048a8</id>

@@ -1,0 +1,258 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" href="/static/images/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="./favicon.ico" />
+    <!-- Animate.css -->
+  <link rel="stylesheet" href="/static/css/animate.css?h=b5df4c2b">
+  <!-- Icomoon Icon Fonts-->
+  <link rel="stylesheet" href="/static/css/icomoon.css?h=eb9e1504">
+  <!-- Simple Line Icons -->
+  <link rel="stylesheet" href="/static/css/simple-line-icons.css?h=8358d953">
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" href="/static/css/magnific-popup.css?h=7ce3d579">
+  <!-- Google fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+  <link rel="stylesheet" href="/static/css/bootstrap.css?h=ff5de57f">
+  <link rel="stylesheet" href="/static/css/style.css?h=9afaea95">
+  <link rel="stylesheet" href="/static/css/styles.css?h=ad20a4c5">
+  
+  
+  <title>TDK-Micronas partners with Quansight to sponsor Spyder — Spyder Website</title>
+</head>
+<body>
+  
+    <div class="fh5co-page">
+        <div id="fh5co-container">
+  <div class="js-sticky">
+    <div class="fh5co-main-nav navbar fixed-top">
+      <div class="container">
+      <div class="fh5co-menu-1">
+        <div class="pull-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li id="menu-logo">
+              <p></p>
+              <a href="/blog/">
+                <img src="/static/images/spyder-logo.svg">
+                <span>
+                  <span id="logo-text"><big>S</big>pyder | Blog</span>                  
+                </span>
+              </a>
+              <p></p>
+            </li>
+          </ul>
+        </div>
+        <a style="font-size:11px;" data-nav-section="RSS" href="/blog/feed.xml">RSS</a>
+          
+            
+              <a class="pull-right" href="https://docs.spyder-ide.org/" data-nav-section="Docs">Docs</a>
+            
+              <a class="pull-right" href="/" data-nav-section="Home">Home</a>
+            
+		</div>
+  </div>
+
+</div>
+
+</div>     
+    
+  <div id="fh5co-about-white" data-section="Blog">
+
+          <div class="center">
+    
+</br>
+  
+
+  <div class="blog-post">
+  
+  <div class="row">
+    <div class="meta-blog-author column small-1">
+        <img class="author-img" src="/authors/goanpeca/goanpeca.jpg" alt="Gonzalo Peña-Castellanos" />
+    </div>    
+    <div class="meta-blog-index">
+        <p>
+          Gonzalo Peña-Castellanos<br>
+          <span class="small">02 June of 2019</span> 
+        </p>
+    </div>
+  </div>
+    <h1>TDK-Micronas partners with Quansight to sponsor Spyder</h1>
+    <!--
+.. title: TDK-Micronas partners with Quansight to sponsor Spyder
+.. slug: tdk-partners-with-quansight-labs
+.. date: 2019-06-02
+.. tags: Spyder, Labs
+.. category: 
+.. link: 
+.. author: Gonzalo Peña-Castellanos
+.. description: 
+.. type: text
+-->
+
+<p><em>This blogpost was originally published on the <a href="https://labs.quansight.org/">Quansight Labs website</a></em></p>
+<p>TDK-Micronas is sponsoring Spyder development efforts through Quansight Labs.
+This will enable the development of some features that have been requested by
+our users, as well as new features that will help TDK develop custom Spyder
+plugins in order to complement their Automatic Test Equipment (ATE’s) in the
+development of their Application Specific Integrated Circuits (ASIC’s).</p>
+<p>At this point it may be useful to clarify the relationship the role of
+Quansight Labs in Spyder's development and the relationship with TDK. To quote
+Ralf Gommers (director of Quansight Labs):</p>
+<blockquote><p>"We're an R&amp;D lab for open source development of core technologies around data
+science and scientific computing in Python. And focused on growing communities
+around those technologies. That's how I see it for Spyder as well: Quansight
+Labs enables developers to be employed to work on Spyder, and helps with
+connecting them to developers of other projects in similar situations. Labs
+should be an enabler to let the Spyder project, its community and individual
+developers grow. And Labs provides mechanisms to attract and coordinate
+funding. Of course the project is still independent. If there are other
+funding sources, e.g. donations from individuals to Spyder via OpenCollective,
+all the better."</p>
+</blockquote>
+<h2 id="multiple-projects-aka-workspaces">Multiple Projects aka Workspaces</h2><p>In its current state Spyder can only handle one active project at a time.
+Although in the past we had basic support for workspaces, it was never a fully
+functional feature, so to ease development and simplify the user experience,
+we decided to remove it in the 3.x series.</p>
+<!-- TEASER_END -->
+
+<p>For TDK-Micronas, as well as for a large part of the Spyder user base, the use
+of multiple simultaneous projects is a common pattern, so this enhancement
+will:</p>
+<ul>
+<li>Move from a single to a multiple active projects concept</li>
+<li>Change the name <code>Project Explorer</code> to <code>WorkSpace Explorer</code>.</li>
+<li>Copying from one project to another is done in the 'Explorer' by means of
+context menus.</li>
+</ul>
+<p>It is worth mentioning that projects are considered an “advanced feature”,
+so it will not be forced on users that just want to get some work done.
+Projects usage is, and will remain, an optional feature.</p>
+<h2 id="project-types">Project Types</h2><p>Since the revamp of Spyder Projects with the 3.x series, the new dialog hinted
+at the possibility of creating different types of projects. Currently Spyder
+provides an "empty project" project type.</p>
+<p><img src="/blog/tdk-micronas-partners-with-quansight-labs/spyder-project-creation.png" alt="Project creation"></p>
+<p>This feature will:</p>
+<ul>
+<li>Expand the (current) Project Explorer API to handle Project Types.</li>
+<li>Define and implement the minimal aspects that should be extensible by a
+Project Type</li>
+</ul>
+<h2 id="file-associations">File Associations</h2><p>Spyder currently supports opening files on the Project and File Explorer
+using the (default) Operating System defined applications. We will enhance
+this by adding <strong>Global</strong> file associations as part of the <strong>Preferences</strong>
+and Project Specific associations as part of the <strong>Project Preferences</strong>.
+This will give users more power to select the tool or set of tools that they
+prefer to use for specific projects and tasks directly on the File and Project
+Explorer pane.</p>
+<h2 id="url-awareness">URL Awareness</h2><p>Working with projects requires access to documentation, located within the
+computer as other files or links located over the internet. We will now
+include integration for URI detection within the editor so users can
+<code>Ctrl+Click</code> on these items. This will work similarly as module
+inspection works, but generalized to external and internal links.</p>
+<h2 id="git-version-control-enhancements">Git version control enhancements</h2><p>The revision system of choice by our user base, including TDK, is Git.
+The purpose of this enhancement is to enable basic Git integration from
+within the File and Project Explorer and to extend the current plugin
+API so context menus can be customized with specific Git features and
+commands.</p>
+<p>Initial work has already started to display Git relevant information
+on the status bar</p>
+<p><img src="/blog/tdk-micronas-partners-with-quansight-labs/spyder-git-status.png" alt="Status bar git"></p>
+<p><small>Git status is now displayed in the status bar (on the left)</small></p>
+<h2 id="editor-alternative-views">Editor alternative views</h2><p>There are many circumstances where a user would like to edit a file that might
+be rendered using a parsing tool into another type of view. One example of
+this is Markdown, the markup language in which this blog post is written and
+that can be rendered to HTML. At the moment the only way to achieve this within
+Spyder is via the use of a dedicated plugin that would create a new type of
+Pane. An example of such a plugin is <a href="https://github.com/spyder-ide/spyder-reports">spyder-reports</a>
+(See image below and the Reports pane). The reason why plugins are developed
+this way is because the Editor Plugin on Spyder can only contain Code Editor
+widgets, which prevents us and other developers to use the Editor to hold
+these alternate views of a given file.</p>
+<p><img src="/blog/tdk-micronas-partners-with-quansight-labs/spyder-reports.png" alt="Spyder Reports"></p>
+<p>The new alternative views feature will remove this limitation and enable the
+inclusion of generic widgets (views) of different types of files and provide
+an API for plugin extensions.</p>
+<h2 id="closing-remarks">Closing Remarks</h2><p>I would like to thank TDK-Micronas and Quansight for the opportunity to
+work in open source development on an awesome product such as Spyder.</p>
+<p>I would also like to thank the users,
+<a href="https://github.com/spyder-ide/spyder/graphs/contributors">contributors</a>
+and <a href="https://github.com/orgs/spyder-ide/people">core developers</a> for helping
+make Spyder an awesome tool!</p>
+
+  
+  </div>
+
+    
+      <div class="comment-box">
+        <h2>Comments</h2>
+        
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/tdk-micronas-partners-with-quansight-labs"; this.page.url = "https://www.spyder-ide.org/blog/tdk-micronas-partners-with-quansight-labs/"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//spyder-ide.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+      </div>
+    
+
+          </div>
+  </div>
+
+      <div id="fh5co-footer" data-section="donate">
+          <div class="container">
+            
+              <div class="row">
+                <a href="https://opencollective.com/spyder/donate" target="_blank">
+                  <img src="/static/images/collective.svg" class="center donate" />
+                </a>
+              </div>
+              </br>
+            
+            <div class="row">
+              <div class="text-center">
+                    <p><small>
+                      Connect with us on: 
+                     
+                      <a href="https://github.com/spyder-ide/spyder">Github</a>
+                     
+                     
+                     <span class="pipe-red">|</span> <a href="https://twitter.com/spyder_ide">Twitter</a>
+                     
+                     
+                     <span class="pipe-red">|</span> <a href="https://www.facebook.com/SpyderIDE/">Facebook</a>
+                     
+                     
+                     
+                     
+                     <span class="pipe-red">|</span> <a href="https://groups.google.com/group/spyderlib">Google Groups</a>
+                     
+                 
+                    </small></p>
+                  </div>
+                </div>
+            
+            <div class="row">
+              <div class="text-center">
+          <p>&copy; 2018 The Spyder Website Contributors <br> Icons by <a href="https://www.freepik.com/" target="_blank" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" target="_blank" title="Flaticon">Flaticon.com</a> <span class="pipe-red">|</span> <a href="https://freehtml5.co/icon-free-website-template-using-bootstrap/" target="_blank">Template</a> designed by <a href='https://freehtml5.co/' target='_blank'>FreeHTML5.co</a> <br>Hugo port by <a href='https://github.com/SteveLane/' target='_blank'>SteveLane</a> <span class="pipe-red">|</span> Lektor port by <a href='https://github.com/dalthviz/' target='_blank'>Dalthviz</a></p>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+    
+    <script type=text/javascript src="/static/js/app.js?h=cc0b04e2" charset="utf-8"></script>
+</body>
