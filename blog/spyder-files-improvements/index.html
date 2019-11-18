@@ -1,0 +1,209 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" href="/static/images/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="./favicon.ico" />
+    <!-- Animate.css -->
+  <link rel="stylesheet" href="/static/css/animate.css?h=b5df4c2b">
+  <!-- Icomoon Icon Fonts-->
+  <link rel="stylesheet" href="/static/css/icomoon.css?h=eb9e1504">
+  <!-- Simple Line Icons -->
+  <link rel="stylesheet" href="/static/css/simple-line-icons.css?h=8358d953">
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" href="/static/css/magnific-popup.css?h=7ce3d579">
+  <!-- Google fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+  <link rel="stylesheet" href="/static/css/bootstrap.css?h=ff5de57f">
+  <link rel="stylesheet" href="/static/css/style.css?h=9afaea95">
+  <link rel="stylesheet" href="/static/css/styles.css?h=ad20a4c5">
+  
+  
+  <title>File management improvements in Spyder 4 — Spyder Website</title>
+</head>
+<body>
+  
+    <div class="fh5co-page">
+        <div id="fh5co-container">
+  <div class="js-sticky">
+    <div class="fh5co-main-nav navbar fixed-top">
+      <div class="container">
+      <div class="fh5co-menu-1">
+        <div class="pull-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li id="menu-logo">
+              <p></p>
+              <a href="/blog/">
+                <img src="/static/images/spyder-logo.svg">
+                <span>
+                  <span id="logo-text"><big>S</big>pyder | Blog</span>                  
+                </span>
+              </a>
+              <p></p>
+            </li>
+          </ul>
+        </div>
+        <a style="font-size:11px;" data-nav-section="RSS" href="/blog/feed.xml">RSS</a>
+          
+            
+              <a class="pull-right" href="https://docs.spyder-ide.org/" data-nav-section="Docs">Docs</a>
+            
+              <a class="pull-right" href="/" data-nav-section="Home">Home</a>
+            
+		</div>
+  </div>
+
+</div>
+
+</div>     
+    
+  <div id="fh5co-about-white" data-section="Blog">
+
+          <div class="center">
+    
+</br>
+  
+
+  <div class="blog-post">
+  
+  <div class="row">
+    <div class="meta-blog-author column small-1">
+        <img class="author-img" src="/authors/juanis2112/juanis2112.jpg" alt="Juanita Gómez Romero" />
+    </div>    
+    <div class="meta-blog-index">
+        <p>
+          Juanita Gómez Romero<br>
+          <span class="small">12 November of 2019</span> 
+        </p>
+    </div>
+  </div>
+    <h1>File management improvements in Spyder 4</h1>
+    <p><em>This blogpost was originally published on the <a href="https://labs.quansight.org/blog/2019/11/File-management-improvements-in-Spyder4/">Quansight Labs website</a></em>.</p>
+<p>Version 4.0 of <a href="https://www.spyder-ide.org/">Spyder</a> is almost ready! It has been in the making for well over two years, and it contains lots of interesting new features. We will focus on the Files pane in this post, where we've made several improvements to the interface and file management tools.</p>
+<h2 id="simplified-interface">Simplified interface</h2><p>In order to simplify the Files pane's interface, the columns corresponding to size and kind are hidden by default. To change which columns are shown, use the top-right pane menu or right-click the header directly.</p>
+<p><img src="/blog/spyder-files-improvements/pane-menu.png" alt="Pane Menu"></p>
+<p><img src="/blog/spyder-files-improvements/header-menu.png" alt="Header Menu"></p>
+<h2 id="custom-file-associations">Custom file associations</h2><p>First, we added the ability to associate different external applications with specific file extensions they can open. Under the File associations tab of the Files preferences pane, you can add file types and set the external program used to open each of them by default.</p>
+<p><img src="/blog/spyder-files-improvements/file-associations.png" alt="File associations"></p>
+<p>Once you've set this up, files will automatically launch in the associated application when opened from the Files pane in Spyder. Additionally, when you right-click a file you will find an <code>Open with...</code> option that will show the application associated with this extension.</p>
+<p><img src="/blog/spyder-files-improvements/open-with.png" alt="Open With"></p>
+<h2 id="single-click-open-option">Single click open option</h2><p>We've added a new option to open files and directories with a single-click instead of a double-click, to suit different user preferences. To enable this option, go to the General tab of the Files preferences pane and check the option <code>Single click to open files</code>. With this setting, only a single click is needed to open a file in the Files pane either externally or in Spyder.</p>
+<p><img src="/blog/spyder-files-improvements/single-click.png" alt="Single click"></p>
+<p>Bear in mind that changing this configuration option will also affect the behaviour of the Project Explorer pane.</p>
+<h2 id="open-files-externally">Open files externally</h2><p>We added the option to open files with the operating system's default program for the file type to the Files pane's context menu. To use this feature, right-click any file in the Files pane and click <code>Open externally</code></p>
+<p><img src="/blog/spyder-files-improvements/open-externally.png" alt="Open Externally"></p>
+<p>Moreover, it is now possible to select more than one file on which to perform a context menu action, thanks to the Files pane's new multi-select functionality. For this, press <code>Ctrl</code> (<code>Cmd</code> on macOS) or <code>Shift</code> while clicking on the files to select, just as you would in your operating system's file manager (Windows Explorer, macOS Finder, etc). As you'd expect, <code>Ctrl</code> (<code>Cmd</code>) selects individual files one by one, while <code>Shift</code> selects all the files between the one you click and the one previously selected.
+Once you've selected multiple files, it is now possible to execute many of the actions available in the context menu on all the selected files, including delete, rename, move, copy and open externally.</p>
+<p><img src="/blog/spyder-files-improvements/select-files.png" alt="Select Files"></p>
+<h2 id="absolute-and-relative-path-handling">Absolute and relative path handling</h2><p>Spyder 4 now allows you to easily copy the absolute or relative paths of one or more files in the <code>Files</code> pane and pasting them as well-formatted text anywhere else in Spyder. Just right-clicking any file or files in the Files or Project panes and select the desired option.</p>
+<p><img src="/blog/spyder-files-improvements/copy-path.png" alt="Copy Path"></p>
+<p>Beyond just copying a single path, when pasting more than one Spyder will intelligently format it into a comma-separated collection of quoted strings, one path per line, that can be pasted directly into a list with no additional formatting needed.</p>
+<p><img src="/blog/spyder-files-improvements/multiple-paths.png" alt="Multiple Paths"></p>
+<p>The <code>Copy Absolute Path</code> option gets us the complete path of each selected file, starting from the drive root.</p>
+<p><img src="/blog/spyder-files-improvements/absolute-path.png" alt="Absolute Path"></p>
+<p>Alternatively, <code>Copy Relative Path</code> gets us the path of the file relative to the current working (displayed in the top right of the Spyder window).</p>
+<p><img src="/blog/spyder-files-improvements/relative-path.png" alt="Relative Path"></p>
+<h2 id="file-type-icons">File type icons</h2><p>Finally, files in the <code>Files</code> pane are now displayed with icons depending on their type. There are custom icons for the source files of a variety of common programming languages including C C++, C Sharp, Java, Python, R, and Swift; for media types like JPEG, MP3, and M4A; and for other common extensions such as <code>.txt</code> and <code>.tex</code>. This allows you to identify file types with just a glance and select the appropriate application accordingly.</p>
+<p><img src="/blog/spyder-files-improvements/file-extensions.png" alt="File Extensions"></p>
+<p>With these new features and UI options in Spyder's <code>Files</code> pane, we hope you will enjoy the improved file management experience coming in Spyder 4! We would like to thank Quansight, our donors, and most of all our dedicated users and contributors from around the world for making these features possible. The final version will be released very soon, but if you'd like to try it out now and share your feedback, follow the instructions on our <a href="https://github.com/spyder-ide/spyder/releases">Github</a>. Happy Spydering!</p>
+
+  
+  </div>
+
+    
+      <div class="comment-box">
+        <h2>Comments</h2>
+        
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function() { this.page.identifier = "/blog/spyder-files-improvements"; this.page.url = "https://www.spyder-ide.org/blog/spyder-files-improvements/"; };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//spyder-ide.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+    rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+      </div>
+    
+
+          </div>
+  </div>
+
+      <div id="fh5co-footer" data-section="donate">
+          <div class="container">
+            
+              <div class="row">
+                <a href="https://opencollective.com/spyder/donate" target="_blank">
+                  <img src="/static/images/collective.svg" class="center donate" />
+                </a>
+              </div>
+              </br>
+            
+            <div class="row">
+              <div class="text-center">
+                    <p><small>
+                      Connect with us on: 
+                     
+                      <a href="https://github.com/spyder-ide/spyder">Github</a>
+                     
+                     
+                     <span class="pipe-red">|</span> <a href="https://twitter.com/spyder_ide">Twitter</a>
+                     
+                     
+                     <span class="pipe-red">|</span> <a href="https://www.facebook.com/SpyderIDE/">Facebook</a>
+                     
+                     
+                     
+                     
+                     <span class="pipe-red">|</span> <a href="https://groups.google.com/group/spyderlib">Google Groups</a>
+                     
+                 
+                    </small></p>
+                  </div>
+                </div>
+            
+            <div class="row">
+              <div class="text-center">
+          <p>&copy; 2018 The Spyder Website Contributors <br> Icons by <a href="https://www.freepik.com/" target="_blank" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" target="_blank" title="Flaticon">Flaticon.com</a> <span class="pipe-red">|</span> <a href="https://freehtml5.co/icon-free-website-template-using-bootstrap/" target="_blank">Template</a> designed by <a href='https://freehtml5.co/' target='_blank'>FreeHTML5.co</a> <br>Hugo port by <a href='https://github.com/SteveLane/' target='_blank'>SteveLane</a> <span class="pipe-red">|</span> Lektor port by <a href='https://github.com/dalthviz/' target='_blank'>Dalthviz</a></p>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+    
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+    room: 'spyder-ide/public',
+    activationElement: '#open_chat',
+    };
+  </script>
+  <a href="https://gitter.im/spyder-ide/public" id="open_chat" class="gitter-open-chat-button">Open Chat</a>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+<!-- jQuery -->
+<script src="/static/js/jquery.min.js?h=5b9df089"></script>
+<!-- jQuery Easing -->
+<script src="/static/js/jquery.easing.1.3.js?h=45144c11"></script>
+<!-- Bootstrap -->
+<script src="/static/js/bootstrap.min.js?h=6c264e0e"></script>
+<!-- Waypoints -->
+<script src="/static/js/jquery.waypoints.min.js?h=791cc989"></script>
+<!-- Stellar Parallax -->
+<script src="/static/js/jquery.stellar.min.js?h=c0655887"></script>
+<!-- Magnific Popup -->
+<script src="/static/js/jquery.magnific-popup.min.js?h=84a81e56"></script>
+<script src="/static/js/magnific-popup-options.js?h=7ac4ca72"></script>
+<!-- Main JS -->
+<script src="/static/js/main.js?h=a41d19e5"></script>
+    <script type=text/javascript src="/static/js/app.js?h=cc0b04e2" charset="utf-8"></script>
+</body>
