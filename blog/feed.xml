@@ -2,13 +2,52 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Spyder Blog</title>
   <id>urn:uuid:a1aeb560-1c3d-3d4a-bd0b-639353c820c3</id>
-  <updated>2019-11-12T00:00:00Z</updated>
+  <updated>2019-11-28T20:00:00Z</updated>
   <link href="https://www.spyder-ide.org/blog/" />
   <link href="https://www.spyder-ide.org/blog/feed.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.3">Lektor Atom Plugin</generator>
+  <entry xml:base="https://www.spyder-ide.org/blog/spyder-variable-explorer/">
+    <title type="text">Variable Explorer improvements in Spyder 4</title>
+    <id>urn:uuid:83f307cc-86f9-3014-98d4-159568f1ecfa</id>
+    <updated>2019-11-28T20:00:00Z</updated>
+    <link href="https://www.spyder-ide.org/blog/spyder-variable-explorer/" />
+    <author>
+      <name>dalthviz</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;em&gt;This blogpost was originally published on the &lt;a href=&quot;https://labs.quansight.org/blog/2019/11/variable-explorer-improvements-in-Spyder-4/&quot;&gt;Quansight Labs website&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.spyder-ide.org/&quot;&gt;Spyder&lt;/a&gt; 4 will be released very soon with lots of interesting new features that you'll want to check out, reflecting years of effort by the team to improve the user experience. In this post, we will be talking about the improvements made to the Variable Explorer.&lt;/p&gt;
+&lt;p&gt;These include the brand new Object Explorer for inspecting arbitrary Python variables, full support for MultiIndex dataframes with multiple dimensions, and the ability to filter and search for variables by name and type, and much more.&lt;/p&gt;
+&lt;p&gt;It is important to mention that several of the above improvements were made possible through integrating the work of two other projects. Code from &lt;a href=&quot;https://github.com/TabViewer/gtabview&quot;&gt;gtabview&lt;/a&gt; was used to implement the multi-dimensional Pandas indexes, while &lt;a href=&quot;https://github.com/titusjan/objbrowser&quot;&gt;objbrowser&lt;/a&gt; was the foundation of the new Object Explorer.&lt;/p&gt;
+&lt;h2 id=&quot;new-viewer-for-arbitrary-python-objects&quot;&gt;New viewer for arbitrary Python objects&lt;/h2&gt;&lt;p&gt;For Spyder 4 we added a long-requested feature: full support for inspecting any kind of Python object through the Variable Explorer. For many years, Spyder has been able to view and edit a small subset of Python variables: NumPy arrays, Pandas DataFrames and Series, and builtin collections (lists, dictionaries and tuples). Other objects were displayed as dictionaries of their attributes, inspecting any of which required showing a new table. This made it rather cumbersome to use this functionality, and was the reason arbitrary Python objects were hidden by default from the Variable Explorer view.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-variable-explorer/python-viewer.png&quot; alt=&quot;Python Viewer&quot;&gt;&lt;/p&gt;
+&lt;p&gt;For the forthcoming Spyder release, we've integrated the excellent &lt;a href=&quot;https://github.com/titusjan/objbrowser&quot;&gt;objbrowser&lt;/a&gt; project by Pepijn Kenter (&lt;a href=&quot;https://github.com/titusjan&quot;&gt;@titusjan&lt;/a&gt;), which provides a tree-like view of Python objects, to offer a much simpler and more user-friendly way to inspect them.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-variable-explorer/python-viewer-metadata.png&quot; alt=&quot;Python Viewer Metadata&quot;&gt;&lt;/p&gt;
+&lt;p&gt;As can be seen above, this viewer will also allow users to browse extra metadata about the inspected object, such as its documentation, source code and the file that holds it.
+It is very important to note that this work was accomplished thanks to the generosity of Pepijn, who kindly changed the license of &lt;a href=&quot;https://github.com/titusjan/objbrowser&quot;&gt;objbrowser&lt;/a&gt; to allow us to integrate it with Spyder.
+To expose this new functionality, we decided to set the option to hide arbitrary Python objects in the Variable Explorer to disabled by default, and introduced a new one called &lt;code&gt;Exclude callables and modules&lt;/code&gt;. With this enabled by default, Spyder will now display a much larger fraction of objects that can be inspected, while still excluding most &quot;uninteresting&quot; variables.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-variable-explorer/exclude-callables-modules.png&quot; alt=&quot;Exclude callables modules&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Finally, we added a context-menu action to open any object using the new Object Explorer even if they already have a builtin viewer (DataFrames, arrays, etc), allowing for deeper inspection of the inner workings of these datatypes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-variable-explorer/view-object-explorer.png&quot; alt=&quot;View object explorer&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;multi-index-support-in-the-dataframe-viewer&quot;&gt;Multi-index support in the dataframe viewer&lt;/h2&gt;&lt;p&gt;One of the first features we added to the Variable Explorer in Spyder 4 was MultiIndex support in its DataFrame inspector, including for multi-level and multi-dimensional indices. Spyder 3 had basic support for such, but it was very rudimentary, making inspecting such DataFrames a less than user-friendly experience.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-variable-explorer/multi-index-support.png&quot; alt=&quot;Multi-index support&quot;&gt;&lt;/p&gt;
+&lt;p&gt;For Spyder 4, we took advantage of the work done by Scott Hansen (&lt;a href=&quot;https://github.com/firecat53&quot;&gt;@firecat53&lt;/a&gt;) and Yuri D'Elia (&lt;a href=&quot;https://github.com/wavexx&quot;&gt;@wavexx&lt;/a&gt;) in their &lt;a href=&quot;https://github.com/TabViewer/gtabview&quot;&gt;gtabview&lt;/a&gt; project, particularly its improved management of column and table headings, which allows the new version of Spyder to display the index shown above in a much nicer way.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-variable-explorer/table-headings.png&quot; alt=&quot;Table headings&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;fuzzy-filtering-of-variables&quot;&gt;Fuzzy filtering of variables&lt;/h2&gt;&lt;p&gt;Spyder 4 also includes the ability to filter the variables shown down to only those of interest. This employs fuzzy matching between the text entered in the search field and the name and type of all available variables.
+To access this functionality, click the search icon in the Variable Explorer toolbar, or press &lt;code&gt;Ctrl+F&lt;/code&gt; (&lt;code&gt;Cmd-F&lt;/code&gt; on macOS) when the Variable Explorer has focus.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-variable-explorer/filter-variables.png&quot; alt=&quot;Filter variables&quot;&gt;&lt;/p&gt;
+&lt;p&gt;To remove the current filter, simply click the search icon again, or press &lt;code&gt;Esc&lt;/code&gt; or &lt;code&gt;Ctrl+F&lt;/code&gt; (&lt;code&gt;Cmd-F&lt;/code&gt;) while the Variable Explorer is focused.&lt;/p&gt;
+&lt;h2 id=&quot;refresh-while-code-is-running&quot;&gt;Refresh while code is running&lt;/h2&gt;&lt;p&gt;We added back the ability to refresh the Variable Explorer while code is running in the console. This feature was dropped in Spyder 3.2, when we removed the old and unmaintained Python console. However, this functionality will return in Spyder 4, thanks to the fantastic work done by Quentin Peter (&lt;a href=&quot;https://github.com/impact27&quot;&gt;@impact27&lt;/a&gt;) to completely re-architect the way Spyder talks to the Jupyter kernels that run the code in our IPython console, integrating support for &lt;a href=&quot;https://jupyter-client.readthedocs.io/en/stable/messaging.html#custom-messages&quot;&gt;Jupyter Comms&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-variable-explorer/refresh.png&quot; alt=&quot;Refresh&quot;&gt;&lt;/p&gt;
+&lt;p&gt;To trigger a refresh, simply click the reload button on the Variable Explorer toolbar, or press the shortcut &lt;code&gt;Ctrl+R&lt;/code&gt; (&lt;code&gt;Cmd-R&lt;/code&gt;) when it has focus.&lt;/p&gt;
+&lt;h2 id=&quot;full-support-for-sets&quot;&gt;Full support for sets&lt;/h2&gt;&lt;p&gt;In Spyder 3, the Variable Explorer could only show builtin Python sets as arbitrary objects, making it very difficult for users to browse and interact with them. In Spyder 4, you can now view sets just like lists, as well as perform various operations on them.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-variable-explorer/set-support.png&quot; alt=&quot;Screenshot of Spyder Variable Explorer UI, showing a Python set displayed in a native viewer&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ui-enhancements-and-more&quot;&gt;UI enhancements and more&lt;/h2&gt;&lt;p&gt;Finally, beyond the headline features, we've added numerous smaller improvements to make the Variable Explorer easier and more efficient to use. These include support for custom index names, better and more efficient automatic resizing of column widths, support for displaying Pandas Indices, tooltips for truncated column headers, and more.&lt;/p&gt;
+&lt;p&gt;Spyder's Variable Explorer is what many of you consider to be one of its standout features, so we can't wait for you all to get your hands on the even better version in Spyder 4. Thanks again to Quansight, our generous community donors, and as always all of you! Spyder 4.0.0 final is planned to be released within approximately one more week, but if you'd like to test it out immediately, follow the instructions on our &lt;a href=&quot;https://github.com/spyder-ide/spyder/releases&quot;&gt;GitHub&lt;/a&gt; to install the pre-release version (which won't touch your existing Spyder install or settings). As always, happy Spydering!&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="https://www.spyder-ide.org/blog/spyder-files-improvements/">
     <title type="text">File management improvements in Spyder 4</title>
     <id>urn:uuid:a77885ee-7488-3a0b-a11b-14f246bbc200</id>
