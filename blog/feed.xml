@@ -2,13 +2,37 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Spyder Blog</title>
   <id>urn:uuid:a1aeb560-1c3d-3d4a-bd0b-639353c820c3</id>
-  <updated>2019-11-28T20:00:00Z</updated>
+  <updated>2020-04-22T17:00:00Z</updated>
   <link href="https://www.spyder-ide.org/blog/" />
   <link href="https://www.spyder-ide.org/blog/feed.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.3">Lektor Atom Plugin</generator>
+  <entry xml:base="https://www.spyder-ide.org/blog/spyder-terminal-030/">
+    <title type="text">Creating the ultimate terminal experience in Spyder 4 with Spyder-Terminal</title>
+    <id>urn:uuid:c6d09bbe-4112-331f-933f-9bd043ec133e</id>
+    <updated>2020-04-22T17:00:00Z</updated>
+    <link href="https://www.spyder-ide.org/blog/spyder-terminal-030/" />
+    <author>
+      <name>steff456</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;em&gt;This blogpost was originally published on the &lt;a href=&quot;https://labs.quansight.org/blog/2020/02/creating-the-ultimate-terminal-experience-in-Spyder-4-with-Spyder-Terminal/&quot;&gt;Quansight Labs website&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://github.com/spyder-ide/spyder-terminal&quot;&gt;Spyder-Terminal&lt;/a&gt; project is revitalized! The new 0.3.0 version adds numerous features that improve the user experience, and enhances compatibility with the latest Spyder 4 release, in part thanks to the improvements made in the &lt;a href=&quot;https://github.com/xtermjs/xterm.js&quot;&gt;xterm.js&lt;/a&gt; project.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-terminal-030/terminal.png&quot; alt=&quot;Screenshot of the new spyder-terminal&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;upgrade-to-es6/jsx-syntax&quot;&gt;Upgrade to ES6/JSX syntax&lt;/h2&gt;&lt;p&gt;First, we were able to update all the old JavaScript files to use ES6/JSX syntax and the tests for the client terminal. This change simplified the code base and maintenance and allows us to easily extend the project to new functionalities that the xterm.js API offers. In order to compile this code and run it inside Spyder, we migrated our deployment to Webpack.&lt;/p&gt;
+&lt;h2 id=&quot;multiple-shells-per-operating-system&quot;&gt;Multiple shells per operating system&lt;/h2&gt;&lt;p&gt;In the new release, you now have the ability to configure which shell to use in the terminal. On Linux and UNIX systems, &lt;code&gt;bash&lt;/code&gt;, &lt;code&gt;sh&lt;/code&gt;, &lt;code&gt;ksh&lt;/code&gt;, &lt;code&gt;zsh&lt;/code&gt;, &lt;code&gt;csh&lt;/code&gt;, &lt;code&gt;pwsh&lt;/code&gt;, &lt;code&gt;tcsh&lt;/code&gt;, &lt;code&gt;screen&lt;/code&gt;, &lt;code&gt;tmux&lt;/code&gt;, &lt;code&gt;dash&lt;/code&gt; and &lt;code&gt;rbash&lt;/code&gt; are supported, while &lt;code&gt;cmd&lt;/code&gt; and &lt;code&gt;powershell&lt;/code&gt; are the available options on Windows. To select your preferred command processor, simply choose it from the menu in the &lt;code&gt;Terminal&lt;/code&gt; pane of Spyder's preferences and restart the IDE.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-terminal-030/shells.png&quot; alt=&quot;UNIX shell options for starting the terminal&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This is a great feature because it allows the user to determine their shell interpreter among the ones that are installed in their systems. In this way, Spyder-Terminal can be configured with any of the existing shells as long as it is available on their machine.&lt;/p&gt;
+&lt;h2 id=&quot;theme-support-and-new-ui-options&quot;&gt;Theme support and new UI options&lt;/h2&gt;&lt;p&gt;Another big change in the new version is built-in support for all Spyder's light and dark themes. When you change your Spyder theme or display options, the Terminal automatically adapt its UI, colors and fonts accordingly.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-terminal-030/terminal-colors.gif&quot; alt=&quot;Spyder-Terminal new themes&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Building on the look and feel of the plugin, we also added configurable options for the terminal sounds and the cursor style. In this way, you can choose whether the terminal uses a bell sound and can select from one of three cursors.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-terminal-030/cursor-style.png&quot; alt=&quot;Cursor options for Spyder-Terminal&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;shortcut-configuration&quot;&gt;Shortcut configuration&lt;/h2&gt;&lt;p&gt;Lastly, the shortcuts on the terminal are configurable within the keyboard shortcuts in Spyder 4. The terminal's shortcuts for &lt;code&gt;Copy&lt;/code&gt;, &lt;code&gt;Paste&lt;/code&gt;, &lt;code&gt;Clean&lt;/code&gt; and &lt;code&gt;New terminal&lt;/code&gt; are now no longer hardcoded.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-terminal-030/shortcuts.png&quot; alt=&quot;Configurable shortcuts for the Terminal inside Spyder 4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;We're excited for you to try out Spyder-Terminal 0.3.0 and experiment with the new features available; we'd like to thank &lt;a href=&quot;https://numfocus.org/&quot;&gt;NumFOCUS&lt;/a&gt; and Quansight for providing the funding and support that made all this work possible. Check back soon for more Spyder updates, and until then, happy coding!&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="https://www.spyder-ide.org/blog/spyder-variable-explorer/">
     <title type="text">Variable Explorer improvements in Spyder 4</title>
     <id>urn:uuid:83f307cc-86f9-3014-98d4-159568f1ecfa</id>
