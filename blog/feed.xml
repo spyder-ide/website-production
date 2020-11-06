@@ -2,13 +2,94 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Spyder Blog</title>
   <id>urn:uuid:a1aeb560-1c3d-3d4a-bd0b-639353c820c3</id>
-  <updated>2020-07-25T10:00:00Z</updated>
+  <updated>2020-11-05T00:00:00Z</updated>
   <link href="https://www.spyder-ide.org/blog/" />
   <link href="https://www.spyder-ide.org/blog/feed.xml" rel="self" />
   <author>
     <name></name>
   </author>
   <generator uri="https://github.com/ajdavis/lektor-atom" version="0.3.1">Lektor Atom Plugin</generator>
+  <entry xml:base="https://www.spyder-ide.org/blog/spyder-debugger/">
+    <title type="text">New features in Spyder 4's new debugger!</title>
+    <id>urn:uuid:c5d28dad-2fb9-3397-913c-93a7d025a3da</id>
+    <updated>2020-11-05T00:00:00Z</updated>
+    <link href="https://www.spyder-ide.org/blog/spyder-debugger/" />
+    <author>
+      <name>impact27</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://ipython.org/&quot;&gt;IPython&lt;/a&gt; is a great improvement over the standard Python interpreter, bringing many enhancements such as autocompletion and &quot;magic&quot; commands.
+When debugging, however, many of these features become inaccessible.
+With Spyder, we aim to bring back these capabilities and more for a truly premium debugging experience!
+(And believe me, I use this debugger a lot, and not only because I write code that might contain bugs :p).&lt;/p&gt;
+&lt;p&gt;In this post, I will describe the debugger improvements we've already made in Spyder 4, as well as those that are already implemented or under review for Spyder 4.2 and beyond.&lt;/p&gt;
+&lt;h2&gt;Make the debugger more like IPython&lt;/h2&gt;
+&lt;p&gt;IPython improves on the stock Python interpreter by adding syntax highlighting, completion, and history.
+We have done the same for the debugger!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/debugger-ipdb.png&quot; alt=&quot;Debugger ipdb&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The output is prettier (and easier to read) than plain black text, as it was in Spyder 3!&lt;/p&gt;
+&lt;p&gt;Code completion and history for the debugger use the same functionality as the IPython console, so you should not notice any difference in behaviour.
+Just press &lt;code&gt;Tab&lt;/code&gt; to trigger autocomplete suggestions, and use the up and down arrows to recall previous commands.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/debugger-autocomplete.png&quot; alt=&quot;Debugger-autocomplete&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This can result useful if you don't know every library's documentation by heart!&lt;/p&gt;
+&lt;p&gt;Another improvement that we added is the ability to write multiline statements.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/debugger-multiline.png&quot; alt=&quot;Debugger-multiline&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This is better than getting &lt;code&gt;SyntaxError: unexpected EOF while parsing&lt;/code&gt;, as was the case in Spyder 3.&lt;/p&gt;
+&lt;p&gt;Finally, IPython has a lot of nice &lt;a href=&quot;https://ipython.readthedocs.io/en/stable/interactive/magics.html&quot;&gt;magic functions&lt;/a&gt; you can take advantage of.
+I personally often use &lt;code&gt;%matplotlib&lt;/code&gt; to switch between the &lt;code&gt;qt5&lt;/code&gt; and &lt;code&gt;inline&lt;/code&gt; plotting backends, and &lt;code&gt;%timeit&lt;/code&gt; to check how fast a given snippet of code is.
+Now, these can be used in the debugger as well!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/debugger-timeit.png&quot; alt=&quot;Debugger timeit&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;Core improvements&lt;/h2&gt;
+&lt;p&gt;When debugging code, a lot of time can be lost stepping through other Python packages.
+To avoid that, enable the new &lt;code&gt;Ignore Python libraries while debugging&lt;/code&gt; option in Spyder's preferences under &lt;code&gt;IPython Console &amp;gt; Debugger &amp;gt; Debug&lt;/code&gt;.
+This will skip all the built-in and third-party Python modules and help you focus on your own code.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/debugger-preferences.png&quot; alt=&quot;Debugger preferences&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Another pain point for me is the mix of Pdb commands and Python statements when using the interactive prompt.
+While debugging a script with a variable named &lt;code&gt;step&lt;/code&gt;, for example, typing &lt;code&gt;step&lt;/code&gt; in the Pdb prompt will not display the value of &lt;code&gt;step&lt;/code&gt;, but will instead step through the code.
+To avoid this, the Spyder 4.2 debugger will give precedence to Python expressions over Pdb commands; prefixing an expression with an exclamation mark will explicitly run it as a Pdb command.
+This matches how the IPython Console handles clashes between magic functions and Python expressions, and contrasts with the previous behavior, where Pdb commands took precedence.
+You can toggle this under &lt;code&gt;IPython Console &amp;gt; Debugger &amp;gt; Debug&lt;/code&gt; in Spyder's preferences.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/debugger-step.png&quot; alt=&quot;Debugger&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Here, you can see I can have a variable named &lt;code&gt;step&lt;/code&gt;, and use it just as I would in the IPython console!&lt;/p&gt;
+&lt;p&gt;While debugging, the context changes constantly, which can be annoying if you need to use a certain module in each frame.
+To address this, Spyder 4.2 will allow you to execute a snippet of code before any Pdb command.
+I personally use &lt;code&gt;import matplotlib.pyplot as plt&lt;/code&gt; so I can use Matplotlib anywhere with no extra commands!
+You'll be able to set this up for yourself under &lt;code&gt;Preferences&lt;/code&gt; &amp;gt; &lt;code&gt;IPython Console&lt;/code&gt; &amp;gt; &lt;code&gt;Debugger&lt;/code&gt; &amp;gt; &lt;code&gt;Run code while debugging&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/debugger-modules.png&quot; alt=&quot;Debugger modules&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;Matplotlib support&lt;/h2&gt;
+&lt;p&gt;Speaking of using Matplotlib, two improvements will make your plotting life much easier while in the debugger.
+First, if you use the &lt;code&gt;inline&lt;/code&gt; backend, the &lt;code&gt;Process execute events while debugging&lt;/code&gt; option in &lt;code&gt;Preferences &amp;gt; IPython console &amp;gt; Debugger&lt;/code&gt; (on by defaults) enables plotting after each command.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/debugger-plots.png&quot; alt=&quot;Debugger plots&quot;&gt;&lt;/p&gt;
+&lt;p&gt;If you would rather use an interactive backend, Spyder 4.2 will allow you to do that too!
+The event loop will be running while waiting for a Pdb input, which will bring Matplotlib figures to life!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/debugger-interactive-plots.png&quot; alt=&quot;Debugger interactive plots&quot;&gt;&lt;/p&gt;
+&lt;p&gt;For example, interactive figures are great to zoom and pan.&lt;/p&gt;
+&lt;h2&gt;Spyder Editor integration&lt;/h2&gt;
+&lt;p&gt;By clicking next to the line number in the Editor, you can set a breakpoint to stop the debugger upon reaching that line.
+With a Shift-click, you can set a conditional breakpoint that will only pause execution if an expression you write evaluates to &lt;code&gt;True&lt;/code&gt;.
+This is very useful if you are debugging a loop and want to go to a specific iteration, for example!
+While debugging, the Editor will show you the line on which execution is stopped.
+If you move around in the Editor, you can always go back to the current line by using the Pdb &lt;code&gt;(w)here&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/editor-breakpoints.png&quot; alt=&quot;Editor breakpoints&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Here, you can see the Spyder debugger is stopped at the breakpoint on line 385, which is highlighted.
+The next line has a conditional breakpoint.&lt;/p&gt;
+&lt;h2&gt;Other Spyder panes&lt;/h2&gt;
+&lt;p&gt;Several other Spyder panes are useful while debugging.
+Breakpoints gives you a list of all the breakpoints you have set throughout your code.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/debugger-breakpoint.png&quot; alt=&quot;Debugger breakpoint&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The Variable Explorer pane allows you to browse and modify the local namespace wherever the debugger is stopped.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/variable-explorer.png&quot; alt=&quot;Variable Explorer&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;The future&lt;/h2&gt;
+&lt;p&gt;I'm excited for the new Frames Explorer pane, which is currently almost ready for Spyder 5.
+Usually while debugging, it can be hard to tell from where the current function was invoked, and one must often step up a long chain of calls to figure it out.
+With the Frames Explorer, you have direct access to all the relevant call information, and you can jump around the stack easily!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/spyder-debugger/frames-explorer.png&quot; alt=&quot;Frames Explorer&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I can see where the current function was called from!&lt;/p&gt;
+&lt;p&gt;The next challenge I will be tackling is to enable the debugger to stop in threads.
+This is a bit difficult to implement because if two threads reach a breakpoint at the same time, only one of them can take control of the shell, leading to skipped breakpoints.
+This might be okay, but I'm still figuring that out.&lt;/p&gt;
+&lt;p&gt;Try out the new improvements in the Spyder debugger and let us know if they make your debugging easier!&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="https://www.spyder-ide.org/blog/STX-interview/">
     <title type="text">STX Next, Python development company, uses Spyder to improve their workflow</title>
     <id>urn:uuid:4e4fa26d-e088-3687-a4b4-37b546e75381</id>
