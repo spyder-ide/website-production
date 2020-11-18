@@ -52,7 +52,7 @@
   <style>
     :root {
       --theme-fg-color: #000000;
-      --theme-fg-alt-color: #4e4e4e;
+      --theme-fg-alt-color: #333333;
       --theme-bg-color: #ffffff;
       --theme-bg-alt-color: #e8ecf1;
       --theme-bg-accent-color: #f5f5f5;
@@ -75,7 +75,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="/static/css/style.css?h=adc94e13" type="text/css">
   <!-- User Custom CSS -->
-  <link rel="stylesheet" href="/static/css/custom_styles.css?h=f02196ab" type="text/css">
+  <link rel="stylesheet" href="/static/css/custom_styles.css?h=d3a0c0f4" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" type="text/css">
 </head>
 
@@ -92,10 +92,7 @@
                 <li id='menu-logo'>
                   <p></p>
                     <a href='/'>
-                    <img alt="Site Logo" src="/static/images/spyder-logo.svg?h=946d9158">
-                    <span class="logo-text-container">
-                      <span class="logo-text">Spyder&nbsp;</span>
-                    </span>
+                    <img alt="Site Logo" src="/static/images/spyder_logo.png?h=5c3a431e">
                   </a>
                   <p></p>
                 </li>
@@ -109,7 +106,6 @@
 <a class="nav-link-section" href="#section-plugins" data-nav-section="plugins">Plugins</a>
 <a class="nav-link-section" href="#section-download" data-nav-section="download">Download</a>
 <a class="nav-link-section" href="#section-donate" data-nav-section="donate">Donate</a>
-<a class="nav-link-section" href="#section-sponsors" data-nav-section="sponsors">Sponsors</a>
               <div class="side-nav-container">
                 <a class="pull-right nav-link-external" href="https://docs.spyder-ide.org/"> Docs</a>
                 <a class="pull-right nav-link-internal" href="/blog/">Blog</a>
@@ -136,7 +132,7 @@
   </div>
   
 <div class="center">
-  <p>Spyder is a powerful scientific environment written in Python, for Python, and designed by and for scientists, engineers and data analysts.
+  <p>Spyder is a free and open source scientific environment written in Python, for Python, and designed by and for scientists, engineers and data analysts.
 It features a unique combination of the advanced editing, analysis, debugging, and profiling functionality of a comprehensive development tool with the data exploration, interactive execution, deep inspection, and beautiful visualization capabilities of a scientific package.</p>
 
 </div>
@@ -155,6 +151,7 @@ It features a unique combination of the advanced editing, analysis, debugging, a
 </div>
 <div class="container center-container">
   <div class="col-md-4 card-outer center-inner">
+    <a href="http://docs.spyder-ide.org/develop/current/editor.html" class="card-link-full">
     <div class="card card-item service transparent-bg">
       <div class="card-inner">
         <div class="icon">
@@ -165,22 +162,24 @@ It features a unique combination of the advanced editing, analysis, debugging, a
 
       </div>
       <div class="card-spacer"></div>
-    </div>
+    </div></a>
   </div>
   <div class="col-md-4 card-outer center-inner">
+    <a href="http://docs.spyder-ide.org/develop/current/ipythonconsole.html" class="card-link-full">
     <div class="card card-item service transparent-bg">
       <div class="card-inner">
         <div class="icon">
           <img alt="IPython Console photo" src="/console.svg" class="img-responsive center" srcset="/console.svg 1x, /console.svg 2x">
         </div>
         <h3>IPython Console</h3>
-        <p>Harness the power of as many IPython consoles as you like within the flexibility of a full GUI interface; run your code by line, cell, or file; and render plots right inline.</p>
+        <p>Harness the power of as many IPython consoles as you like in one GUI. Run code by line, cell or file; or work interactively with debugging, plots and magic commands.</p>
 
       </div>
       <div class="card-spacer"></div>
-    </div>
+    </div></a>
   </div>
   <div class="col-md-4 card-outer center-inner">
+    <a href="http://docs.spyder-ide.org/develop/current/variableexplorer.html" class="card-link-full">
     <div class="card card-item service transparent-bg">
       <div class="card-inner">
         <div class="icon">
@@ -191,22 +190,24 @@ It features a unique combination of the advanced editing, analysis, debugging, a
 
       </div>
       <div class="card-spacer"></div>
-    </div>
+    </div></a>
   </div>
   <div class="col-md-4 card-outer center-inner">
+    <a href="http://docs.spyder-ide.org/develop/current/plots.html" class="card-link-full">
     <div class="card card-item service transparent-bg">
       <div class="card-inner">
         <div class="icon">
           <img alt="Plots photo" src="/plots.svg" class="img-responsive center" srcset="/plots.svg 1x, /plots.svg 2x">
         </div>
         <h3>Plots</h3>
-        <p>View, copy and save figures and images created during your code execution.</p>
+        <p>Browse, zoom, copy and save the figures and images you create.</p>
 
       </div>
       <div class="card-spacer"></div>
-    </div>
+    </div></a>
   </div>
   <div class="col-md-4 card-outer center-inner">
+    <a href="http://docs.spyder-ide.org/develop/current/debugging.html" class="card-link-full">
     <div class="card card-item service transparent-bg">
       <div class="card-inner">
         <div class="icon">
@@ -217,9 +218,10 @@ It features a unique combination of the advanced editing, analysis, debugging, a
 
       </div>
       <div class="card-spacer"></div>
-    </div>
+    </div></a>
   </div>
   <div class="col-md-4 card-outer center-inner">
+    <a href="http://docs.spyder-ide.org/develop/current/help.html" class="card-link-full">
     <div class="card card-item service transparent-bg">
       <div class="card-inner">
         <div class="icon">
@@ -230,14 +232,14 @@ It features a unique combination of the advanced editing, analysis, debugging, a
 
       </div>
       <div class="card-spacer"></div>
-    </div>
+    </div></a>
   </div>
 </div>
 </div> <!-- END services-section -->
 <div id="section-plugins" data-section="plugins" class="gallery-section body-section body-block dark-bg-section">
   <div class="text-center fh5co-heading">
     <h2>Plugins</h2>
-    <p>Extend Spyder's functionality with these awesome third-party plugins!</p>
+    <p>Extend Spyder's functionality with these awesome plugins!</p>
 
   </div>
   
@@ -258,27 +260,17 @@ It features a unique combination of the advanced editing, analysis, debugging, a
     <div class="fh5co-copy">
       <div class="fh5co-copy-inner">
         <h2>Spyder Terminal</h2>
-        <h3>Control full Bash and cmd shells from inside Spyder</h3>
+        <h3>Control full Bash and CMD shells from inside Spyder</h3>
       </div>
     </div>
   </a>
   <a href="https://github.com/spyder-ide/spyder-unittest" class="center-inner fh5co-item gallery-item-title" style="background-image: url(/unittest_screenshot@1024.png)">
-    <h3>Spyder UnitTest</h3>
+    <h3>Spyder Unittest</h3>
     <div class="fh5co-overlay"></div>
     <div class="fh5co-copy">
       <div class="fh5co-copy-inner">
-        <h2>Spyder UnitTest</h2>
+        <h2>Spyder Unittest</h2>
         <h3>Run test suites within Spyder and view the results</h3>
-      </div>
-    </div>
-  </a>
-  <a href="https://github.com/spyder-ide/spyder-reports" class="center-inner fh5co-item gallery-item-title" style="background-image: url(/reports_screenshot@1024.png)">
-    <h3>Spyder Reports</h3>
-    <div class="fh5co-overlay"></div>
-    <div class="fh5co-copy">
-      <div class="fh5co-copy-inner">
-        <h2>Spyder Reports</h2>
-        <h3>Render beautiful data-driven documents with Spyder</h3>
       </div>
     </div>
   </a>
@@ -320,7 +312,7 @@ Happy Spydering!</p>
 <div id="section-donate" data-section="donate" class="content-section body-section body-block dark-bg-section">
   <div class="text-center fh5co-heading">
     <h2>Donate</h2>
-    <p>Help us to provide the best Scientific Python Development Environment!</p>
+    <p>Help us make Spyder even better for everyone!</p>
 
   </div>
   
@@ -347,6 +339,7 @@ Happy Spydering!</p>
 
 <div class="container center-container">
   <div class="col-md-4 card-outer center-inner">
+    <a href="https://www.quansight.com/" class="card-link-full">
     <div class="card card-item service transparent-bg">
       <div class="card-inner">
         <div class="icon">
@@ -355,9 +348,10 @@ Happy Spydering!</p>
         
       </div>
       <div class="card-spacer"></div>
-    </div>
+    </div></a>
   </div>
   <div class="col-md-4 card-outer center-inner">
+    <a href="https://numfocus.org/" class="card-link-full">
     <div class="card card-item service transparent-bg">
       <div class="card-inner">
         <div class="icon">
@@ -366,7 +360,7 @@ Happy Spydering!</p>
         
       </div>
       <div class="card-spacer"></div>
-    </div>
+    </div></a>
   </div>
 </div>
 </div> <!-- END services-subsection -->
